@@ -495,13 +495,7 @@ object-fit: cover;
     font-weight: 500;
 }
 
-
-
-
-
-
 .slider-btn {
-
     color: #717171;
     background: black;
     padding: 0.625rem 1.875rem;
@@ -511,14 +505,12 @@ object-fit: cover;
     border: 2px solid #c2c2c2;
     border-radius: 10px;
     transition: 0.3s ease-in-out;
-
 }
 
 .slider-btn:hover {
     border: 0.125rem solid #00a4aa;
     color: #00a4aa;
 }
-
 
 
 .myswiper {
@@ -533,8 +525,6 @@ object-fit: cover;
     height: 28.125rem;
     background-size: cover;
     background-position: center;
-    
-
 }
 
 
@@ -545,12 +535,10 @@ object-fit: cover;
     opacity: 1;
     background-color: rgba(0, 0, 0, 0.5);
     height: 300px;
-  
 }
 
 .swiper-slide-active div a {
     align-self: flex-start;
-  
 }
 
 .myswiper-slider h2 {
@@ -581,7 +569,6 @@ object-fit: cover;
 .swiper-pagination-bullet,
 .swiper-pagination-bullet-active {
     background: #fff;
-  
 }
 
 .swiper-image{
@@ -614,10 +601,8 @@ object-fit: cover;
     flex-direction: row;
     justify-content: center;
     width: 100%;
-  
     margin-right: auto;
     margin-left: auto;
-
 }
 
 .intro-left-bar{
@@ -702,9 +687,7 @@ object-fit: cover;
     width: 600px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     margin-top: 100px;
-  
     justify-content: space-between;
-
 }
 
 .experience-box-reverse{
@@ -713,12 +696,8 @@ object-fit: cover;
     width: 600px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     margin-top: 100px;
-  
     justify-content: space-between;
-
 }
-
-
 
 
 .exp-img{
@@ -789,7 +768,6 @@ object-fit: cover;
     .experience-box .exp-text{
         align-items: start;
         width: 300px;
-       
     }
     .experience-box-reverse .exp-text{
         align-items: start;

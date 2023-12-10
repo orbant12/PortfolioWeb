@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
 import React,{useEffect} from 'react';
 import '../CSS/navbar.css';
-
+import workData from '../portfolio.json'
 
 const PortfolioPage = () => {
 
@@ -9,52 +9,59 @@ const { id } = useParams();
 
 
 
-const Clippify = {
-    title:"Clippify",
-    list:[
-        "Clip trimming, saving, storing",
-        "Machine Learning Model for transcript extraction",
-        "Built in OpenAi api - Fine Tuned","Rich Text Editor",
-        "Smooth Subscription and Payment with Stripe api",
-        "Firebase Backend"
-    ],
-    expertise:[
-        {
-            logo:"https://images.unsplash.com/photo-1631397833242-fc6213046352?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8Y2xpcHBpZnklMjBsb2dvfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
-            title:"Machine Learning Model",
-            text:[
-                "Video type manipulation (blob, data:url, base64)",
-                "FFmpeg syntax for video manipulation",
-                "Timeline Bar from thubnails"
-            ],
-        },
-        {
-            logo:"https://images.unsplash.com/photo-1631397833242-fc6213046352?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8Y2xpcHBpZnklMjBsb2dvfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
-            title:"Dealing with Video - FFmpeg",
-            text:[
-                "Video type manipulation (blob, data:url, base64)",
-                "FFmpeg syntax for video manipulation",
-                "Timeline Bar from thubnails"
-            ],
-        },
-        {
-            logo:"https://images.unsplash.com/photo-1631397833242-fc6213046352?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8Y2xpcHBpZnklMjBsb2dvfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
-            title:"Dealing with Video - FFmpeg",
-            text:[
-                "Video type manipulation (blob, data:url, base64)",
-                "FFmpeg syntax for video manipulation",
-                "Timeline Bar from thubnails"
-            ],
-        }
-    ]
-}
+// const Clippify = {
+//     title:"Clippify",
+//     list:[
+//         "Clip trimming, saving, storing",
+//         "Machine Learning Model for transcript extraction",
+//         "Built in OpenAi api - Fine Tuned","Rich Text Editor",
+//         "Smooth Subscription and Payment with Stripe api",
+//         "Firebase Backend"
+//     ],
+//     expertise:[
+//         {
+//             logo:"https://images.unsplash.com/photo-1631397833242-fc6213046352?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8Y2xpcHBpZnklMjBsb2dvfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
+//             title:"Machine Learning Model",
+//             text:[
+//                 "Video type manipulation (blob, data:url, base64)",
+//                 "FFmpeg syntax for video manipulation",
+//                 "Timeline Bar from thubnails"
+//             ],
+//         },
+//         {
+//             logo:"https://images.unsplash.com/photo-1631397833242-fc6213046352?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8Y2xpcHBpZnklMjBsb2dvfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
+//             title:"Dealing with Video - FFmpeg",
+//             text:[
+//                 "Video type manipulation (blob, data:url, base64)",
+//                 "FFmpeg syntax for video manipulation",
+//                 "Timeline Bar from thubnails"
+//             ],
+//         },
+//         {
+//             logo:"https://images.unsplash.com/photo-1631397833242-fc6213046352?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8Y2xpcHBpZnklMjBsb2dvfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
+//             title:"Dealing with Video - FFmpeg",
+//             text:[
+//                 "Video type manipulation (blob, data:url, base64)",
+//                 "FFmpeg syntax for video manipulation",
+//                 "Timeline Bar from thubnails"
+//             ],
+//         }
+//     ]
+// }
 
 const [pageData,setPageData] = React.useState({title:"",list:[],expertise:[{logo:"",title:"",text:[]}]});
 
 useEffect(() => {
     if(id == "Clippify"){
-        setPageData(Clippify);
+        setPageData(workData.Work.Clippify);
+    }else if(id == "Lupody"){
+        setPageData(workData.Work.Lupody);
+    }else if(id == "Lupody Mobile"){
+        setPageData(workData.Work.LupodyMobile);
+    }else if(id == "Clippify Mobile"){
+        setPageData(workData.Work.ClippifyMobile);
     }
+    console.log(id);
 },[]);
 
 return(
@@ -70,10 +77,10 @@ return(
                     })}
                 </ul>
                 <div style={{marginTop:40,marginBottom:20,width:"100%",display:"flex"}}>
-                    <a className="tryFree" href="https://clippify.net">Try it for Free</a>
+                    <a className="tryFree" href={pageData.navigation}>Try it for Free</a>
                 </div>
             </div>
-            <iframe className="youtube-frame"  src="https://www.youtube.com/embed/xNRJwmlRBNU?si=f7WTiSJIPG9jg3Ad" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen ></iframe>
+            <iframe className="youtube-frame"  src={pageData.youtube} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen ></iframe>
         </div>
 
         <div className="this-project-box">
