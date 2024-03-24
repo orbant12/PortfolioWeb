@@ -22,3 +22,10 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+
+# Large files
+src/assets/RichTextEditorClip.mp4
+src/assets/RateClip.mp4
+src/assets/WatchLaterClip.mp4
+src/assets/ChatBotClip.mp4
