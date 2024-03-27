@@ -15,6 +15,10 @@ import React from "react";
 //IMAGE
 import downArrow from "../assets/down-arrow.png";
 import mePicture from "../assets/mePic.png"
+import GetconLogo from "../assets/gtcon.png"
+
+//ICONS
+import { SocialIcon } from "react-social-icons";
 
 //COMPONENTS
 import ServiceBox from "../components/serviceBox";
@@ -161,7 +165,22 @@ function openResume() {
     window.open(url, '_blank');
 }
 
+const handleSeeMore = (navigationTitle) => {
+    //GITHUB
+    if(navigationTitle == "Github"){
+        window.location.href = "https://github.com/orbant12"
+    }
 
+    //YOUTUBE
+    if(navigationTitle == "Youtube"){
+        window.location.href = "https://www.youtube.com/channel/UCV32IuRS4IQiA2_TWVJDd_w"
+    }
+
+     //Getcon
+    if(navigationTitle == "Getcon"){
+        window.location.href = "https://www.getcon.hu/"
+    }
+}
 
 
 
@@ -395,16 +414,12 @@ return (
                     </Swiper>
                 </div>
             </div>
-            <hr style={{borderStyle:"groove"}} />
-            <div className="aboutme-section">
-                <h2>About Me</h2>
-                <h5>Let me show you with another perspective</h5>
-                <div onClick={handleVrPressed} style={{cursor:"pointer"}}> 
-                    <div className="spline-visionPro" > 
-                        <Spline scene="https://prod.spline.design/KX8f-KHZwA3H06Gs/scene.splinecode" />
-                    </div>
-                </div>
+            
+            <div className="divider-row">
+                <h4>Worked with :</h4>
+                <img src={GetconLogo} onClick={() => handleSeeMore("Getcon")}/>
             </div>
+
             <div className="review-bubbles">
                 <div className="bubble-rows">
                     {/* COL 1 */}
@@ -420,16 +435,23 @@ return (
                         </div>
 
                         <div className="bubble-type2">
-                            <h3>Anonymus</h3>
-                            <h5 style={{opacity:0.7,fontWeight:400,marginTop:5}}>"Working with Tamas was a delight! Their expertise, attention to detail, and commitment to deadlines exceeded my expectations. The app they developed met my vision. I highly recommend !!!"</h5>
+                        <h3>Live Coding</h3>
+                            <h5 style={{opacity:0.7,fontWeight:400,marginTop:5}}>Hacking / Data Science<br /> <span style={{fontWeight:800}}>Programming </span><br/></h5>
+                            <div className="see-more_btn" onClick={()=> handleSeeMore("Youtube")}>
+                                <h5>Videos</h5>
+                            </div>
                         </div>
 
                     </div>
                     {/* COL 2 */}
                     <div className="bubbleCol">
                         <div className="bubble-type2">
-                        <h3>Anonymus</h3>
-                            <h5 style={{opacity:0.7,fontWeight:400,marginTop:5,fontSize:12}}>"The quick communication on Discord made a world of difference during our app development. It played a huge role in making the process smooth and enjoyable. Respect to your team for fostering such effective communication. It truly sets your service apart!"</h5>
+                        <h3>Github</h3>
+                            <h5 style={{opacity:0.7,fontWeight:400,marginTop:5}}>All of my personal projects<br /> <span style={{fontWeight:800}}>Passion</span><br/></h5>
+                            <div style={{display:"flex",flexDirection:"column",justifyContent:"center",alignItems:"center",marginTop:20}}>
+                                <SocialIcon url="https://github.com/orbant12" />
+                            </div>
+                            
                         </div>
 
                         <div className="bubble-type1">
@@ -457,8 +479,14 @@ return (
                         </div>
 
                         <div className="bubble-type2">
-                            <h3>Anonymus</h3>
-                            <h5 style={{opacity:0.7,fontWeight:400,marginTop:5,fontSize:14}}>"Your ability to effortlessly understand and implement my ideas, even through handwritings and images, made the collaboration enjoyable."</h5>
+                            <h3>Socials</h3>
+                                <h5 style={{opacity:0.7,fontWeight:400,marginTop:5}}>Feel free to check me out<br /> <span style={{fontWeight:800}}>Budapest, Hungary</span><br/></h5>
+                                <div className="social_accs">
+                                    <SocialIcon url="https://twitter.com/TamasOrban12" />
+                                    <SocialIcon url="https://instagram.com/orbant12" />
+                                    <SocialIcon url="https://www.linkedin.com/in/tamas-orban-30921524b/" />
+                                   
+                                </div>
                         </div>
 
                     </div>
@@ -504,6 +532,16 @@ return (
                             </div>
                     </div>
 
+                    </div>
+                </div>
+            </div>
+
+            <div className="aboutme-section">
+                <h2>About Me</h2>
+                <h5>Let me show you with another perspective</h5>
+                <div onClick={handleVrPressed} style={{cursor:"pointer"}}> 
+                    <div className="spline-visionPro" > 
+                        <Spline scene="https://prod.spline.design/KX8f-KHZwA3H06Gs/scene.splinecode" />
                     </div>
                 </div>
             </div>

@@ -1234,6 +1234,7 @@ body .image-frame__video{
       flex-direction: column;
       height: 300px;
       margin-top: 30px;
+      margin-bottom: 30px;
       width: 300px;
       padding: 10px;
       margin-right: auto;
@@ -1329,15 +1330,44 @@ body .bubble-type2{
     opacity: 0.6;
 }
 
+/*Divider Row*/
+.divider-row{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+  padding:70px;
+  height: 100px;
+  background-color: white;
+  box-shadow: 1px 8px 10px 1px black;
+}
+
+.divider-row h4{
+  color: black;
+  font-weight: 800;
+  font-size: 20px;
+}
+
+.divider-row img{
+  position: relative;
+  width: 100px;
+  height: 80px;
+  cursor: pointer;
+}
+
+
+
 /*ABOUTME SECTION*/
 
 .aboutme-section{
     display: flex;
     flex-direction: column;
-    height: 400px;
+    height: 350px;
     margin-top: 30px;
-    width: 400px;
-    padding: 10px;
+    margin-bottom: 50px;
+    width: 800px;
+    padding: 18px;
     margin-right: auto;
     margin-left: auto;
     align-items: center;
@@ -1352,7 +1382,7 @@ body .bubble-type2{
 .spline-visionPro{
   height:500px;
   z-index:-1;
-  margin-top:-100px
+  margin-top:-130px
 }
 
 /*ABOUT ME PAGE*/
@@ -1451,12 +1481,23 @@ body .bubble-type2{
 }
 
 .see-more_btn:hover{
-  transition: ease-in-out 1s;
-  box-shadow: 4px 4px 3px 3px black;
+  transition: ease-in-out 0.3s;
+  box-shadow: 2px 2px 1px 2px black;
 }
 
 .see-more_btn h5{
   font-weight: 400;
+}
+
+.social_accs{
+  display: flex;
+  flex-direction: row;
+  width: 80%;
+  margin-right: auto;
+  margin-left: auto;
+  justify-content: space-between;
+  margin-top: 20px;
+  
 }
 
 /*FOOTER*/
