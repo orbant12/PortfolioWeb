@@ -1436,6 +1436,29 @@ body .bubble-type2{
     margin-bottom: 20px;
 }
 
+.see-more_btn{
+    display: flex;
+    flex-direction: column;
+    margin-left: auto;
+    margin-right: auto;
+    border: 2px solid black;
+    border-radius: 20px;
+    width: 40%;
+    align-items: center;
+    padding: 5px 10px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.see-more_btn:hover{
+  transition: ease-in-out 1s;
+  box-shadow: 4px 4px 3px 3px black;
+}
+
+.see-more_btn h5{
+  font-weight: 400;
+}
+
 /*FOOTER*/
 
 .container{
@@ -1807,7 +1830,7 @@ body {
   }
   
   .tree-view-output {
-display: none;
+    display: none;
     background: #222;
     color: #fff;
     padding: 5px;

@@ -334,7 +334,7 @@ return (
                     </div>
 
                 </div> :
-                 null}
+                    null}
             </div>
 
             <div id="portfolio">
@@ -405,12 +405,8 @@ return (
                     </div>
                 </div>
             </div>
-
-         
-
             <div className="review-bubbles">
                 <div className="bubble-rows">
-
                     {/* COL 1 */}
                     <div className="bubbleCol">
                         <div className="bubble-type1">
@@ -453,7 +449,7 @@ return (
                             <div className="cert-logo">
                                 <img src={ibmLogo} alt="" />
                             </div>
-                           
+
                             <h3>Machine Leaning</h3>
                             <div>
                                 <BasicModal />
@@ -472,7 +468,7 @@ return (
                             <div className="cert-logo">
                                 <img src={metaLogo} alt="" />
                             </div>
-                           
+
                             <h3>Backend Development</h3>
                             <div>
                                 <BasicModal />
@@ -482,6 +478,9 @@ return (
                         <div className="bubble-type2">
                             <h3>University</h3>
                             <h5 style={{opacity:0.7,fontWeight:400,marginTop:5}}>Vrije University Amsterdam <br /> <span style={{fontWeight:800}}>Computer Science</span><br/></h5>
+                            <div className="see-more_btn">
+                                <h5>See More</h5>
+                            </div>
                         </div>
 
                     </div>
@@ -490,11 +489,8 @@ return (
                     <div className="bubble-type2">
                     <h3>Intern Experience</h3>
                             <h5 style={{opacity:0.7,fontWeight:400,marginTop:5}}>Company: <a href="https://getcon.hu">Getcon</a><br />Duration: 6 months</h5>
-                            <div style={{marginTop:20,height:80,display:"flex",flexDirection:"column",justifyContent:"space-between"}}>
-                                <h6>• Network Security Standby Management</h6>
-                                <h6>• Setting up & deploying routers for Hunagrian Schools</h6>
-                                <h6>• Collecting Data from Huge Network Pipelines</h6>
-                                <h6>• Cleaning and drawing conclusions/predictions from the collected data with ML models</h6>
+                            <div className="see-more_btn">
+                                <h5>See More</h5>
                             </div>
                     </div>
 
@@ -548,7 +544,6 @@ return (
                         
                     </div>
                 </div>
-              
             </div> : null}
 
             <footer className="footer">
