@@ -5,6 +5,9 @@ import betterByteLogo from "../assets/BetterByteLogo.png"
 import { ReactOriginal } from 'devicons-react';
 import CtfImage from "../assets/CTF.jpeg"
 import Pentest from "../assets/Pentest.jpeg"
+import AndrewNg from "../assets/AndrewNg.jpeg"
+import CourseraLogo from "../assets/Coursera.png"
+import SurferboyLogo from "../assets/SurferboyLogo.jpeg"
 
 const CyberSecurityPage = () => {
 
@@ -41,6 +44,11 @@ return(
       <div className='hero-left'>
         <h1>Pentesting</h1>
         <h5>Let me introduce to you my fullstack development journey ...</h5>
+        <div className='experience-row'>
+          <h4>Experience Level:</h4>
+          <h5 className='filled_experience'>•</h5>
+          <h5 className='no_filled_experience'>• • • •</h5>
+        </div>
       </div> 
 
       <div className='hero-right'>
@@ -230,6 +238,192 @@ return(
         </>
       )
     ):null}
+    </div>
+
+    <div className='fullstack-learning'>
+      <h5>Click the icon for Certificate</h5>
+        <h1 style={{marginTop:10}}>My Learning Journey</h1>
+
+        <div className='learning-path'>
+        <ol class="timeline">
+          <li class="timeline-item">
+            <span class="timeline-item-icon | avatar-icon">
+              <i class="avatar">
+                <img src={CourseraLogo} />
+              </i>
+            </span>
+            <div class="timeline-item-description">
+              <span><a href="#">Andrew Ng's</a> moved <a href="#">Eric Lubin</a> to <a href="#">📚 Technical Test</a> on <time datetime="20-01-2021">Jan 20, 2021</time></span>
+            </div>
+          </li>
+          <li class="timeline-item">
+            <span class="timeline-item-icon | faded-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                <path fill="none" d="M0 0h24v24H0z" />
+                <path fill="currentColor" d="M12.9 6.858l4.242 4.243L7.242 21H3v-4.243l9.9-9.9zm1.414-1.414l2.121-2.122a1 1 0 0 1 1.414 0l2.829 2.829a1 1 0 0 1 0 1.414l-2.122 2.121-4.242-4.242z" />
+              </svg>
+            </span>
+            <div class="timeline-item-description">
+              <i class="avatar | small">
+                <img src={AndrewNg} />
+              </i>
+              <span><a href="#">Andrew Ng's</a> Lecture <a href="#">2 attributes</a> on <time datetime="21-01-2021">Dec 11, 2023</time></span>
+            </div>
+          </li>
+          <li class="timeline-item">
+            <span class="timeline-item-icon | faded-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                <path fill="none" d="M0 0h24v24H0z" />
+                <path fill="currentColor" d="M12 13H4v-2h8V4l8 8-8 8z" />
+              </svg>
+            </span>
+            <div class="timeline-item-description">
+              <i class="avatar | small">
+                <img src={AndrewNg} />
+              </i>
+              <span><a href="#">Andrew Ng's</a> moved <a href="#">Eric Lubin</a> to <a href="#">📚 Technical Test</a> on <time datetime="20-01-2021">Jan 20, 2021</time></span>
+            </div>
+          </li>
+          <li class="timeline-item">
+            <span class="timeline-item-icon | faded-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                <path fill="none" d="M0 0h24v24H0z" />
+                <path fill="currentColor" d="M12 13H4v-2h8V4l8 8-8 8z" />
+              </svg>
+            </span>
+            <div class="timeline-item-description">
+              <i class="avatar | small">
+                <img src={AndrewNg} />
+              </i>
+              <span><a href="#">Andrew Ng's</a> moved <a href="#">Eric Lubin</a> to <a href="#">📚 Technical Test</a> on <time datetime="20-01-2021">Jan 20, 2021</time></span>
+            </div>
+          </li>
+          <li class="timeline-item | extra-space">
+            <span class="timeline-item-icon | filled-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                <path fill="none" d="M0 0h24v24H0z" />
+                <path fill="currentColor" d="M6.455 19L2 22.5V4a1 1 0 0 1 1-1h18a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H6.455zM7 10v2h2v-2H7zm4 0v2h2v-2h-2zm4 0v2h2v-2h-2z" />
+              </svg>
+            </span>
+            <div class="timeline-item-wrapper">
+              <div class="timeline-item-description">
+                <i class="avatar | small">
+                  <img src={SurferboyLogo} />
+                </i>
+                <span><a href="#">What I've learned</a> from this course </span>
+              </div>
+              <div class="comment">
+                <p>I've sent him the assignment we discussed recently, he is coming back to us this week. Regarding to our last call, I really enjoyed talking to him and so far he has the profile we are looking for. Can't wait to see his technical test, I'll keep you posted and we'll debrief it all together!😊</p>
+                <button class="button">👏 2</button>
+                <button class="button | square">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                    <path fill="none" d="M0 0h24v24H0z" />
+                    <path fill="currentColor" d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zM7 12a5 5 0 0 0 10 0h-2a3 3 0 0 1-6 0H7z" />
+                  </svg>
+                </button>
+              </div>
+              <button class="show-replies" onClick={() => handleVisitClick("CourseraNotes")}>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-forward" width="44" height="44" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                  <path d="M15 11l4 4l-4 4m4 -4h-11a4 4 0 0 1 0 -8h1" />
+                </svg>
+                  See My Notes
+              </button>
+              </div>
+          </li>
+        </ol>
+
+        <hr />
+
+        <ol class="timeline">
+          <li class="timeline-item">
+            <span class="timeline-item-icon | avatar-icon">
+              <i class="avatar">
+                <img src={CourseraLogo} />
+              </i>
+            </span>
+            <div class="timeline-item-description">
+              <span><a href="#">Andrew Ng's</a> moved <a href="#">Eric Lubin</a> to <a href="#">📚 Technical Test</a> on <time datetime="20-01-2021">Jan 20, 2021</time></span>
+            </div>
+          </li>
+          <li class="timeline-item">
+            <span class="timeline-item-icon | faded-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                <path fill="none" d="M0 0h24v24H0z" />
+                <path fill="currentColor" d="M12.9 6.858l4.242 4.243L7.242 21H3v-4.243l9.9-9.9zm1.414-1.414l2.121-2.122a1 1 0 0 1 1.414 0l2.829 2.829a1 1 0 0 1 0 1.414l-2.122 2.121-4.242-4.242z" />
+              </svg>
+            </span>
+            <div class="timeline-item-description">
+              <i class="avatar | small">
+                <img src={AndrewNg} />
+              </i>
+              <span>Intro to Machine Learning - <time datetime="21-01-2021">Dec 11, 2023</time></span>
+            </div>
+          </li>
+          <li class="timeline-item">
+            <span class="timeline-item-icon | faded-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                <path fill="none" d="M0 0h24v24H0z" />
+                <path fill="currentColor" d="M12 13H4v-2h8V4l8 8-8 8z" />
+              </svg>
+            </span>
+            <div class="timeline-item-description">
+              <i class="avatar | small">
+                <img src={AndrewNg} />
+              </i>
+              <span>Pandas - <time datetime="20-01-2021">Jan 20, 2021</time></span>
+            </div>
+          </li>
+          <li class="timeline-item">
+            <span class="timeline-item-icon | faded-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                <path fill="none" d="M0 0h24v24H0z" />
+                <path fill="currentColor" d="M12 13H4v-2h8V4l8 8-8 8z" />
+              </svg>
+            </span>
+            <div class="timeline-item-description">
+              <i class="avatar | small">
+                <img src={AndrewNg} />
+              </i>
+              <span>Intermediate Machine Learning - <time datetime="20-01-2021">Jan 20, 2021</time></span>
+            </div>
+          </li>
+          <li class="timeline-item | extra-space">
+            <span class="timeline-item-icon | filled-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                <path fill="none" d="M0 0h24v24H0z" />
+                <path fill="currentColor" d="M6.455 19L2 22.5V4a1 1 0 0 1 1-1h18a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H6.455zM7 10v2h2v-2H7zm4 0v2h2v-2h-2zm4 0v2h2v-2h-2z" />
+              </svg>
+            </span>
+            <div class="timeline-item-wrapper">
+              <div class="timeline-item-description">
+                <i class="avatar | small">
+                  <img src={SurferboyLogo} />
+                </i>
+                <span><a href="#">What I've learned</a> from this course </span>
+              </div>
+              <div class="comment">
+                <p>I've sent him the assignment we discussed recently, he is coming back to us this week. Regarding to our last call, I really enjoyed talking to him and so far he has the profile we are looking for. Can't wait to see his technical test, I'll keep you posted and we'll debrief it all together!😊</p>
+                <button class="button">👏 2</button>
+                <button class="button | square">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                    <path fill="none" d="M0 0h24v24H0z" />
+                    <path fill="currentColor" d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zM7 12a5 5 0 0 0 10 0h-2a3 3 0 0 1-6 0H7z" />
+                  </svg>
+                </button>
+              </div>
+              <button class="show-replies" onClick={() => handleVisitClick("CourseraNotes")}>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-forward" width="44" height="44" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                  <path d="M15 11l4 4l-4 4m4 -4h-11a4 4 0 0 1 0 -8h1" />
+                </svg>
+                  See My Notes
+              </button>
+              </div>
+          </li>
+        </ol>
+
+        </div>
     </div>
   </div>
 )
