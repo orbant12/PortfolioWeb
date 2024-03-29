@@ -1,7 +1,19 @@
+//REACT
 import { useParams } from "react-router-dom";
 import React,{useEffect,useState} from 'react';
+
+//CSS
 import '../CSS/navbar.css';
-import {ClippifyData,LupodyData,LupodyMobileData,ClippifyMobileData} from '../portfolio.jsx'
+
+//DATA JSON --> portfolio.jsx
+import {
+    ClippifyData,
+    LupodyData,
+    LupodyMobileData,
+    ClippifyMobileData
+} from '../portfolio.jsx'
+
+//ICONS
 import GitHubIcon from '@mui/icons-material/GitHub';
 
 
@@ -9,12 +21,14 @@ const PortfolioPage = () => {
 
 const { id } = useParams();
 
-
-const [pageData,setPageData] = useState({title:"",list:[],expertise:[{logo:"",title:"",text:[]}],navigation:"",youtube:"",youtubeHref:""});
-
-
-
-
+const [pageData,setPageData] = useState({
+    title:"",
+    list:[],
+    expertise:[{logo:"",title:"",text:[]}],
+    navigation:"",
+    youtube:"",
+    youtubeHref:""
+});
 
 useEffect(() => {
     if(id == "Clippify"){
@@ -52,8 +66,6 @@ return(
                     <source style={{objectFit:"contain",width:150}} type="video/mp4" src={pageData.youtube} />
                 </video>
             </div>
-          
-            
         </div>
 
         <div className="this-project-box">
@@ -61,11 +73,10 @@ return(
             {pageData.expertise.map((item, index) => {
                 return (
                     <div key={index}>
-                           <div className="github-link">
+                        <div className="github-link">
                             <GitHubIcon />
                         </div>
                     <div className={index % 2 == 0 ? "experience-box" : "experience-box-reverse"} key={index}>
-                 
                         <img className="exp-img" src={item.logo} alt="" />
                         <div className="exp-text">
                             
@@ -78,7 +89,6 @@ return(
                                 })}
                             </ul> 
                         </div>
-                     
                     </div>
                         {item.show && item.show()}
                 </div>

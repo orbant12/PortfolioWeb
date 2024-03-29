@@ -52,7 +52,7 @@ return(
       </div>   
       
     </div> 
-    
+
     <div className='fullstack-stat'>
       <div className='stat-title'>
         <h6>icon</h6>

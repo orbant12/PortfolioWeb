@@ -9,12 +9,36 @@ import OBJ_Image from "../assets/OBJ.png"
 import AndrewNg from "../assets/AndrewNg.jpeg"
 import CourseraLogo from "../assets/Coursera.png"
 import SurferboyLogo from "../assets/SurferboyLogo.jpeg"
+import Modal from '@mui/material/Modal';
+
+
+//KAGGLE LOGOS
+import ML_Introduction from "../assets/kaggle/ML_Introduction.png"
+import Pandas from "../assets/kaggle/Pandas.png"
+import ML_Intermediate from "../assets/kaggle/ML_Internmediate.png"
+import DL_Introduction from "../assets/kaggle/DeepLearning_Introduction.png"
+
+//KAGGLE CERTS
+import ML_Intermediate_cert from "../assets/kaggle/certs/ML_Intermediate_cert.png"
+import ML_Introduction_cert from "../assets/kaggle/certs/ML_Intro_cert.png"
+import Pandas_cert from "../assets/kaggle/certs/Pandas_cert.png"
+import DL_Introduction_cert from "../assets/kaggle/certs/DL_Intro_cert.png"
+
+//COURSERA CERTS
+import Suprevised_cert from "../assets/coursera/certs/Suprevised_cert.png"
+import Advanced_Algo_cert from "../assets/coursera/certs/Advanced_Algo_cert.png"
+
+
 
 const MLPage = () => {
 
   //STATE FOR Data Representation
 
   const [isSelected, setIsSelected] = useState("kaggle");
+
+  const [open, setOpen] = useState(false);
+
+  const [modelInput, setModelInput] = useState("")
 
   //<**********-DATA-*****************>
 
@@ -46,8 +70,8 @@ const MLPage = () => {
     }
 
     //YOUTUBE
-    if(navigationTitle == "Youtube"){
-        window.location.href = "https://www.youtube.com/channel/UCV32IuRS4IQiA2_TWVJDd_w"
+    if(navigationTitle == "KaggleNotes"){
+        window.location.href = "https://www.notion.so/Kaggle-a8855b09448a4ae6b3c614b08dc91919?pvs=4"
     }
 
      //Getcon
@@ -55,6 +79,12 @@ const MLPage = () => {
         window.location.href = "https://www.getcon.hu/"
     }
 }
+
+const handleOpen = (certInput) => {
+  setOpen(true);
+  setModelInput(certInput)
+};
+const handleClose = () => setOpen(false);
 
 
 return(
@@ -92,18 +122,18 @@ return(
       <div className='stat-middle'>
         <div className='middle-table'>
             <div className='table-row'>
-                  <h2>Solution: </h2>
-                  <h4>{Transcript_data.project}</h4>
+              <h2>Solution: </h2>
+              <h4>{Transcript_data.project}</h4>
             </div>
 
             <div className='table-row'>
-                  <h2>Model Accuracy: </h2>
-                  <h4>{Transcript_data.total_users}</h4>
+              <h2>Model Accuracy: </h2>
+              <h4>{Transcript_data.total_users}</h4>
             </div>
 
             <div className='table-row'>
-                  <h2>API: </h2>
-                  <h4>{Transcript_data.record_live_users}</h4>
+              <h2>API: </h2>
+              <h4>{Transcript_data.record_live_users}</h4>
             </div>
         </div>
 
@@ -113,11 +143,10 @@ return(
                 <h3>See All</h3>
             </div>
             <h5 style={{position:"absolute",color:"black",marginTop:-290,borderBottom:"1px solid black",opacity:"0.3"}}>Click to see more</h5>
-          </div> 
+        </div> 
       </div>
 
       <div className='language-row-fullstack'>
-        <ReactOriginal />
         <ReactOriginal />
         <ReactOriginal />
         <ReactOriginal />
@@ -126,19 +155,19 @@ return(
 
       <div className='stat-bottom'>
         <div className='bottom-box'>
-            <h3>30%</h3>
+            <h3>10%</h3>
         </div>
 
         <div className='bottom-box'>
-            <h3>30%</h3>
+            <h3>20%</h3>
         </div>
 
         <div className='bottom-box'>
-            <h3>30%</h3>
+            <h3>80%</h3>
         </div>
 
         <div className='bottom-box'>
-            <h3>30%</h3>
+            <h3>100%</h3>
         </div>
       </div>
       </>
@@ -280,11 +309,10 @@ return(
             </div>
           </li>
           <li class="timeline-item">
-            <span class="timeline-item-icon | faded-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
-                <path fill="none" d="M0 0h24v24H0z" />
-                <path fill="currentColor" d="M12.9 6.858l4.242 4.243L7.242 21H3v-4.243l9.9-9.9zm1.414-1.414l2.121-2.122a1 1 0 0 1 1.414 0l2.829 2.829a1 1 0 0 1 0 1.414l-2.122 2.121-4.242-4.242z" />
-              </svg>
+            <span class="timeline-item-icon | faded-icon" onClick={() => handleOpen(Suprevised_cert)}>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 24" width="24" height="24">
+            <path class="cls-1" d="M28,5H4A2,2,0,0,0,2,7V24a2,2,0,0,0,2,2H18v3a1,1,0,0,0,.53.88,1,1,0,0,0,1-.05L22,28.2l2.45,1.63A1,1,0,0,0,26,29V26h2a2,2,0,0,0,2-2V7A2,2,0,0,0,28,5ZM22.59,21.94a3,3,0,1,1,2.35-2.35A3,3,0,0,1,22.59,21.94ZM24,27.13l-1.45-1a1,1,0,0,0-1.1,0l-1.45,1V23.58a5,5,0,0,0,4,0ZM28,24H26V22s0,0,0,0a4.93,4.93,0,0,0,.88-4.1A5,5,0,0,0,17,19a4.93,4.93,0,0,0,1,3s0,0,0,0v2H4V7H28Z"/><path class="cls-1" d="M7,12H25a1,1,0,0,0,0-2H7a1,1,0,0,0,0,2Z"/><path class="cls-1" d="M7,16h8a1,1,0,0,0,0-2H7a1,1,0,0,0,0,2Z"/><path class="cls-1" d="M7,20h8a1,1,0,0,0,0-2H7a1,1,0,0,0,0,2Z"/>
+            </svg>
             </span>
             <div class="timeline-item-description">
               <i class="avatar | small">
@@ -294,25 +322,10 @@ return(
             </div>
           </li>
           <li class="timeline-item">
-            <span class="timeline-item-icon | faded-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
-                <path fill="none" d="M0 0h24v24H0z" />
-                <path fill="currentColor" d="M12 13H4v-2h8V4l8 8-8 8z" />
-              </svg>
-            </span>
-            <div class="timeline-item-description">
-              <i class="avatar | small">
-                <img src={AndrewNg} />
-              </i>
-              <span><a href="#">Andrew Ng's</a> moved <a href="#">Eric Lubin</a> to <a href="#">📚 Technical Test</a> on <time datetime="20-01-2021">Jan 20, 2021</time></span>
-            </div>
-          </li>
-          <li class="timeline-item">
-            <span class="timeline-item-icon | faded-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
-                <path fill="none" d="M0 0h24v24H0z" />
-                <path fill="currentColor" d="M12 13H4v-2h8V4l8 8-8 8z" />
-              </svg>
+            <span class="timeline-item-icon | faded-icon" onClick={() => handleOpen(Advanced_Algo_cert)}>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 24" width="24" height="24">
+              <path class="cls-1" d="M28,5H4A2,2,0,0,0,2,7V24a2,2,0,0,0,2,2H18v3a1,1,0,0,0,.53.88,1,1,0,0,0,1-.05L22,28.2l2.45,1.63A1,1,0,0,0,26,29V26h2a2,2,0,0,0,2-2V7A2,2,0,0,0,28,5ZM22.59,21.94a3,3,0,1,1,2.35-2.35A3,3,0,0,1,22.59,21.94ZM24,27.13l-1.45-1a1,1,0,0,0-1.1,0l-1.45,1V23.58a5,5,0,0,0,4,0ZM28,24H26V22s0,0,0,0a4.93,4.93,0,0,0,.88-4.1A5,5,0,0,0,17,19a4.93,4.93,0,0,0,1,3s0,0,0,0v2H4V7H28Z"/><path class="cls-1" d="M7,12H25a1,1,0,0,0,0-2H7a1,1,0,0,0,0,2Z"/><path class="cls-1" d="M7,16h8a1,1,0,0,0,0-2H7a1,1,0,0,0,0,2Z"/><path class="cls-1" d="M7,20h8a1,1,0,0,0,0-2H7a1,1,0,0,0,0,2Z"/>
+            </svg>
             </span>
             <div class="timeline-item-description">
               <i class="avatar | small">
@@ -356,7 +369,7 @@ return(
           </li>
         </ol>
 
-        <hr />
+        <hr style={{border:"2px groove black"}} />
 
         <ol class="timeline">
           <li class="timeline-item">
@@ -370,45 +383,57 @@ return(
             </div>
           </li>
           <li class="timeline-item">
-            <span class="timeline-item-icon | faded-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
-                <path fill="none" d="M0 0h24v24H0z" />
-                <path fill="currentColor" d="M12.9 6.858l4.242 4.243L7.242 21H3v-4.243l9.9-9.9zm1.414-1.414l2.121-2.122a1 1 0 0 1 1.414 0l2.829 2.829a1 1 0 0 1 0 1.414l-2.122 2.121-4.242-4.242z" />
-              </svg>
+            <span class="timeline-item-icon | faded-icon" onClick={() => handleOpen(ML_Introduction_cert)}>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 24" width="24" height="24">
+              <path class="cls-1" d="M28,5H4A2,2,0,0,0,2,7V24a2,2,0,0,0,2,2H18v3a1,1,0,0,0,.53.88,1,1,0,0,0,1-.05L22,28.2l2.45,1.63A1,1,0,0,0,26,29V26h2a2,2,0,0,0,2-2V7A2,2,0,0,0,28,5ZM22.59,21.94a3,3,0,1,1,2.35-2.35A3,3,0,0,1,22.59,21.94ZM24,27.13l-1.45-1a1,1,0,0,0-1.1,0l-1.45,1V23.58a5,5,0,0,0,4,0ZM28,24H26V22s0,0,0,0a4.93,4.93,0,0,0,.88-4.1A5,5,0,0,0,17,19a4.93,4.93,0,0,0,1,3s0,0,0,0v2H4V7H28Z"/><path class="cls-1" d="M7,12H25a1,1,0,0,0,0-2H7a1,1,0,0,0,0,2Z"/><path class="cls-1" d="M7,16h8a1,1,0,0,0,0-2H7a1,1,0,0,0,0,2Z"/><path class="cls-1" d="M7,20h8a1,1,0,0,0,0-2H7a1,1,0,0,0,0,2Z"/>
+            </svg>
+
+
             </span>
             <div class="timeline-item-description">
               <i class="avatar | small">
-                <img src={AndrewNg} />
+                <img src={ML_Introduction} />
               </i>
               <span>Intro to Machine Learning - <time datetime="21-01-2021">Dec 11, 2023</time></span>
             </div>
           </li>
           <li class="timeline-item">
-            <span class="timeline-item-icon | faded-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
-                <path fill="none" d="M0 0h24v24H0z" />
-                <path fill="currentColor" d="M12 13H4v-2h8V4l8 8-8 8z" />
+            <span class="timeline-item-icon | faded-icon" onClick={() => handleOpen(Pandas_cert)} >
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 24" width="24" height="24">
+                <path class="cls-1" d="M28,5H4A2,2,0,0,0,2,7V24a2,2,0,0,0,2,2H18v3a1,1,0,0,0,.53.88,1,1,0,0,0,1-.05L22,28.2l2.45,1.63A1,1,0,0,0,26,29V26h2a2,2,0,0,0,2-2V7A2,2,0,0,0,28,5ZM22.59,21.94a3,3,0,1,1,2.35-2.35A3,3,0,0,1,22.59,21.94ZM24,27.13l-1.45-1a1,1,0,0,0-1.1,0l-1.45,1V23.58a5,5,0,0,0,4,0ZM28,24H26V22s0,0,0,0a4.93,4.93,0,0,0,.88-4.1A5,5,0,0,0,17,19a4.93,4.93,0,0,0,1,3s0,0,0,0v2H4V7H28Z"/><path class="cls-1" d="M7,12H25a1,1,0,0,0,0-2H7a1,1,0,0,0,0,2Z"/><path class="cls-1" d="M7,16h8a1,1,0,0,0,0-2H7a1,1,0,0,0,0,2Z"/><path class="cls-1" d="M7,20h8a1,1,0,0,0,0-2H7a1,1,0,0,0,0,2Z"/>
               </svg>
             </span>
             <div class="timeline-item-description">
               <i class="avatar | small">
-                <img src={AndrewNg} />
+                <img src={Pandas} />
               </i>
               <span>Pandas - <time datetime="20-01-2021">Jan 20, 2021</time></span>
             </div>
           </li>
           <li class="timeline-item">
-            <span class="timeline-item-icon | faded-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
-                <path fill="none" d="M0 0h24v24H0z" />
-                <path fill="currentColor" d="M12 13H4v-2h8V4l8 8-8 8z" />
-              </svg>
+            <span class="timeline-item-icon | faded-icon" onClick={() => handleOpen(ML_Intermediate_cert)}>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 24" width="24" height="24">
+              <path class="cls-1" d="M28,5H4A2,2,0,0,0,2,7V24a2,2,0,0,0,2,2H18v3a1,1,0,0,0,.53.88,1,1,0,0,0,1-.05L22,28.2l2.45,1.63A1,1,0,0,0,26,29V26h2a2,2,0,0,0,2-2V7A2,2,0,0,0,28,5ZM22.59,21.94a3,3,0,1,1,2.35-2.35A3,3,0,0,1,22.59,21.94ZM24,27.13l-1.45-1a1,1,0,0,0-1.1,0l-1.45,1V23.58a5,5,0,0,0,4,0ZM28,24H26V22s0,0,0,0a4.93,4.93,0,0,0,.88-4.1A5,5,0,0,0,17,19a4.93,4.93,0,0,0,1,3s0,0,0,0v2H4V7H28Z"/><path class="cls-1" d="M7,12H25a1,1,0,0,0,0-2H7a1,1,0,0,0,0,2Z"/><path class="cls-1" d="M7,16h8a1,1,0,0,0,0-2H7a1,1,0,0,0,0,2Z"/><path class="cls-1" d="M7,20h8a1,1,0,0,0,0-2H7a1,1,0,0,0,0,2Z"/>
+            </svg>
             </span>
             <div class="timeline-item-description">
               <i class="avatar | small">
-                <img src={AndrewNg} />
+                <img src={ML_Intermediate} />
               </i>
               <span>Intermediate Machine Learning - <time datetime="20-01-2021">Jan 20, 2021</time></span>
+            </div>
+          </li>
+          <li class="timeline-item">
+            <span class="timeline-item-icon | faded-icon" onClick={() => handleOpen(DL_Introduction_cert)}>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 24" width="24" height="24">
+              <path class="cls-1" d="M28,5H4A2,2,0,0,0,2,7V24a2,2,0,0,0,2,2H18v3a1,1,0,0,0,.53.88,1,1,0,0,0,1-.05L22,28.2l2.45,1.63A1,1,0,0,0,26,29V26h2a2,2,0,0,0,2-2V7A2,2,0,0,0,28,5ZM22.59,21.94a3,3,0,1,1,2.35-2.35A3,3,0,0,1,22.59,21.94ZM24,27.13l-1.45-1a1,1,0,0,0-1.1,0l-1.45,1V23.58a5,5,0,0,0,4,0ZM28,24H26V22s0,0,0,0a4.93,4.93,0,0,0,.88-4.1A5,5,0,0,0,17,19a4.93,4.93,0,0,0,1,3s0,0,0,0v2H4V7H28Z"/><path class="cls-1" d="M7,12H25a1,1,0,0,0,0-2H7a1,1,0,0,0,0,2Z"/><path class="cls-1" d="M7,16h8a1,1,0,0,0,0-2H7a1,1,0,0,0,0,2Z"/><path class="cls-1" d="M7,20h8a1,1,0,0,0,0-2H7a1,1,0,0,0,0,2Z"/>
+            </svg>
+            </span>
+            <div class="timeline-item-description">
+              <i class="avatar | small">
+                <img src={DL_Introduction} />
+              </i>
+              <span>Intro to Deep Learning - <time datetime="20-01-2021">Jan 20, 2021</time></span>
             </div>
           </li>
           <li class="timeline-item | extra-space">
@@ -435,7 +460,7 @@ return(
                   </svg>
                 </button>
               </div>
-              <button class="show-replies" onClick={() => handleVisitClick("CourseraNotes")}>
+              <button class="show-replies" onClick={() => handleVisitClick("KaggleNotes")}>
                 <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-forward" width="44" height="44" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                   <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                   <path d="M15 11l4 4l-4 4m4 -4h-11a4 4 0 0 1 0 -8h1" />
@@ -445,6 +470,17 @@ return(
               </div>
           </li>
         </ol>
+
+        <Modal
+          open={open}
+          onClose={handleClose}
+          aria-labelledby="modal-modal-title"
+          aria-describedby="modal-modal-description"
+          >
+          <div style={{display:"flex",flexDirection:"column",width:"100%",alignItems:"center",marginTop:200}}>
+              <img className='cert-image-kaggle'  src={modelInput} alt="" />
+          </div>
+        </Modal>
 
         </div>
     </div>

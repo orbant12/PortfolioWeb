@@ -484,8 +484,7 @@ return (
                                 <div className="social_accs">
                                     <SocialIcon url="https://twitter.com/TamasOrban12" />
                                     <SocialIcon url="https://instagram.com/orbant12" />
-                                    <SocialIcon url="https://www.linkedin.com/in/tamas-orban-30921524b/" />
-                                   
+                                    <SocialIcon url="https://www.linkedin.com/in/tamas-orban-30921524b/" />                   
                                 </div>
                         </div>
 

@@ -1,46 +1,54 @@
+//SPLINE
 import Spline from '@splinetool/react-spline';
-import React, { useEffect } from 'react';
+
+//REACT
+import React, { useState,useEffect } from 'react';
+
+//CSS
 import "../CSS/navbar.css";
 
 const Contact = () => {
 
-    const [mobileModal, setMobileModal] = React.useState(false);
+//<**************[ VARIABLES ]****************>
 
-  useEffect(() => {
-    const handleOrientationChange = () => {
-      const isMobilePortrait = window.innerWidth < 768 && window.innerHeight > window.innerWidth;
+const [mobileModal, setMobileModal] = useState(false);
 
-      if (isMobilePortrait) {
-        setMobileModal(true)
-      }
-    };
+//<**************[ FUNCTIONS ]****************>
 
-    // Initial check
-    handleOrientationChange();
+useEffect(() => {
+  const handleOrientationChange = () => {
+    const isMobilePortrait = window.innerWidth < 768 && window.innerHeight > window.innerWidth;
 
-    // Add event listener for orientation change
-    window.addEventListener("orientationchange", handleOrientationChange);
+    if (isMobilePortrait) {
+      setMobileModal(true)
+    }
+  };
 
-    // Cleanup the event listener on component unmount
-    return () => {
-      window.removeEventListener("orientationchange", handleOrientationChange);
-    };
-  }, []);
+  // Initial check
+  handleOrientationChange();
 
-  return (
-    <div className="aboutMePage">
-        {mobileModal ?(
-            <>
-            <div style={{display:"block",width:"100%",height:"100%",backgroundColor:"black",position:"absolute",opacity:0.8}}></div>
-            <div style={{display:"flex",flexDirection:"column",position:"absolute",justifyContent:"center",background:"black",marginTop:200,textAlign:"center",padding:20}}>
-                    <h3 style={{fontWeight:500,color:"white"}}>Rotate Your Phone for better experience</h3>
-                    <h5 onClick={() => setMobileModal(false)} style={{color:"white",padding:"10px 5px",border:"1px solid white",marginTop:20,opacity:0.6}}>OK</h5>
-            </div>
-            </>
-        ):null}
-      <Spline scene="https://prod.spline.design/APmkMmNAEgcKr5nk/scene.splinecode" />
-    </div>
-  );
-};
+  // Add event listener for orientation change
+  window.addEventListener("orientationchange", handleOrientationChange);
+
+  // Cleanup the event listener on component unmount
+  return () => {
+    window.removeEventListener("orientationchange", handleOrientationChange);
+  };
+}, []);
+
+return (
+  <div className="aboutMePage">
+      {mobileModal ?(
+          <>
+          <div style={{display:"block",width:"100%",height:"100%",backgroundColor:"black",position:"absolute",opacity:0.8}}></div>
+          <div style={{display:"flex",flexDirection:"column",position:"absolute",justifyContent:"center",background:"black",marginTop:200,textAlign:"center",padding:20}}>
+                  <h3 style={{fontWeight:500,color:"white"}}>Rotate Your Phone for better experience</h3>
+                  <h5 onClick={() => setMobileModal(false)} style={{color:"white",padding:"10px 5px",border:"1px solid white",marginTop:20,opacity:0.6}}>OK</h5>
+          </div>
+          </>
+      ):null}
+    <Spline scene="https://prod.spline.design/APmkMmNAEgcKr5nk/scene.splinecode" />
+  </div>
+)};
 
 export default Contact;

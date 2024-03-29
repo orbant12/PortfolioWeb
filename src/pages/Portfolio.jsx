@@ -1,32 +1,41 @@
-
+//SPLINE
 import Spline from '@splinetool/react-spline';
+
+//REACT
 import React, {useState,useEffect} from 'react';
+
+//CSS
 import "../CSS/navbar.css"
 
 const Portfolio = () => {
 
-    const [mobileModal, setMobileModal] = React.useState(false);
+//<**************[ VARIABLES ]****************>
 
-    useEffect(() => {
-      const handleOrientationChange = () => {
-        const isMobilePortrait = window.innerWidth < 768 && window.innerHeight > window.innerWidth;
-  
-        if (isMobilePortrait) {
-          setMobileModal(true)
-        }
-      };
-  
-      // Initial check
-      handleOrientationChange();
-  
-      // Add event listener for orientation change
-      window.addEventListener("orientationchange", handleOrientationChange);
-  
-      // Cleanup the event listener on component unmount
-      return () => {
-        window.removeEventListener("orientationchange", handleOrientationChange);
-      };
-    }, []);
+const [mobileModal, setMobileModal] = useState(false);
+
+//<**************[ FUNCTIONS ]****************>
+
+useEffect(() => {
+  const handleOrientationChange = () => {
+    const isMobilePortrait = window.innerWidth < 768 && window.innerHeight > window.innerWidth;
+
+    if (isMobilePortrait) {
+      setMobileModal(true)
+    }
+  };
+
+  // Initial check
+  handleOrientationChange();
+
+  // Add event listener for orientation change
+  window.addEventListener("orientationchange", handleOrientationChange);
+
+  // Cleanup the event listener on component unmount
+  return () => {
+    window.removeEventListener("orientationchange", handleOrientationChange);
+  };
+}, []);
+
 return(
     <div className="aboutMePage">
         {mobileModal ?(
