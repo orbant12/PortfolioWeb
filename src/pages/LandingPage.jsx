@@ -224,7 +224,7 @@ return (
         </div>
     </div>
 
-    <div style={{borderTop:"1px solid black"}}>
+    <div style={{borderTop:"1px solid black", display:"flex",flexDirection:"column"}}>
         <div id="services">
             <div className="services-pick">
                 <h3 onClick={() => setIsSelected("web")} className={isSelected === "web" ? "selected" : "select"}>Fullstack</h3>

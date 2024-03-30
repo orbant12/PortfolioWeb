@@ -475,3 +475,74 @@ textarea {
 		margin-right: -8px;
 	}
 }
+
+/*RESPONSIVENESS*/
+
+@media (max-width: 880px) {
+	.hero-right img{
+
+		display: none;
+	}
+
+    .services-pick-fullstack h3{
+		font-size: 11px;
+	}
+  
+	.services-pick-fullstack{
+		display: flex;
+		flex-direction: row;
+		width: 100%;
+		justify-content: space-between;
+		align-items: center;
+		margin-right: auto;
+		margin-left: auto;
+		border-bottom: 1px solid black;
+		padding: 20px 10px;
+	}
+
+
+	.stat-middle{
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		align-items: center;
+		width: 100%;
+		height: 100%;
+		padding: 20px 0px;
+	}
+
+	.middle-table{
+		display: flex;
+		flex-direction: column;
+		width: 200px;
+		margin-bottom: 50px;
+	}
+
+	.middle-thumbnail{
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		width: 100%;
+		height: 250px;
+		border-radius: 20px;
+	}
+	
+	.middle-thumbnail:hover{
+		cursor: pointer;
+		width: 100%;
+		padding: 0px 20px;
+		height: 250px;
+	}
+
+	.stat-bottom{
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+		width: 100%;
+		height: 100%;
+		padding: 0px;
+	}
+}
