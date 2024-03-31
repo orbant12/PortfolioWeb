@@ -9,6 +9,8 @@ import AndrewNg from "../assets/AndrewNg.jpeg"
 import CourseraLogo from "../assets/Coursera.png"
 import SurferboyLogo from "../assets/SurferboyLogo.jpeg"
 
+import { SocialIcon } from "react-social-icons";
+
 const CyberSecurityPage = () => {
 
   //STATE FOR Data Representation
@@ -85,6 +87,11 @@ return(
                   <h2>API: </h2>
                   <h4>{Pentest_data.record_live_users}</h4>
             </div>
+
+            <div className="social_accs">
+                <SocialIcon url="https://github.com/orbant12/Clippify---REST-API" />
+                <SocialIcon url="https://instagram.com/clippify.app" />                   
+            </div>  
         </div>
 
         <div className='middle-thumbnail'>
@@ -203,6 +210,12 @@ return(
                     <h2>Record traffic: </h2>
                     <h4>{Portfolio_data.record_live_users}</h4>
               </div>
+
+
+            <div className="social_accs">
+                <SocialIcon url="https://github.com/orbant12/Clippify---REST-API" />
+                <SocialIcon url="https://instagram.com/clippify.app" />                   
+            </div>  
           </div>
   
           <div className='middle-thumbnail'>

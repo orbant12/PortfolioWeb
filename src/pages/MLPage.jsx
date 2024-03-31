@@ -28,7 +28,7 @@ import DL_Introduction_cert from "../assets/kaggle/certs/DL_Intro_cert.png"
 import Suprevised_cert from "../assets/coursera/certs/Suprevised_cert.png"
 import Advanced_Algo_cert from "../assets/coursera/certs/Advanced_Algo_cert.png"
 
-
+import { SocialIcon } from "react-social-icons";
 
 const MLPage = () => {
 
@@ -135,6 +135,11 @@ return(
               <h2>API: </h2>
               <h4>{Transcript_data.record_live_users}</h4>
             </div>
+
+            <div className="social_accs">
+              <SocialIcon url="https://github.com/orbant12/Clippify---REST-API" />
+              <SocialIcon url="https://instagram.com/clippify.app" />                   
+            </div>
         </div>
 
         <div className='middle-thumbnail'>
@@ -195,6 +200,11 @@ return(
                     <h2>ML: </h2>
                     <h4>{Kaggle_data.record_live_users}</h4>
               </div>
+
+              <div className="social_accs">
+                <SocialIcon url="https://github.com/orbant12/Clippify---REST-API" />
+                <SocialIcon url="https://instagram.com/clippify.app" />                   
+              </div>
           </div>
   
           <div className='middle-thumbnail'>
@@ -252,6 +262,11 @@ return(
                     <h2>Record traffic: </h2>
                     <h4>{ObjectD_data.record_live_users}</h4>
               </div>
+
+              <div className="social_accs">
+                <SocialIcon url="https://github.com/orbant12/Clippify---REST-API" />
+                <SocialIcon url="https://instagram.com/clippify.app" />                   
+              </div>  
           </div>
   
           <div className='middle-thumbnail'>

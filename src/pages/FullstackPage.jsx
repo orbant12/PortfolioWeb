@@ -3,9 +3,11 @@ import React, {useState,useEffect} from 'react';
 import "../CSS/fullstack.css"
 import betterByteLogo from "../assets/BetterByteLogo.png"
 import { ReactOriginal } from 'devicons-react';
-import AndrewNg from "../assets/AndrewNg.jpeg"
+import AngelaYu from "../assets/Angela_Yu.jpeg"
 import CourseraLogo from "../assets/Coursera.png"
 import SurferboyLogo from "../assets/SurferboyLogo.jpeg"
+import UdemyLogo from "../assets/UdemyIMAGE.png"
+import { SocialIcon } from "react-social-icons";
 
 const FullstackPage = () => {
 
@@ -82,6 +84,10 @@ return(
                   <h2>Record traffic: </h2>
                   <h4>{Clippify_data.record_live_users}</h4>
             </div>
+            <div className="social_accs">
+              <SocialIcon url="https://github.com/orbant12/Clippify---REST-API" />
+              <SocialIcon url="https://instagram.com/clippify.app" />                   
+            </div>
         </div>
 
         <div className='middle-thumbnail'>
@@ -133,6 +139,11 @@ return(
               <div className='table-row'>
                     <h2>Record traffic: </h2>
                     <h4>{Lupody_data .record_live_users}</h4>
+              </div>
+
+              <div className="social_accs">
+                <SocialIcon url="https://github.com/orbant12/Podcast-Social-Media---WebApp.git" />
+                <SocialIcon url="https://https://www.tiktok.com/@lupody.tv" />                   
               </div>
           </div>
   
@@ -187,6 +198,10 @@ return(
                     <h2>Record traffic: </h2>
                     <h4>{Portfolio_data.record_live_users}</h4>
               </div>
+
+              <div className="social_accs">
+                <SocialIcon url="https://github.com/orbant12/Betterbyte.git" />                 
+              </div>
           </div>
   
           <div className='middle-thumbnail'>
@@ -233,7 +248,7 @@ return(
           <li class="timeline-item">
             <span class="timeline-item-icon | avatar-icon">
               <i class="avatar">
-                <img src={CourseraLogo} />
+                <img src={UdemyLogo} />
               </i>
             </span>
             <div class="timeline-item-description">
@@ -249,7 +264,7 @@ return(
             </span>
             <div class="timeline-item-description">
               <i class="avatar | small">
-                <img src={AndrewNg} />
+                <img src={AngelaYu} />
               </i>
               <span><a href="#">Andrew Ng's</a> Lecture <a href="#">2 attributes</a> on <time datetime="21-01-2021">Dec 11, 2023</time></span>
             </div>
@@ -263,7 +278,7 @@ return(
             </span>
             <div class="timeline-item-description">
               <i class="avatar | small">
-                <img src={AndrewNg} />
+                <img src={AngelaYu} />
               </i>
               <span><a href="#">Andrew Ng's</a> moved <a href="#">Eric Lubin</a> to <a href="#">📚 Technical Test</a> on <time datetime="20-01-2021">Jan 20, 2021</time></span>
             </div>
@@ -277,7 +292,7 @@ return(
             </span>
             <div class="timeline-item-description">
               <i class="avatar | small">
-                <img src={AndrewNg} />
+                <img src={AngelaYu} />
               </i>
               <span><a href="#">Andrew Ng's</a> moved <a href="#">Eric Lubin</a> to <a href="#">📚 Technical Test</a> on <time datetime="20-01-2021">Jan 20, 2021</time></span>
             </div>
@@ -323,7 +338,7 @@ return(
           <li class="timeline-item">
             <span class="timeline-item-icon | avatar-icon">
               <i class="avatar">
-                <img src={CourseraLogo} />
+                <img src={UdemyLogo} />
               </i>
             </span>
             <div class="timeline-item-description">
@@ -339,7 +354,7 @@ return(
             </span>
             <div class="timeline-item-description">
               <i class="avatar | small">
-                <img src={AndrewNg} />
+                <img src={AngelaYu} />
               </i>
               <span>Intro to Machine Learning - <time datetime="21-01-2021">Dec 11, 2023</time></span>
             </div>
@@ -353,7 +368,7 @@ return(
             </span>
             <div class="timeline-item-description">
               <i class="avatar | small">
-                <img src={AndrewNg} />
+                <img src={AngelaYu} />
               </i>
               <span>Pandas - <time datetime="20-01-2021">Jan 20, 2021</time></span>
             </div>
@@ -367,7 +382,7 @@ return(
             </span>
             <div class="timeline-item-description">
               <i class="avatar | small">
-                <img src={AndrewNg} />
+                <img src={AngelaYu} />
               </i>
               <span>Intermediate Machine Learning - <time datetime="20-01-2021">Jan 20, 2021</time></span>
             </div>

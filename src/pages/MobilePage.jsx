@@ -3,15 +3,26 @@ import React, {useState,useEffect} from 'react';
 import "../CSS/fullstack.css"
 import betterByteLogo from "../assets/BetterByteLogo.png"
 import { ReactOriginal } from 'devicons-react';
-import AndrewNg from "../assets/AndrewNg.jpeg"
+import MetaLogo from "../assets/meta-logo.jpeg"
 import CourseraLogo from "../assets/Coursera.png"
 import SurferboyLogo from "../assets/SurferboyLogo.jpeg"
+import UdemyLogo from "../assets/UdemyIMAGE.png"
+import AngelaYu from "../assets/Angela_Yu.jpeg"
+import Modal from '@mui/material/Modal';
+import Fullstack_Udemy_cert from "../assets/UdemyIosCert.jpeg"
+import Meta_cert from "../assets/META.jpg"
+
+import { SocialIcon } from "react-social-icons";
 
 const MobilePage = () => {
 
   //STATE FOR Data Representation
 
   const [isSelected, setIsSelected] = useState("kaggle");
+
+  const [open, setOpen] = useState(false);
+
+  const [modelInput, setModelInput] = useState("")
 
   //<**********-DATA-*****************>
 
@@ -32,6 +43,12 @@ const MobilePage = () => {
     "total_users": 0,
     "record_live_users": 0
   }
+
+  const handleOpen = (certInput) => {
+    setOpen(true);
+    setModelInput(certInput)
+  };
+  const handleClose = () => setOpen(false);
 
 
 return(
@@ -83,6 +100,11 @@ return(
                   <h2>API: </h2>
                   <h4>{Clippify_data.record_live_users}</h4>
             </div>
+
+            <div className="social_accs">
+                <SocialIcon url="https://github.com/orbant12/Clippify---REST-API" />
+                <SocialIcon url="https://instagram.com/clippify.app" />                   
+            </div>  
         </div>
 
         <div className='middle-thumbnail'>
@@ -140,6 +162,12 @@ return(
                     <h2>ML: </h2>
                     <h4>{Lupody_data .record_live_users}</h4>
               </div>
+
+
+            <div className="social_accs">
+                <SocialIcon url="https://github.com/orbant12/Clippify---REST-API" />
+                <SocialIcon url="https://instagram.com/clippify.app" />                   
+            </div>  
           </div>
   
           <div className='middle-thumbnail'>
@@ -193,6 +221,11 @@ return(
                     <h2>Record traffic: </h2>
                     <h4>{Portfolio_data.record_live_users}</h4>
               </div>
+
+            <div className="social_accs">
+                <SocialIcon url="https://github.com/orbant12/Clippify---REST-API" />
+                <SocialIcon url="https://instagram.com/clippify.app" />                   
+            </div>  
           </div>
   
           <div className='middle-thumbnail'>
@@ -239,7 +272,7 @@ return(
           <li class="timeline-item">
             <span class="timeline-item-icon | avatar-icon">
               <i class="avatar">
-                <img src={CourseraLogo} />
+                <img src={UdemyLogo} />
               </i>
             </span>
             <div class="timeline-item-description">
@@ -255,7 +288,7 @@ return(
             </span>
             <div class="timeline-item-description">
               <i class="avatar | small">
-                <img src={AndrewNg} />
+                <img src={AngelaYu} />
               </i>
               <span><a href="#">Andrew Ng's</a> Lecture <a href="#">2 attributes</a> on <time datetime="21-01-2021">Dec 11, 2023</time></span>
             </div>
@@ -269,21 +302,20 @@ return(
             </span>
             <div class="timeline-item-description">
               <i class="avatar | small">
-                <img src={AndrewNg} />
+                <img src={AngelaYu} />
               </i>
               <span><a href="#">Andrew Ng's</a> moved <a href="#">Eric Lubin</a> to <a href="#">📚 Technical Test</a> on <time datetime="20-01-2021">Jan 20, 2021</time></span>
             </div>
           </li>
           <li class="timeline-item">
-            <span class="timeline-item-icon | faded-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
-                <path fill="none" d="M0 0h24v24H0z" />
-                <path fill="currentColor" d="M12 13H4v-2h8V4l8 8-8 8z" />
-              </svg>
+          <span class="timeline-item-icon | faded-icon" onClick={() => handleOpen(Fullstack_Udemy_cert)}>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 24" width="24" height="24">
+              <path class="cls-1" d="M28,5H4A2,2,0,0,0,2,7V24a2,2,0,0,0,2,2H18v3a1,1,0,0,0,.53.88,1,1,0,0,0,1-.05L22,28.2l2.45,1.63A1,1,0,0,0,26,29V26h2a2,2,0,0,0,2-2V7A2,2,0,0,0,28,5ZM22.59,21.94a3,3,0,1,1,2.35-2.35A3,3,0,0,1,22.59,21.94ZM24,27.13l-1.45-1a1,1,0,0,0-1.1,0l-1.45,1V23.58a5,5,0,0,0,4,0ZM28,24H26V22s0,0,0,0a4.93,4.93,0,0,0,.88-4.1A5,5,0,0,0,17,19a4.93,4.93,0,0,0,1,3s0,0,0,0v2H4V7H28Z"/><path class="cls-1" d="M7,12H25a1,1,0,0,0,0-2H7a1,1,0,0,0,0,2Z"/><path class="cls-1" d="M7,16h8a1,1,0,0,0,0-2H7a1,1,0,0,0,0,2Z"/><path class="cls-1" d="M7,20h8a1,1,0,0,0,0-2H7a1,1,0,0,0,0,2Z"/>
+            </svg>
             </span>
             <div class="timeline-item-description">
               <i class="avatar | small">
-                <img src={AndrewNg} />
+                <img src={AngelaYu} />
               </i>
               <span><a href="#">Andrew Ng's</a> moved <a href="#">Eric Lubin</a> to <a href="#">📚 Technical Test</a> on <time datetime="20-01-2021">Jan 20, 2021</time></span>
             </div>
@@ -345,7 +377,7 @@ return(
             </span>
             <div class="timeline-item-description">
               <i class="avatar | small">
-                <img src={AndrewNg} />
+                <img src={MetaLogo} />
               </i>
               <span>Intro to Machine Learning - <time datetime="21-01-2021">Dec 11, 2023</time></span>
             </div>
@@ -359,21 +391,20 @@ return(
             </span>
             <div class="timeline-item-description">
               <i class="avatar | small">
-                <img src={AndrewNg} />
+                <img src={MetaLogo} />
               </i>
               <span>Pandas - <time datetime="20-01-2021">Jan 20, 2021</time></span>
             </div>
           </li>
           <li class="timeline-item">
-            <span class="timeline-item-icon | faded-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
-                <path fill="none" d="M0 0h24v24H0z" />
-                <path fill="currentColor" d="M12 13H4v-2h8V4l8 8-8 8z" />
-              </svg>
+          <span class="timeline-item-icon | faded-icon" onClick={() => handleOpen(Meta_cert)}>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 24" width="24" height="24">
+              <path class="cls-1" d="M28,5H4A2,2,0,0,0,2,7V24a2,2,0,0,0,2,2H18v3a1,1,0,0,0,.53.88,1,1,0,0,0,1-.05L22,28.2l2.45,1.63A1,1,0,0,0,26,29V26h2a2,2,0,0,0,2-2V7A2,2,0,0,0,28,5ZM22.59,21.94a3,3,0,1,1,2.35-2.35A3,3,0,0,1,22.59,21.94ZM24,27.13l-1.45-1a1,1,0,0,0-1.1,0l-1.45,1V23.58a5,5,0,0,0,4,0ZM28,24H26V22s0,0,0,0a4.93,4.93,0,0,0,.88-4.1A5,5,0,0,0,17,19a4.93,4.93,0,0,0,1,3s0,0,0,0v2H4V7H28Z"/><path class="cls-1" d="M7,12H25a1,1,0,0,0,0-2H7a1,1,0,0,0,0,2Z"/><path class="cls-1" d="M7,16h8a1,1,0,0,0,0-2H7a1,1,0,0,0,0,2Z"/><path class="cls-1" d="M7,20h8a1,1,0,0,0,0-2H7a1,1,0,0,0,0,2Z"/>
+            </svg>
             </span>
             <div class="timeline-item-description">
               <i class="avatar | small">
-                <img src={AndrewNg} />
+                <img src={MetaLogo} />
               </i>
               <span>Intermediate Machine Learning - <time datetime="20-01-2021">Jan 20, 2021</time></span>
             </div>
@@ -412,6 +443,17 @@ return(
               </div>
           </li>
         </ol>
+
+        <Modal
+          open={open}
+          onClose={handleClose}
+          aria-labelledby="modal-modal-title"
+          aria-describedby="modal-modal-description"
+          >
+          <div style={{display:"flex",flexDirection:"column",width:"100%",alignItems:"center",marginTop:200}}>
+              <img className='cert-image-kaggle'  src={modelInput} alt="" />
+          </div>
+        </Modal>
 
         </div>
     </div>
