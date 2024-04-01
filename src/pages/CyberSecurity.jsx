@@ -2,7 +2,7 @@
 import React, {useState,useEffect} from 'react';
 import "../CSS/fullstack.css"
 import betterByteLogo from "../assets/BetterByteLogo.png"
-import { ReactOriginal } from 'devicons-react';
+import { KaggleOriginal, LinuxOriginal, ReactOriginal, WebflowOriginal } from 'devicons-react';
 import CtfImage from "../assets/CTF.jpeg"
 import Pentest from "../assets/Pentest.jpeg"
 import AndrewNg from "../assets/AndrewNg.jpeg"
@@ -104,29 +104,60 @@ return(
       </div>
 
       <div className='language-row-fullstack'>
-        <ReactOriginal />
-        <ReactOriginal />
-        <ReactOriginal />
-        <ReactOriginal />
-        <ReactOriginal />
+        <LinuxOriginal size={50} />
       </div>
 
       <div className='stat-bottom'>
-        <div className='bottom-box'>
-            <h3>30%</h3>
+        <div className='bottom-box' style={{background: "linear-gradient(to right, cyan 100%, transparent 100%)"}}>
+            <h3>React</h3>
+            <h6>100%</h6>
         </div>
 
-        <div className='bottom-box'>
-            <h3>30%</h3>
+        <div className='bottom-box' style={{background: "linear-gradient(to right, cyan 100%, transparent 100%)"}}>
+          <h3>Firebase Utils</h3>
+          <h6>100%</h6>
         </div>
 
-        <div className='bottom-box'>
-            <h3>30%</h3>
+        <div className='bottom-box' style={{background: "linear-gradient(to right, cyan 80%, transparent 100%)"}}>
+          <h3>CSS</h3>
+          <h6>90%</h6>
         </div>
 
-        <div className='bottom-box'>
-            <h3>30%</h3>
+        <div className='bottom-box' style={{background: "linear-gradient(to right, cyan 100%, transparent 100%)"}}>
+          <h3>Vite</h3>
+          <h6>100%</h6>
         </div>
+
+        </div>
+
+        <div className='tag-section'>
+        <div className='tagbar'>
+          <h5>Skit Learn Libary</h5>
+        </div>
+
+        <div className='tagbar'>
+          <h5>Git</h5>
+        </div>
+
+        <div className='tagbar'>
+          <h5>Anaconda</h5>
+        </div>
+
+        <div className='tagbar'>
+          <h5>Convolutional Neural Network</h5>
+        </div>
+
+        <div className='tagbar'>
+          <h5>OS Script Automation</h5>
+        </div>
+
+        <div className='tagbar'>
+          <h5>Own Data Collection</h5>
+        </div>
+
+        <div className='tagbar'>
+          <h5>NVDIA Cuda</h5>
+        </div> 
       </div>
       </>
     ):isSelected == "ctf" ? (
@@ -165,89 +196,61 @@ return(
         </div>
   
         <div className='language-row-fullstack'>
-          <ReactOriginal />
-          <ReactOriginal />
-          <ReactOriginal />
-          <ReactOriginal />
-          <ReactOriginal />
+        <LinuxOriginal size={50} />
         </div>
   
         <div className='stat-bottom'>
-          <div className='bottom-box'>
-              <h3>30%</h3>
-          </div>
-  
-          <div className='bottom-box'>
-              <h3>30%</h3>
-          </div>
-  
-          <div className='bottom-box'>
-              <h3>30%</h3>
-          </div>
-  
-          <div className='bottom-box'>
-              <h3>30%</h3>
-          </div>
+        <div className='bottom-box' style={{background: "linear-gradient(to right, cyan 100%, transparent 100%)"}}>
+            <h3>React</h3>
+            <h6>100%</h6>
         </div>
-        </>
-      )
-    ):isSelected == "object" ? (
-      (
-        <>
-        <div className='stat-middle'>
-          <div className='middle-table'>
-              <div className='table-row'>
-                    <h2>Project: </h2>
-                    <h4>{Portfolio_data.project}</h4>
-              </div>
-  
-              <div className='table-row'>
-                    <h2>Registered Users: </h2>
-                    <h4>{Portfolio_data.total_users}</h4>
-              </div>
-  
-              <div className='table-row'>
-                    <h2>Record traffic: </h2>
-                    <h4>{Portfolio_data.record_live_users}</h4>
-              </div>
 
+        <div className='bottom-box' style={{background: "linear-gradient(to right, cyan 100%, transparent 100%)"}}>
+          <h3>Firebase Utils</h3>
+          <h6>100%</h6>
+        </div>
 
-            <div className="social_accs">
-                <SocialIcon url="https://github.com/orbant12/Clippify---REST-API" />
-                <SocialIcon url="https://instagram.com/clippify.app" />                   
-            </div>  
-          </div>
-  
-          <div className='middle-thumbnail'>
-            
-          </div> 
+        <div className='bottom-box' style={{background: "linear-gradient(to right, cyan 80%, transparent 100%)"}}>
+          <h3>CSS</h3>
+          <h6>90%</h6>
         </div>
-  
-        <div className='language-row-fullstack'>
-          <ReactOriginal />
-          <ReactOriginal />
-          <ReactOriginal />
-          <ReactOriginal />
-          <ReactOriginal />
+
+        <div className='bottom-box' style={{background: "linear-gradient(to right, cyan 100%, transparent 100%)"}}>
+          <h3>Vite</h3>
+          <h6>100%</h6>
         </div>
-  
-        <div className='stat-bottom'>
-          <div className='bottom-box'>
-              <h3>30%</h3>
-          </div>
-  
-          <div className='bottom-box'>
-              <h3>30%</h3>
-          </div>
-  
-          <div className='bottom-box'>
-              <h3>30%</h3>
-          </div>
-  
-          <div className='bottom-box'>
-              <h3>30%</h3>
-          </div>
+
         </div>
+
+        <div className='tag-section'>
+        <div className='tagbar'>
+          <h5>Skit Learn Libary</h5>
+        </div>
+
+        <div className='tagbar'>
+          <h5>Git</h5>
+        </div>
+
+        <div className='tagbar'>
+          <h5>Anaconda</h5>
+        </div>
+
+        <div className='tagbar'>
+          <h5>Convolutional Neural Network</h5>
+        </div>
+
+        <div className='tagbar'>
+          <h5>OS Script Automation</h5>
+        </div>
+
+        <div className='tagbar'>
+          <h5>Own Data Collection</h5>
+        </div>
+
+        <div className='tagbar'>
+          <h5>NVDIA Cuda</h5>
+        </div> 
+      </div>
         </>
       )
     ):null}

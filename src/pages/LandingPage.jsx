@@ -201,7 +201,7 @@ return (
                     </motion.h1>
                     <motion.div variants={textVariants} className="buttons">
                         <motion.button variants={textVariants}>
-                            <a onClick={openResume} href="">See my career resume</a>
+                            <a onClick={openResume}  href="">See my career resume</a>
                         </motion.button>
                         <motion.button variants={textVariants}><a href="/contact">Contact Me</a></motion.button>
                     </motion.div>
@@ -358,7 +358,7 @@ return (
 
             <div id="portfolio">
                 <div className="portfolio-title">
-                    <h1>Portfolio</h1>
+                    <h1 style={{fontWeight:400,padding:"8px 13px",borderRadius:10,opacity:0.8,boxShadow:"inset -3px -3px 5px 1px black",zIndex:999}}>Portfolio</h1>
                 </div>
 
                 <div style={{marginTop:50, maxWidth:1000,width: 1000,marginBottom:100}}>
@@ -416,7 +416,7 @@ return (
             </div>
             
             <div className="divider-row">
-                <h4>Worked with :</h4>
+                <h4 style={{fontWeight:550,padding:"8px 20px",borderRadius:10,opacity:0.8,boxShadow: "inset -3px -3px 5px 1px black"}} >Worked with ...</h4>
                 <img src={GetconLogo} onClick={() => handleSeeMore("Getcon")}/>
             </div>
 
@@ -537,7 +537,7 @@ return (
 
             <div className="aboutme-section">
                 <h2>About Me</h2>
-                <h5>Let me show you with another perspective</h5>
+                <h5 style={{padding:"8px 20px",borderRadius:30,opacity:0.7,boxShadow: "inset 1px 1px 5px 1px black",marginTop:5,fontWeight:550}}>Let me show you with another perspective</h5>
                 <div onClick={handleVrPressed} style={{cursor:"pointer"}}> 
                     <div className="spline-visionPro" > 
                         <Spline scene="https://prod.spline.design/KX8f-KHZwA3H06Gs/scene.splinecode" />

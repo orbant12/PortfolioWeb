@@ -2,7 +2,7 @@
 import React, {useState,useEffect} from 'react';
 import "../CSS/fullstack.css"
 import betterByteLogo from "../assets/BetterByteLogo.png"
-import { ReactOriginal } from 'devicons-react';
+import { CloudflareworkersOriginal, Css3Original, FigmaOriginal, FirebaseOriginal, GoogleOriginal, GooglecloudOriginal, Html5Original, NodejsOriginal, ReactOriginal, ViteOriginal, ViteOriginalWordmark } from 'devicons-react';
 import AngelaYu from "../assets/Angela_Yu.jpeg"
 import CourseraLogo from "../assets/Coursera.png"
 import SurferboyLogo from "../assets/SurferboyLogo.jpeg"
@@ -96,29 +96,69 @@ return(
       </div>
 
       <div className='language-row-fullstack'>
-        <ReactOriginal />
-        <ReactOriginal />
-        <ReactOriginal />
-        <ReactOriginal />
-        <ReactOriginal />
+        <ReactOriginal size={50} />
+        <FirebaseOriginal size={50} />
+        <NodejsOriginal size={50} />
+        <GooglecloudOriginal size={50} />
+        <ViteOriginalWordmark size={50} />
       </div>
 
       <div className='stat-bottom'>
-        <div className='bottom-box'>
-            <h3>30%</h3>
+        <div className='bottom-box' style={{background: "linear-gradient(to right, cyan 100%, transparent 100%)"}}>
+            <h3>React</h3>
+            <h6>100%</h6>
         </div>
 
-        <div className='bottom-box'>
-            <h3>30%</h3>
+        <div className='bottom-box' style={{background: "linear-gradient(to right, cyan 100%, transparent 100%)"}}>
+          <h3>Firebase Utils</h3>
+          <h6>100%</h6>
         </div>
 
-        <div className='bottom-box'>
-            <h3>30%</h3>
+        <div className='bottom-box' style={{background: "linear-gradient(to right, cyan 100%, transparent 100%)"}}>
+          <h3>Node JS</h3>
+          <h6>100%</h6>
         </div>
 
-        <div className='bottom-box'>
-            <h3>30%</h3>
+        <div className='bottom-box' style={{background: "linear-gradient(to right, cyan 100%, transparent 100%)"}}>
+          <h3>Google Cloud</h3>
+          <h6>100%</h6>
         </div>
+
+        <div className='bottom-box' style={{background: "linear-gradient(to right, cyan 100%, transparent 100%)"}}>
+          <h3>Vite</h3>
+          <h6>100%</h6>
+        </div>
+
+      </div>
+
+      <div className='tag-section'>
+        <div className='tagbar'>
+          <h5>Skit Learn Libary</h5>
+        </div>
+
+        <div className='tagbar'>
+          <h5>Git</h5>
+        </div>
+
+        <div className='tagbar'>
+          <h5>Anaconda</h5>
+        </div>
+
+        <div className='tagbar'>
+          <h5>Convolutional Neural Network</h5>
+        </div>
+
+        <div className='tagbar'>
+          <h5>OS Script Automation</h5>
+        </div>
+
+        <div className='tagbar'>
+          <h5>Own Data Collection</h5>
+        </div>
+
+        <div className='tagbar'>
+          <h5>NVDIA Cuda</h5>
+        </div> 
       </div>
       </>
     ):isSelected == "lupody" ? (
@@ -153,30 +193,64 @@ return(
         </div>
   
         <div className='language-row-fullstack'>
-          <ReactOriginal />
-          <ReactOriginal />
-          <ReactOriginal />
-          <ReactOriginal />
-          <ReactOriginal />
+          <ReactOriginal size={50} />
+          <FirebaseOriginal size={50} />
+          <Css3Original size={50} />
+          <ViteOriginalWordmark size={50} />
         </div>
   
         <div className='stat-bottom'>
-          <div className='bottom-box'>
-              <h3>30%</h3>
-          </div>
-  
-          <div className='bottom-box'>
-              <h3>30%</h3>
-          </div>
-  
-          <div className='bottom-box'>
-              <h3>30%</h3>
-          </div>
-  
-          <div className='bottom-box'>
-              <h3>30%</h3>
-          </div>
+        <div className='bottom-box' style={{background: "linear-gradient(to right, cyan 100%, transparent 100%)"}}>
+            <h3>React</h3>
+            <h6>100%</h6>
         </div>
+
+        <div className='bottom-box' style={{background: "linear-gradient(to right, cyan 100%, transparent 100%)"}}>
+          <h3>Firebase Utils</h3>
+          <h6>100%</h6>
+        </div>
+
+        <div className='bottom-box' style={{background: "linear-gradient(to right, cyan 80%, transparent 100%)"}}>
+          <h3>CSS</h3>
+          <h6>90%</h6>
+        </div>
+
+        <div className='bottom-box' style={{background: "linear-gradient(to right, cyan 100%, transparent 100%)"}}>
+          <h3>Vite</h3>
+          <h6>100%</h6>
+        </div>
+
+        </div>
+
+        <div className='tag-section'>
+        <div className='tagbar'>
+          <h5>Skit Learn Libary</h5>
+        </div>
+
+        <div className='tagbar'>
+          <h5>Git</h5>
+        </div>
+
+        <div className='tagbar'>
+          <h5>Anaconda</h5>
+        </div>
+
+        <div className='tagbar'>
+          <h5>Convolutional Neural Network</h5>
+        </div>
+
+        <div className='tagbar'>
+          <h5>OS Script Automation</h5>
+        </div>
+
+        <div className='tagbar'>
+          <h5>Own Data Collection</h5>
+        </div>
+
+        <div className='tagbar'>
+          <h5>NVDIA Cuda</h5>
+        </div> 
+      </div>
         </>
       )
     ):isSelected == "portfolio" ? (
@@ -210,30 +284,64 @@ return(
         </div>
   
         <div className='language-row-fullstack'>
-          <ReactOriginal />
-          <ReactOriginal />
-          <ReactOriginal />
-          <ReactOriginal />
-          <ReactOriginal />
+          <ReactOriginal size={50} />
+          <GooglecloudOriginal size={50} />
+          <FigmaOriginal size={50} />
+          <ViteOriginalWordmark size={50} />
         </div>
   
         <div className='stat-bottom'>
-          <div className='bottom-box'>
-              <h3>30%</h3>
-          </div>
-  
-          <div className='bottom-box'>
-              <h3>30%</h3>
-          </div>
-  
-          <div className='bottom-box'>
-              <h3>30%</h3>
-          </div>
-  
-          <div className='bottom-box'>
-              <h3>30%</h3>
-          </div>
+        <div className='bottom-box' style={{background: "linear-gradient(to right, cyan 100%, transparent 100%)"}}>
+            <h3>React</h3>
+            <h6>100%</h6>
         </div>
+
+        <div className='bottom-box' style={{background: "linear-gradient(to right, cyan 100%, transparent 100%)"}}>
+          <h3>Google Cloud</h3>
+          <h6>100%</h6>
+        </div>
+
+        <div className='bottom-box' style={{background: "linear-gradient(to right, cyan 80%, transparent 100%)"}}>
+          <h3>Figma</h3>
+          <h6>90%</h6>
+        </div>
+
+        <div className='bottom-box' style={{background: "linear-gradient(to right, cyan 100%, transparent 100%)"}}>
+          <h3>Vite</h3>
+          <h6>100%</h6>
+        </div>
+
+        </div>
+
+        <div className='tag-section'>
+        <div className='tagbar'>
+          <h5>Skit Learn Libary</h5>
+        </div>
+
+        <div className='tagbar'>
+          <h5>Git</h5>
+        </div>
+
+        <div className='tagbar'>
+          <h5>Anaconda</h5>
+        </div>
+
+        <div className='tagbar'>
+          <h5>Convolutional Neural Network</h5>
+        </div>
+
+        <div className='tagbar'>
+          <h5>OS Script Automation</h5>
+        </div>
+
+        <div className='tagbar'>
+          <h5>Own Data Collection</h5>
+        </div>
+
+        <div className='tagbar'>
+          <h5>NVDIA Cuda</h5>
+        </div> 
+      </div>
         </>
       )
     ):null}

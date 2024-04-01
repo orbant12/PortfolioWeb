@@ -1530,6 +1530,7 @@ body .bubble-type2{
   margin-right: auto;
   margin-left: auto;
   justify-content: space-between;
+  align-items: center;
   margin-top: 20px;
   
 }

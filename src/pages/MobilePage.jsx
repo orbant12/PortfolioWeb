@@ -2,7 +2,7 @@
 import React, {useState,useEffect} from 'react';
 import "../CSS/fullstack.css"
 import betterByteLogo from "../assets/BetterByteLogo.png"
-import { ReactOriginal } from 'devicons-react';
+import { AndroidOriginal, AppleOriginal, ExpressOriginal, ExpressOriginalWordmark, FirebaseOriginal, ReactOriginal, ReactnavigationOriginal, SwiftOriginal, XcodeOriginal } from 'devicons-react';
 import MetaLogo from "../assets/meta-logo.jpeg"
 import CourseraLogo from "../assets/Coursera.png"
 import SurferboyLogo from "../assets/SurferboyLogo.jpeg"
@@ -18,7 +18,7 @@ const MobilePage = () => {
 
   //STATE FOR Data Representation
 
-  const [isSelected, setIsSelected] = useState("kaggle");
+  const [isSelected, setIsSelected] = useState("clippifyMobile");
 
   const [open, setOpen] = useState(false);
 
@@ -78,11 +78,11 @@ return(
       </div>
 
       <div className="services-pick-fullstack">
-                <h3 onClick={() => setIsSelected("transcript")} className={isSelected === "transcript" ? "selected" : "select"}>Swift UI</h3>
-                <h3 onClick={() => setIsSelected("kaggle")} className={isSelected === "kaggle" ? "selected" : "select"}>Clippify Mobile</h3>
-                <h3 onClick={() => setIsSelected("object")} className={isSelected === "object" ? "selected" : "select"}>Lupody Mobile</h3>
+                <h3 onClick={() => setIsSelected("swiftUi")} className={isSelected === "swiftUi" ? "selected" : "select"}>Swift UI</h3>
+                <h3 onClick={() => setIsSelected("clippifyMobile")} className={isSelected === "clippifyMobile" ? "selected" : "select"}>Clippify Mobile</h3>
+                <h3 onClick={() => setIsSelected("lupodyMobile")} className={isSelected === "lupodyMobile" ? "selected" : "select"}>Lupody Mobile</h3>
       </div>
-    { isSelected == "transcript" ? (
+    { isSelected == "swiftUi" ? (
       <>
       <div className='stat-middle'>
         <div className='middle-table'>
@@ -113,32 +113,66 @@ return(
       </div>
 
       <div className='language-row-fullstack'>
-        <ReactOriginal />
-        <ReactOriginal />
-        <ReactOriginal />
-        <ReactOriginal />
-        <ReactOriginal />
+        <SwiftOriginal size={50} />
+        <XcodeOriginal size={50} />
+        <FirebaseOriginal size={50} />
+        <AppleOriginal size={50} />
       </div>
 
       <div className='stat-bottom'>
-        <div className='bottom-box'>
-            <h3>30%</h3>
+        <div className='bottom-box' style={{background: "linear-gradient(to right, cyan 30%, transparent 100%)"}}>
+            <h3>SwiftUI</h3>
+            <h6>60%</h6>
         </div>
 
-        <div className='bottom-box'>
-            <h3>30%</h3>
+        <div className='bottom-box' style={{background: "linear-gradient(to right, cyan 100%, transparent 100%)"}}>
+          <h3>Xcode Env.</h3>
+          <h6>100%</h6>
         </div>
 
-        <div className='bottom-box'>
-            <h3>30%</h3>
+        <div className='bottom-box' style={{background: "linear-gradient(to right, cyan 100%, transparent 100%)"}}>
+          <h3>Firebase Cons.</h3>
+          <h6>100%</h6>
         </div>
 
-        <div className='bottom-box'>
-            <h3>30%</h3>
+        <div className='bottom-box' style={{background: "linear-gradient(to right, cyan 100%, transparent 100%)"}}>
+          <h3>Apple Developer</h3>
+          <h6>100%</h6>
         </div>
+
+        </div>
+
+        <div className='tag-section'>
+        <div className='tagbar'>
+          <h5>Skit Learn Libary</h5>
+        </div>
+
+        <div className='tagbar'>
+          <h5>Git</h5>
+        </div>
+
+        <div className='tagbar'>
+          <h5>Anaconda</h5>
+        </div>
+
+        <div className='tagbar'>
+          <h5>Convolutional Neural Network</h5>
+        </div>
+
+        <div className='tagbar'>
+          <h5>OS Script Automation</h5>
+        </div>
+
+        <div className='tagbar'>
+          <h5>Own Data Collection</h5>
+        </div>
+
+        <div className='tagbar'>
+          <h5>NVDIA Cuda</h5>
+        </div> 
       </div>
       </>
-    ):isSelected == "kaggle" ? (
+    ):isSelected == "clippifyMobile" ? (
       (
         <>
         <div className='stat-middle'>
@@ -176,33 +210,73 @@ return(
         </div>
   
         <div className='language-row-fullstack'>
-          <ReactOriginal />
-          <ReactOriginal />
-          <ReactOriginal />
-          <ReactOriginal />
-          <ReactOriginal />
+          <ReactOriginal size={50} />
+          <ExpressOriginal size={50} />
+          <FirebaseOriginal size={50} />
+          <AppleOriginal size={50} />
+          <AndroidOriginal size={50} />
         </div>
   
         <div className='stat-bottom'>
-          <div className='bottom-box'>
-              <h3>30%</h3>
-          </div>
-  
-          <div className='bottom-box'>
-              <h3>30%</h3>
-          </div>
-  
-          <div className='bottom-box'>
-              <h3>30%</h3>
-          </div>
-  
-          <div className='bottom-box'>
-              <h3>30%</h3>
-          </div>
+        <div className='bottom-box' style={{background: "linear-gradient(to right, cyan 100%, transparent 100%)"}}>
+            <h3>React Native</h3>
+            <h6>100%</h6>
         </div>
+
+        <div className='bottom-box' style={{background: "linear-gradient(to right, cyan 60%, transparent 100%)"}}>
+          <h3>Expo</h3>
+          <h6>80%</h6>
+        </div>
+
+        <div className='bottom-box' style={{background: "linear-gradient(to right, cyan 100%, transparent 100%)"}}>
+          <h3>Firebase Utils</h3>
+          <h6>100%</h6>
+        </div>
+
+        <div className='bottom-box' style={{background: "linear-gradient(to right, cyan 100%, transparent 100%)"}}>
+          <h3>Appstore</h3>
+          <h6>100%</h6>
+        </div>
+
+        <div className='bottom-box' style={{background: "linear-gradient(to right, cyan 100%, transparent 100%)"}}>
+          <h3>PlayStore</h3>
+          <h6>100%</h6>
+        </div>
+
+        </div>
+
+        <div className='tag-section'>
+        <div className='tagbar'>
+          <h5>Skit Learn Libary</h5>
+        </div>
+
+        <div className='tagbar'>
+          <h5>Git</h5>
+        </div>
+
+        <div className='tagbar'>
+          <h5>Anaconda</h5>
+        </div>
+
+        <div className='tagbar'>
+          <h5>Convolutional Neural Network</h5>
+        </div>
+
+        <div className='tagbar'>
+          <h5>OS Script Automation</h5>
+        </div>
+
+        <div className='tagbar'>
+          <h5>Own Data Collection</h5>
+        </div>
+
+        <div className='tagbar'>
+          <h5>NVDIA Cuda</h5>
+        </div> 
+      </div>
         </>
       )
-    ):isSelected == "object" ? (
+    ):isSelected == "lupodyMobile" ? (
       (
         <>
         <div className='stat-middle'>
@@ -234,30 +308,70 @@ return(
         </div>
   
         <div className='language-row-fullstack'>
-          <ReactOriginal />
-          <ReactOriginal />
-          <ReactOriginal />
-          <ReactOriginal />
-          <ReactOriginal />
+          <ReactOriginal size={50} />
+          <ExpressOriginal size={50} />
+          <FirebaseOriginal size={50} />
+          <AppleOriginal size={50} />
+          <AndroidOriginal size={50} />
         </div>
   
         <div className='stat-bottom'>
-          <div className='bottom-box'>
-              <h3>30%</h3>
-          </div>
-  
-          <div className='bottom-box'>
-              <h3>30%</h3>
-          </div>
-  
-          <div className='bottom-box'>
-              <h3>30%</h3>
-          </div>
-  
-          <div className='bottom-box'>
-              <h3>30%</h3>
-          </div>
+        <div className='bottom-box' style={{background: "linear-gradient(to right, cyan 100%, transparent 100%)"}}>
+            <h3>React Native</h3>
+            <h6>100%</h6>
         </div>
+
+        <div className='bottom-box' style={{background: "linear-gradient(to right, cyan 60%, transparent 100%)"}}>
+          <h3>Expo</h3>
+          <h6>80%</h6>
+        </div>
+
+        <div className='bottom-box' style={{background: "linear-gradient(to right, cyan 100%, transparent 100%)"}}>
+          <h3>Firebase Utils</h3>
+          <h6>100%</h6>
+        </div>
+
+        <div className='bottom-box' style={{background: "linear-gradient(to right, cyan 100%, transparent 100%)"}}>
+          <h3>Appstore</h3>
+          <h6>100%</h6>
+        </div>
+
+        <div className='bottom-box' style={{background: "linear-gradient(to right, cyan 100%, transparent 100%)"}}>
+          <h3>PlayStore</h3>
+          <h6>100%</h6>
+        </div>
+
+        </div>
+
+        <div className='tag-section'>
+        <div className='tagbar'>
+          <h5>Skit Learn Libary</h5>
+        </div>
+
+        <div className='tagbar'>
+          <h5>Git</h5>
+        </div>
+
+        <div className='tagbar'>
+          <h5>Anaconda</h5>
+        </div>
+
+        <div className='tagbar'>
+          <h5>Convolutional Neural Network</h5>
+        </div>
+
+        <div className='tagbar'>
+          <h5>OS Script Automation</h5>
+        </div>
+
+        <div className='tagbar'>
+          <h5>Own Data Collection</h5>
+        </div>
+
+        <div className='tagbar'>
+          <h5>NVDIA Cuda</h5>
+        </div> 
+      </div>
         </>
       )
     ):null}
@@ -451,7 +565,7 @@ return(
           aria-describedby="modal-modal-description"
           >
           <div style={{display:"flex",flexDirection:"column",width:"100%",alignItems:"center",marginTop:200}}>
-              <img className='cert-image-kaggle'  src={modelInput} alt="" />
+              <img className='cert-image-clippifyMobile'  src={modelInput} alt="" />
           </div>
         </Modal>
 
