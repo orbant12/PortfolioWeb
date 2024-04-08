@@ -12,6 +12,8 @@ import Portfolio from './pages/Portfolio';
 import MLPage from './pages/MLPage';
 import CyberSecurityPage from './pages/CyberSecurity';
 import MobilePage from './pages/MobilePage';
+import ClippifyPage from './pages/FullstackProjects/Clippify';
+import LupodyPage from './pages/FullstackProjects/Lupody';
 //import UserAuthContext from './context/UserAuthContext';
 
 function App() {
@@ -31,6 +33,8 @@ return (
         <Route path="/mobile-projects" element={<MobilePage />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/portfolio" element={<Portfolio/>} />
+        <Route path="/fullstack-projects/clippify" element={<ClippifyPage/>} />
+        <Route path="/fullstack-projects/lupody" element={<LupodyPage/>} />
       </Routes>
       
   </Router>

@@ -61,6 +61,12 @@ const handleOpen = (certInput) => {
 };
 const handleClose = () => setOpen(false);
 
+const handleVisitClick = (navigationTitle) => {
+  //Coursera Notes
+  if(navigationTitle == "Clippify"){
+      window.location.href = "/fullstack-projects/clippify"
+  }
+}
 
 return(
   <div className="fullstack">
@@ -120,7 +126,7 @@ return(
 
           <div className='middle-thumbnail'>
               <img src={Clippify_data.thumbnail} className='thumbnail-image' alt="CTF" />
-              <div className='visit-btn'> 
+              <div className='visit-btn' onClick={() => handleVisitClick("Clippify")}> 
                   <h3>See All</h3>
               </div>
               <h5 style={{position:"absolute",color:"black",marginTop:-290,borderBottom:"1px solid black",opacity:"0.3"}}>Click to see more</h5>
