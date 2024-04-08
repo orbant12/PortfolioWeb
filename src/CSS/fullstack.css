@@ -182,7 +182,7 @@
     
 }
 
-.stat-bottom{
+.fullstack .stat-bottom{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -587,7 +587,7 @@ textarea {
 		height: 250px;
 	}
 
-	.stat-bottom{
+	.fullstack .stat-bottom{
 		display: flex;
 		flex-direction: row;
 		justify-content: space-between;

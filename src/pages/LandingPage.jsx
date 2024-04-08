@@ -133,19 +133,51 @@ const crossData = {
 
 //HANDLE PORTFOLIO NAVIGATION
 const handlePortfolioNavigation = (title) => {
-    window.location.href = '/portfolio/'+title;
-}
+    if(title === "Lupody"){
+        window.location.href = "/fullstack-projects/lupody"
+    }
+    
+    if(title === "Clippify"){
+        window.location.href = "/fullstack-projects/clippify"
+    }
 
-//HANDLE VR PRESSED
-const handleVrPressed = () => {
-    window.location.href = '/about-me';
-}
+    if(title === "Lupody-Mobile"){
+        window.location.href = "/mobile-project/lupody-mobile"
+    }
 
-//HANDLE ASSISTANT INPUT CHANGE
-const handleAssistantInputChange = (e) => {
-    setAssistantInput(e.target.value);
-}
+    if(title === "Clippify-Mobile"){
+        window.location.href = "/mobile-project/clippify-mobile"
+    }
 
+    if(title === "Speech To Text"){
+        window.location.href = "/cross-project/speech-to-text"
+    }
+
+    if(title === "Object Detection"){  
+        window.location.href = "/cross-project/object-detection"
+    }
+
+    if(title === "Kaggle Solutions"){
+        window.location.href = "/cross-project/kaggle-solutions"
+    }
+
+    if(title === "Capture The Flag"){
+        window.location.href = "/cyber-project/capture-the-flag"
+    }
+
+    if(title === "Pentesting My Web Apps"){
+        window.location.href = "/cyber-project/pentesting-web"
+    }
+
+    if(title === "Pentesting My Mobile Apps"){
+        window.location.href = "/cyber-project/pentesting-mobile"
+    }
+
+    if(title === "Vr"){
+        window.location.href = "/about-me"
+    }
+
+}
 //DOWNLOAD RESUME
 function downloadResume() {
     // Replace 'your_resume_file_url' with the actual URL of the resume file
@@ -275,7 +307,7 @@ return (
                         
                     </div>
 
-                    <div onClick={() => handlePortfolioNavigation("Clippify Mobile")} className="project-show">
+                    <div onClick={() => handlePortfolioNavigation("Clippify-Mobile")} className="project-show">
                         <h3>Clippify Mobile</h3>
                         <div>
                             <h6>Ai Clip Analysing</h6>
@@ -538,7 +570,7 @@ return (
             <div className="aboutme-section">
                 <h2>About Me</h2>
                 <h5 style={{padding:"8px 20px",borderRadius:30,opacity:0.7,boxShadow: "inset 1px 1px 5px 1px black",marginTop:5,fontWeight:550}}>Let me show you with another perspective</h5>
-                <div onClick={handleVrPressed} style={{cursor:"pointer"}}> 
+                <div onClick={() => handlePortfolioNavigation("Vr")} style={{cursor:"pointer"}}> 
                     <div className="spline-visionPro" > 
                         <Spline scene="https://prod.spline.design/KX8f-KHZwA3H06Gs/scene.splinecode" />
                     </div>

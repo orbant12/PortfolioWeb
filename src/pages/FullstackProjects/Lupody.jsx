@@ -1,14 +1,40 @@
 
+//REACT
+import { useParams } from "react-router-dom";
+import {useEffect,useState} from 'react';
 
+//CSS
 import "./f-projects.css"
 
-import React, {useState} from "react";
+//DATA JSON --> portfolio.jsx
+import {
+    LupodyData
+} from '../../portfolio.jsx'
+
+//ICONS
+import GitHubIcon from '@mui/icons-material/GitHub';
+
 
 import {FaArrowRight} from "react-icons/fa";
 
 const LupodyPage = () => {
 
     const [isSelectedDate, setIsSelectedDate] = useState("Month");
+
+    const { id } = useParams();
+
+    const [pageData,setPageData] = useState({
+        title:"",
+        list:[],
+        expertise:[{logo:"",title:"",text:[]}],
+        navigation:"",
+        youtube:"",
+        youtubeHref:""
+    });
+
+    useEffect(() => {
+        setPageData(LupodyData);
+    },[]);
 
     return (
         <div className="project-page">
@@ -48,6 +74,54 @@ const LupodyPage = () => {
                     <div className="stat-item" style={{border:"none"}}>
                         <h2>2 lvl</h2>
                         <h5>Are currently spam</h5>
+                    </div>
+                </div>
+            </div>
+            <div className="project-details-page">
+                <h4 className="d-p-title">About The Project</h4>
+                <div className="portfolio-page" >
+                    <div className="intro-box">
+                        <div className="intro-left-bar">
+                            <h3 className="intro-left-title">{id}</h3>
+                            <ul className="intro-left-list">
+                                {pageData.list.map((item,index) => {
+                                    return(
+                                        <li key={index}>{item}</li>
+                                    )
+                                })}
+                            </ul>
+                        </div>
+                        <div className="youtube-frameDiv">
+                            <iframe className="youtube-frame" src={pageData.youtube} title="YouTube video player" frameBorder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+                        </div>
+                    </div>
+
+                    <div className="this-project-box">
+                        <h3 className="this-project-title">This Project <br /> Made Me an Expert In</h3>
+                        {pageData.expertise.map((item, index) => {
+                            return (
+                                <div key={index}>
+                                    <div className="github-link">
+                                        <GitHubIcon />
+                                    </div>
+                                <div className={index % 2 == 0 ? "experience-box" : "experience-box-reverse"} key={index}>
+                                    <img className="exp-img" src={item.logo} alt="" />
+                                    <div className="exp-text">
+                                        
+                                        <h4 className="exp-title">{item.title}</h4>
+                                        <ul>
+                                            {item.text.map((item2, index2) => {
+                                                return (
+                                                    <li key={index2}>{item2}</li>
+                                                )
+                                            })}
+                                        </ul> 
+                                    </div>
+                                </div>
+                                    {item.show && item.show()}
+                            </div>
+                            );
+                        })}
                     </div>
                 </div>
             </div>
