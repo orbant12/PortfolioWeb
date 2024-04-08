@@ -5,7 +5,7 @@ import "./f-projects.css"
 //REACT
 import { useParams } from "react-router-dom";
 import {useEffect,useState} from 'react';
-
+import ClippifyLogo from "../../assets/Clippify-log.svg";
 //CSS
 
 
@@ -19,6 +19,9 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 
 
 import {FaArrowRight} from "react-icons/fa";
+
+
+
 
 const ClippifyPage = () => {
 
@@ -90,27 +93,40 @@ const ClippifyPage = () => {
             <div className="project-details-page">
                 <h4 className="d-p-title">About The Project</h4>
                 <div className="portfolio-page" >
-                    <div className="intro-box">
-                        <div className="intro-left-bar">
-                            <h3 className="intro-left-title">{id}</h3>
-                            <ul className="intro-left-list">
-                                {pageData.list.map((item,index) => {
-                                    return(
-                                        <li key={index}>{item}</li>
-                                    )
-                                })}
-                            </ul>
+                    <div className="details-container">
+                        <div className="d-cont-left">
+                            <div className="l-title">
+                                <div className="l-logo">
+                                    <img src={ClippifyLogo} alt="" />
+                                </div>
+                                <h6>What is Clippify ?</h6>
+                                <h1>Clippify</h1>
+                            </div>
+                            <div className="l-desc">
+                            <h5>Clippify enables you to effortlessly collect and store video clips from various sources. Whether it's the funny moments from your family gatherings, educational tutorials, or your favorite movie quotes, Clippify helps you organize and access them with ease.</h5><br />
+                                <h5>Clippify enables you to effortlessly collect and store video clips from various sources. Whether it's the funny moments from your family gatherings, educational tutorials, or your favorite movie quotes, Clippify helps you organize and access them with ease.</h5>
+                            </div>
                         </div>
-                        <div className="youtube-frameDiv">
-                            <iframe className="youtube-frame" src={pageData.youtube} title="YouTube video player" frameBorder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+
+                        <div className="d-video-frame">
+                            <iframe className="m-video-frame" src={pageData.youtube} title="YouTube video player" frameBorder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+                        </div>
+
+                        <div className="d-cont-right">
+                            <a href="#Lexical Rich Text Editor">Text Editor</a>
+                            <a href="">OpenAI API</a>
+                            <a href="#Dealing with Video - FFmpeg">FFmpeg</a>
+                            <a href="">RNN</a>
+                            <a href="#Stripe Payment">Stripe API</a>
+                            <a href="#Stripe Payment">OAuth 2</a>
+                            <a href="#Stripe Payment">CO Isolation</a>
                         </div>
                     </div>
-
                     <div className="this-project-box">
                         <h3 className="this-project-title">This Project <br /> Made Me an Expert In</h3>
                         {pageData.expertise.map((item, index) => {
                             return (
-                                <div key={index}>
+                                <div key={index} id={item.title}>
                                     <div className="github-link">
                                         <GitHubIcon />
                                     </div>
@@ -135,7 +151,6 @@ const ClippifyPage = () => {
                     </div>
                 </div>
             </div>
-
         </div>
     );
 }

@@ -16,7 +16,9 @@ import ClippifyPage from './pages/FullstackProjects/Clippify';
 import LupodyPage from './pages/FullstackProjects/Lupody';
 //import UserAuthContext from './context/UserAuthContext';
 
+
 function App() {
+
 
 return ( 
 
