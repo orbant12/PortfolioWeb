@@ -50,7 +50,7 @@ const ClippifyPage = () => {
         },[]);
 
     return (
-        <div className="project-page">
+        <div className="project-page" id="clippify">
             <div className="project-hero">
                 <div className="hero-top">
                     <h2>Clippify</h2>
