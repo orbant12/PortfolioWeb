@@ -2,57 +2,24 @@
 import React, {useState,useEffect} from 'react';
 import "../CSS/fullstack.css"
 import betterByteLogo from "../assets/BetterByteLogo.png"
-import { CloudflareworkersOriginal, Css3Original, FigmaOriginal, FirebaseOriginal, GoogleOriginal, GooglecloudOriginal, Html5Original, NodejsOriginal, ReactOriginal, ViteOriginal, ViteOriginalWordmark } from 'devicons-react';
 import AngelaYu from "../assets/Angela_Yu.jpeg"
 import CourseraLogo from "../assets/Coursera.png"
 import SurferboyLogo from "../assets/SurferboyLogo.jpeg"
 import UdemyLogo from "../assets/UdemyIMAGE.png"
-import { SocialIcon } from "react-social-icons";
 import Modal from '@mui/material/Modal';
-
-//CLIPPIFY
-import ClippifyThumbnail from "../assets/ClippifyScreen.png"
-//LUPODY
-import LupodyThumbnail from "../assets/LupodyScreen2.png"
-//PORTFOLIO
-import PortfolioThumbnail from "../assets/Portfolio.png"
-
-//CERTS
+import ClippifyImage from "../assets/Clippify-log.svg"
+import { Link } from 'react-router-dom';
 import BootcampFullstack_cert from "../assets/BootcampFullstack.jpeg"
 
 
 const FullstackPage = () => {
 
   //STATE FOR Data Representation
-
-  const [isSelected, setIsSelected] = useState("clippify");
-
   const [open, setOpen] = useState(false);
 
   const [modelInput, setModelInput] = useState("")
 
   //<**********-DATA-*****************>
-
-  const Clippify_data = {
-    "project": 11,
-    "total_users": 31,
-    "record_live_users": 13,
-    "thumbnail":ClippifyThumbnail 
-  }
-
-  const Lupody_data = {
-    "project": 11,
-    "total_users": 0,
-    "record_live_users": 0,
-    "thumbnail": LupodyThumbnail
-  }
-
-  const Portfolio_data = {
-    "project": 0,
-    "total_users": 0,
-    "record_live_users": 0,
-    "thumbnail": PortfolioThumbnail
-  }
 
 
 const handleOpen = (certInput) => {
@@ -61,22 +28,16 @@ const handleOpen = (certInput) => {
 };
 const handleClose = () => setOpen(false);
 
-const handleVisitClick = (navigationTitle) => {
-  //Coursera Notes
-  if(navigationTitle == "Clippify"){
-      window.location.href = "/fullstack-projects/clippify"
-  }
-}
 
 return(
   <div className="fullstack">
     {/*1.) Hero SECTION*/}
     <div className='fullstack-hero'>
       <div className='hero-left'>
-        <h1>Fullstack Development</h1>
+        <h1 className='text-white text-xl'>Fullstack Development</h1>
         <h5>Let me introduce to you my fullstack development journey ...</h5>
         <div className='experience-row'>
-          <h4>Experience Level:</h4>
+          <h4 className='text-white opacity-60'>Experience Level:</h4>
           <h5 className='filled_experience'>• • • •</h5>
           <h5 className='no_filled_experience'>•</h5>
         </div>
@@ -87,316 +48,46 @@ return(
       </div>   
       
     </div>
-
-    {/*2.) Projects SECTION*/}
-    <div className='fullstack-stat'>
-      <div className='stat-title'>
-        <h5 style={{border:"0px solid black",padding:"5px 10px",borderRadius:10,opacity:0.4,boxShadow: "inset 1px 1px 5px 1px black",marginBottom:10}}>Projects</h5>
-        <h2>Get Useful Insight</h2>
-      </div>
-
-      <div className="services-pick-fullstack">
-                <h3 onClick={() => setIsSelected("clippify")} className={isSelected === "clippify" ? "selected" : "select"}>Clippify</h3>
-                <h3 onClick={() => setIsSelected("lupody")} className={isSelected === "lupody" ? "selected" : "select"}>Lupody</h3>
-                <h3 onClick={() => setIsSelected("portfolio")} className={isSelected === "portfolio" ? "selected" : "select"}>Portfolio</h3>
-      </div>
-      { isSelected == "clippify" ? (
-        <>
-        <div className='stat-middle'>
-          <div className='middle-table'>
-              <div className='table-row'>
-                    <h2>Project: </h2>
-                    <h4>{Clippify_data.project}</h4>
-              </div>
-
-              <div className='table-row'>
-                    <h2>Registered Users: </h2>
-                    <h4>{Clippify_data.total_users}</h4>
-              </div>
-
-              <div className='table-row'>
-                    <h2>Record traffic: </h2>
-                    <h4>{Clippify_data.record_live_users}</h4>
-              </div>
-              <div className="social_accs">
-                <SocialIcon url="https://github.com/orbant12/Clippify---REST-API" />
-                <SocialIcon url="https://instagram.com/clippify.app" />                   
-              </div>
-          </div>
-
-          <div className='middle-thumbnail'>
-              <img src={Clippify_data.thumbnail} className='thumbnail-image' alt="CTF" />
-              <div className='visit-btn' onClick={() => handleVisitClick("Clippify")}> 
-                  <h3>See All</h3>
-              </div>
-              <h5 style={{position:"absolute",color:"black",marginTop:-290,borderBottom:"1px solid black",opacity:"0.3"}}>Click to see more</h5>
-          </div> 
-        </div>
-
-        <div className='language-row-fullstack'>
-          <ReactOriginal size={50} />
-          <FirebaseOriginal size={50} />
-          <NodejsOriginal size={50} />
-          <GooglecloudOriginal size={50} />
-          <ViteOriginalWordmark size={50} />
-        </div>
-
-        <div className='stat-bottom'>
-          <div className='bottom-box' style={{background: "linear-gradient(to right, cyan 100%, transparent 100%)"}}>
-              <h3>React</h3>
-              <h6>100%</h6>
-          </div>
-
-          <div className='bottom-box' style={{background: "linear-gradient(to right, cyan 100%, transparent 100%)"}}>
-            <h3>Firebase Utils</h3>
-            <h6>100%</h6>
-          </div>
-
-          <div className='bottom-box' style={{background: "linear-gradient(to right, cyan 100%, transparent 100%)"}}>
-            <h3>Node JS</h3>
-            <h6>100%</h6>
-          </div>
-
-          <div className='bottom-box' style={{background: "linear-gradient(to right, cyan 100%, transparent 100%)"}}>
-            <h3>Google Cloud</h3>
-            <h6>100%</h6>
-          </div>
-
-          <div className='bottom-box' style={{background: "linear-gradient(to right, cyan 100%, transparent 100%)"}}>
-            <h3>Vite</h3>
-            <h6>100%</h6>
-          </div>
-
-        </div>
-
-        <div className='tag-section'>
-          <div className='tagbar'>
-            <h5>Skit Learn Libary</h5>
-          </div>
-
-          <div className='tagbar'>
-            <h5>Git</h5>
-          </div>
-
-          <div className='tagbar'>
-            <h5>Anaconda</h5>
-          </div>
-
-          <div className='tagbar'>
-            <h5>Convolutional Neural Network</h5>
-          </div>
-
-          <div className='tagbar'>
-            <h5>OS Script Automation</h5>
-          </div>
-
-          <div className='tagbar'>
-            <h5>Own Data Collection</h5>
-          </div>
-
-          <div className='tagbar'>
-            <h5>NVDIA Cuda</h5>
-          </div> 
-        </div>
-        </>
-      ):isSelected == "lupody" ? (
-        (
-          <>
-          <div className='stat-middle'>
-            <div className='middle-table'>
-                <div className='table-row'>
-                      <h2>Project: </h2>
-                      <h4>{Lupody_data .project}</h4>
-                </div>
-    
-                <div className='table-row'>
-                      <h2>Registered Users: </h2>
-                      <h4>{Lupody_data .total_users}</h4>
-                </div>
-    
-                <div className='table-row'>
-                      <h2>Record traffic: </h2>
-                      <h4>{Lupody_data .record_live_users}</h4>
-                </div>
-
-                <div className="social_accs">
-                  <SocialIcon url="https://github.com/orbant12/Podcast-Social-Media---WebApp.git" />
-                  <SocialIcon url="https://https://www.tiktok.com/@lupody.tv" />                   
-                </div>
-            </div>
-    
-            <div className='middle-thumbnail'>
-              <img src={Lupody_data.thumbnail} className='thumbnail-image' alt="CTF" />
-              <div className='visit-btn'> 
-                  <h3>See All</h3>
-              </div>
-              <h5 style={{position:"absolute",color:"black",marginTop:-290,borderBottom:"1px solid black",opacity:"0.3"}}>Click to see more</h5>
-          </div> 
-          </div>
-    
-          <div className='language-row-fullstack'>
-            <ReactOriginal size={50} />
-            <FirebaseOriginal size={50} />
-            <Css3Original size={50} />
-            <ViteOriginalWordmark size={50} />
-          </div>
-    
-          <div className='stat-bottom'>
-          <div className='bottom-box' style={{background: "linear-gradient(to right, cyan 100%, transparent 100%)"}}>
-              <h3>React</h3>
-              <h6>100%</h6>
-          </div>
-
-          <div className='bottom-box' style={{background: "linear-gradient(to right, cyan 100%, transparent 100%)"}}>
-            <h3>Firebase Utils</h3>
-            <h6>100%</h6>
-          </div>
-
-          <div className='bottom-box' style={{background: "linear-gradient(to right, cyan 80%, transparent 100%)"}}>
-            <h3>CSS</h3>
-            <h6>90%</h6>
-          </div>
-
-          <div className='bottom-box' style={{background: "linear-gradient(to right, cyan 100%, transparent 100%)"}}>
-            <h3>Vite</h3>
-            <h6>100%</h6>
-          </div>
-
-          </div>
-
-          <div className='tag-section'>
-          <div className='tagbar'>
-            <h5>Skit Learn Libary</h5>
-          </div>
-
-          <div className='tagbar'>
-            <h5>Git</h5>
-          </div>
-
-          <div className='tagbar'>
-            <h5>Anaconda</h5>
-          </div>
-
-          <div className='tagbar'>
-            <h5>Convolutional Neural Network</h5>
-          </div>
-
-          <div className='tagbar'>
-            <h5>OS Script Automation</h5>
-          </div>
-
-          <div className='tagbar'>
-            <h5>Own Data Collection</h5>
-          </div>
-
-          <div className='tagbar'>
-            <h5>NVDIA Cuda</h5>
-          </div> 
-        </div>
-          </>
-        )
-      ):isSelected == "portfolio" ? (
-        (
-          <>
-          <div className='stat-middle'>
-            <div className='middle-table'>
-                <div className='table-row'>
-                      <h2>Project: </h2>
-                      <h4>{Portfolio_data.project}</h4>
-                </div>
-    
-                <div className='table-row'>
-                      <h2>Registered Users: </h2>
-                      <h4>{Portfolio_data.total_users}</h4>
-                </div>
-    
-                <div className='table-row'>
-                      <h2>Record traffic: </h2>
-                      <h4>{Portfolio_data.record_live_users}</h4>
-                </div>
-
-                <div className="social_accs">
-                  <SocialIcon url="https://github.com/orbant12/Betterbyte.git" />                 
-                </div>
-            </div>
-    
-            <div className='middle-thumbnail'>
-              <img src={Portfolio_data.thumbnail} className='thumbnail-image' alt="CTF" />
-              <div className='visit-btn'> 
-                  <h3>See All</h3>
-              </div>
-              <h5 style={{position:"absolute",color:"black",marginTop:-290,borderBottom:"1px solid black",opacity:"0.3"}}>Click to see more</h5>
-            </div> 
-          </div>
-    
-          <div className='language-row-fullstack'>
-            <ReactOriginal size={50} />
-            <GooglecloudOriginal size={50} />
-            <FigmaOriginal size={50} />
-            <ViteOriginalWordmark size={50} />
-          </div>
-    
-          <div className='stat-bottom'>
-          <div className='bottom-box' style={{background: "linear-gradient(to right, cyan 100%, transparent 100%)"}}>
-              <h3>React</h3>
-              <h6>100%</h6>
-          </div>
-
-          <div className='bottom-box' style={{background: "linear-gradient(to right, cyan 100%, transparent 100%)"}}>
-            <h3>Google Cloud</h3>
-            <h6>100%</h6>
-          </div>
-
-          <div className='bottom-box' style={{background: "linear-gradient(to right, cyan 80%, transparent 100%)"}}>
-            <h3>Figma</h3>
-            <h6>90%</h6>
-          </div>
-
-          <div className='bottom-box' style={{background: "linear-gradient(to right, cyan 100%, transparent 100%)"}}>
-            <h3>Vite</h3>
-            <h6>100%</h6>
-          </div>
-
-          </div>
-
-          <div className='tag-section'>
-          <div className='tagbar'>
-            <h5>Skit Learn Libary</h5>
-          </div>
-
-          <div className='tagbar'>
-            <h5>Git</h5>
-          </div>
-
-          <div className='tagbar'>
-            <h5>Anaconda</h5>
-          </div>
-
-          <div className='tagbar'>
-            <h5>Convolutional Neural Network</h5>
-          </div>
-
-          <div className='tagbar'>
-            <h5>OS Script Automation</h5>
-          </div>
-
-          <div className='tagbar'>
-            <h5>Own Data Collection</h5>
-          </div>
-
-          <div className='tagbar'>
-            <h5>NVDIA Cuda</h5>
-          </div> 
-        </div>
-          </>
-        )
-      ):null}
+    <div className='flex flex-col items-center border-t mt-16'>
+      <h1 className='text-xl font-medium m-10 p-3 text-white' >Projects</h1>
+      <ProductView 
+        icon={ClippifyImage}
+        title="Clippify"
+        description="A comprehensive course on Fullstack Web Development, covering Frontend, Backend, and Databases."
+        tags={["Web Development", "Frontend", "Backend", "Databases"]}
+        navigation={"/fullstack-projects/clippify"}
+      />
+      <ProductView 
+        icon={ClippifyImage}
+        title="Lupody"
+        description="A comprehensive course on Fullstack Web Development, covering Frontend, Backend, and Databases."
+        tags={["Web Development", "Frontend", "Backend", "Databases"]}
+        navigation={"/fullstack-projects/lupody"}
+      />
+      <ProductView 
+        icon={ClippifyImage}
+        title="Pocket Protect"
+        description="A comprehensive course on Fullstack Web Development, covering Frontend, Backend, and Databases."
+        tags={["Web Development", "Frontend", "Backend", "Databases"]}
+        navigation={"fullstack-projects/lupody"}
+      />
+      <ProductView 
+        icon={ClippifyImage}
+        title="Portfolio Website"
+        description="A comprehensive course on Fullstack Web Development, covering Frontend, Backend, and Databases."
+        tags={["Web Development", "Frontend", "Backend", "Databases"]}
+        navigation={"/lupody"}
+      />
     </div>
+
+
 
     {/*3.) Learning-Path SECTION*/}
     <div className='fullstack-learning'>
-        <h5 style={{border:"0px solid black",padding:"5px 10px",borderRadius:10,opacity:0.4,boxShadow: "inset 1px 1px 5px 1px black"}}>Click the icon for Certificate</h5>
-        <h1 style={{marginTop:10}}>My Learning Journey</h1>
+        <div className='flex flex-col items-center mb-10 '>
+          <h5 style={{border:"0px solid black",padding:"5px 10px",borderRadius:10,opacity:0.4,boxShadow: "inset 1px 1px 5px 1px white",color:"white"}}>Click the icon for Certificate</h5>
+          <h1 style={{marginTop:10, color:"white",fontSize:20}}>My Learning Journey</h1>
+        </div>
 
         <div className='learning-path'>
         {/*FULLSTACK WEB BOOTCAMP - UDEMY COURSE*/}
@@ -409,7 +100,7 @@ return(
               </i>
             </span>
             <div class="timeline-item-description">
-              <span><a href="https://www.udemy.com/course/the-complete-web-development-bootcamp/?couponCode=ACCAGE0923" className='learned-course-title' style={{color:"black"}}>📚 Complete Web Development Bootcamp 📚</a></span>
+              <span><a href="https://www.udemy.com/course/the-complete-web-development-bootcamp/?couponCode=ACCAGE0923" className='learned-course-title text-xs md:text-lg' style={{color:"white"}}>📚 Complete Web Development Bootcamp 📚</a></span>
             </div>
           </li>
           
@@ -425,7 +116,7 @@ return(
               <i class="avatar | small">
                 <img src={AngelaYu} />
               </i>
-              <span><a style={{color:"black"}} className='learned-course-lesson-title' href="https://www.udemy.com/course/the-complete-web-development-bootcamp/?couponCode=ACCAGE0923">Front-End Web Development</a> •-• <a href="https://www.udemy.com/course/the-complete-web-development-bootcamp/?couponCode=ACCAGE0923#instructor-1">Dr. Angela Yu</a> •-• <time datetime="21-01-2021">Dec 11, 2023</time></span>
+              <span><a style={{color:"white"}} className='learned-course-lesson-title' href="https://www.udemy.com/course/the-complete-web-development-bootcamp/?couponCode=ACCAGE0923">Front-End Web Development</a> •-• <a href="https://www.udemy.com/course/the-complete-web-development-bootcamp/?couponCode=ACCAGE0923#instructor-1">Dr. Angela Yu</a> •-• <time datetime="21-01-2021">Dec 11, 2023</time></span>
             </div>
           </li>
           {/*Technology's COURSE ITEM*/}
@@ -440,7 +131,7 @@ return(
               <i class="avatar | small">
                 <img src={AngelaYu} />
               </i>
-              <span><a style={{color:"black"}} className='learned-course-lesson-title' href="https://www.udemy.com/course/the-complete-web-development-bootcamp/?couponCode=ACCAGE0923">Bootstrap, jQuery, Node & Express, EJS, React, SQL, PostgreSQL, Databases </a> •-• <a href="https://www.udemy.com/course/the-complete-web-development-bootcamp/?couponCode=ACCAGE0923#instructor-1">Dr. Angela Yu</a> •-• <time datetime="21-01-2021">Dec 11, 2023</time></span>
+              <span><a style={{color:"white"}} className='learned-course-lesson-title' href="https://www.udemy.com/course/the-complete-web-development-bootcamp/?couponCode=ACCAGE0923">Bootstrap, jQuery, Node & Express, EJS, React, SQL, PostgreSQL, Databases </a> •-• <a href="https://www.udemy.com/course/the-complete-web-development-bootcamp/?couponCode=ACCAGE0923#instructor-1">Dr. Angela Yu</a> •-• <time datetime="21-01-2021">Dec 11, 2023</time></span>
             </div>
           </li>
           {/*BACKEND COURSE ITEM*/}
@@ -455,7 +146,7 @@ return(
               <i class="avatar | small">
                 <img src={AngelaYu} />
               </i>
-              <span><a style={{color:"black"}} className='learned-course-lesson-title' href="https://www.udemy.com/course/the-complete-web-development-bootcamp/?couponCode=ACCAGE0923">Back-End Web Development</a> •-• <a href="https://www.udemy.com/course/the-complete-web-development-bootcamp/?couponCode=ACCAGE0923#instructor-1">Dr. Angela Yu</a> •-• <time datetime="21-01-2021">Dec 11, 2023</time></span>
+              <span><a style={{color:"white"}} className='learned-course-lesson-title' href="https://www.udemy.com/course/the-complete-web-development-bootcamp/?couponCode=ACCAGE0923">Back-End Web Development</a> •-• <a href="https://www.udemy.com/course/the-complete-web-development-bootcamp/?couponCode=ACCAGE0923#instructor-1">Dr. Angela Yu</a> •-• <time datetime="21-01-2021">Dec 11, 2023</time></span>
             </div>
           </li>
           {/*AUTH-SECURITY COURSE ITEM*/}
@@ -470,7 +161,7 @@ return(
               <i class="avatar | small">
                 <img src={AngelaYu} />
               </i>
-              <span><a style={{color:"black"}} className='learned-course-lesson-title' href="https://www.udemy.com/course/the-complete-web-development-bootcamp/?couponCode=ACCAGE0923">Authentication and Security - Handling Credentials & Designing a Secure Login</a> •-• <a href="https://www.udemy.com/course/the-complete-web-development-bootcamp/?couponCode=ACCAGE0923#instructor-1">Dr. Angela Yu</a> •-• <time datetime="21-01-2021">Dec 11, 2023</time></span>
+              <span><a style={{color:"white"}} className='learned-course-lesson-title' href="https://www.udemy.com/course/the-complete-web-development-bootcamp/?couponCode=ACCAGE0923">Authentication and Security - Handling Credentials & Designing a Secure Login</a> •-• <a href="https://www.udemy.com/course/the-complete-web-development-bootcamp/?couponCode=ACCAGE0923#instructor-1">Dr. Angela Yu</a> •-• <time datetime="21-01-2021">Dec 11, 2023</time></span>
             </div>
           </li>
           {/*API COURSE ITEM*/}
@@ -485,7 +176,7 @@ return(
               <i class="avatar | small">
                 <img src={AngelaYu} />
               </i>
-              <span><a style={{color:"black"}} className='learned-course-lesson-title' href="https://www.udemy.com/course/the-complete-web-development-bootcamp/?couponCode=ACCAGE0923">API Types and Architectures</a> •-• <a href="https://www.udemy.com/course/the-complete-web-development-bootcamp/?couponCode=ACCAGE0923#instructor-1">Dr. Angela Yu</a> •-• <time datetime="21-01-2021">Dec 11, 2023</time></span>
+              <span><a style={{color:"white"}} className='learned-course-lesson-title' href="https://www.udemy.com/course/the-complete-web-development-bootcamp/?couponCode=ACCAGE0923">API Types and Architectures</a> •-• <a href="https://www.udemy.com/course/the-complete-web-development-bootcamp/?couponCode=ACCAGE0923#instructor-1">Dr. Angela Yu</a> •-• <time datetime="21-01-2021">Dec 11, 2023</time></span>
             </div>
           </li>
           {/*CERT*/}
@@ -658,3 +349,43 @@ return(
 }
 
 export default FullstackPage;
+
+
+
+const ProductView = ({ icon, title, description, tags, navigation }) => {
+  return (
+    <div className="flex items-start p-10 border border-gray-200 items-center rounded shadow-lg mb-10">
+      <div className="flex flex-col">
+        <h3 className="text-xl font-semibold mb-2 text-white">{title}</h3>
+        <p className="text-gray-400 mb-2 max-w-[90%] text-bac md:text-md lg:text-sd">{description}</p>
+        <div className="flex flex-wrap">
+          {tags.map((tag, index) => (
+            <span
+              key={index}
+              className="bg-blue-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded m-2"
+            >
+              {tag}
+            </span>
+          ))}
+        </div>
+      </div>
+      <div className="flex flex-col justify-center">
+      <div className="relative inline-block">
+        <div className="group">
+          <div className="flex flex-col justify-center bg-white p-4 rounded pr-10 pl-10 transition duration-300 ease-in-out">
+            <h5 className="text-black">Open</h5>
+          </div>
+          <Link to={navigation} className="absolute inset-0 bg-black opacity-90 rounded pr-10 pl-10 flex justify-center items-center group-hover:opacity-100 transition duration-300 ease-in-out cursor-pointer rounded border border-white-800">
+            <h5 className="text-white font-bolder">Open</h5>
+          </Link>
+        </div>
+      </div>
+    </div>
+    </div>
+  );
+};
+
+
+
+
+

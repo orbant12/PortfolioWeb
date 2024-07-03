@@ -1,14 +1,6 @@
 //CSS
 import "../CSS/navbar.css";
-import '../../node_modules/swiper/swiper-bundle.min.css'
-import '../../node_modules/swiper/swiper.min.css'
-
-//MOTION FOR ANIMATED ELEMENTS
-import { motion } from "framer-motion";
-
-//SPLINE 3D
-import Spline from '@splinetool/react-spline';
-
+import "../CSS/mian.css"
 //REACT
 import React from "react";
 
@@ -16,7 +8,7 @@ import React from "react";
 import downArrow from "../assets/down-arrow.png";
 import mePicture from "../assets/mePic.png"
 import GetconLogo from "../assets/gtcon.png"
-
+import '../../node_modules/swiper/swiper-bundle.css';
 //ICONS
 import { SocialIcon } from "react-social-icons";
 
@@ -26,7 +18,6 @@ import ServiceBoxCyber from "../components/serviceBoxCyber";
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Pagination, EffectCoverflow, Autoplay } from 'swiper/modules'
 import ChatMessage from "../components/ClippifyComponents/chatMessage";
-
 import CancelIcon from '@mui/icons-material/Cancel';
 import ServiceBoxMobile from "../components/serviceBoxMobile";
 import ServiceBoxAi from "../components/serviceBoxAi";
@@ -47,6 +38,8 @@ import ClippifyMobileScreen from '../assets/ClippifyMobileScreen.png';
 import LupodyMobileScreen from '../assets/LupodyMobileScreen.png';
 import { Link } from "react-router-dom";
 import MyResume from '../assets/OT_Resume.pdf'
+import { AppleOriginal, DiscordjsOriginal, DiscordjsOriginalWordmark, FacebookOriginal, FigmaOriginal, GoogleOriginal, OpenalOriginal, ReactOriginal } from 'devicons-react';
+
 const LandingPage = () => {
 
 //<**************VARIABLES**********************>
@@ -106,10 +99,6 @@ const slider = [
 const [isSelected, setIsSelected] = React.useState("cross");
 
 const [isAiChatOpen, setIsAiChatOpen]= React.useState(false);
-
-const [assistantInput , setAssistantInput] = React.useState("");
-
-const [chatLog, setChatLog] = React.useState([]);
 
 //WEB DATA
 const webData = {
@@ -192,7 +181,6 @@ function downloadResume() {
 
 //OPEN RESUME
 function openResume() {
-    // Replace 'your_resume_file_url' with the actual URL of the resume file
     const url = MyResume;
     window.open(url, '_blank');
 }
@@ -218,235 +206,19 @@ const handleSeeMore = (navigationTitle) => {
 
 return (
 <div className="landing-page">
-    <div className="row1">
-        <div className="hero">
-            <div className="wrapper">
-                <motion.div
-                    className="textContainer"
-                    variants={textVariants}
-                    initial="initial"
-                    animate="animate"
-                >
-                    <motion.h2 variants={textVariants}>Hi, I'm <span>Tamas. 👋</span></motion.h2>
-                    <motion.h1 variants={textVariants}>
-                    <span className="hero-span">Fullstack Developer</span> and <span className="hero-span">IT Enthusiast</span> in <span className="hero-span">Several Subject</span>. I'm responsible to code your ideas into reality.
-                    </motion.h1>
-                    <motion.div variants={textVariants} className="buttons">
-                        <motion.button variants={textVariants}>
-                            <a onClick={openResume}  href="">See my career resume</a>
-                        </motion.button>
-                        <motion.button variants={textVariants}><a href="/contact">Contact Me</a></motion.button>
-                    </motion.div>
-                    <motion.img
-                        variants={textVariants}
-                        animate="scrollButton"
-                        src={downArrow}
-                        alt="dasdsd"
-                        className="scrollButton"
-                    />
-                </motion.div>
-            </div>
+    <HeroSection 
+        openResume={openResume}
+    />
 
-            <div className="spline3D">
-                <img src={betterByteLogo} className="profile-image" alt="" />
-            </div>
-        </div>
-        <div className="cube-bg">
-            <Spline scene="https://prod.spline.design/8TZXGNPj0BahNLrA/scene.splinecode" />
-        </div>
-    </div>
+    <WidgetSection />
 
-    <div style={{borderTop:"1px solid black", display:"flex",flexDirection:"column"}}>
-        <div id="services">
-            <div className="services-pick">
-                <h3 onClick={() => setIsSelected("web")} className={isSelected === "web" ? "selected" : "select"}>Fullstack</h3>
-                <h3 onClick={() => setIsSelected("cross")} className={isSelected === "cross" ? "selected" : "select"} >Machine Learning</h3>
-                <h3  onClick={() => setIsSelected("cyber")} className={isSelected === "cyber" ? "selected" : "select"}>Cyber Security</h3>
-                <h3 onClick={() => setIsSelected("mobile")} className={isSelected === "mobile" ? "selected" : "select"}>Mobile</h3>
-            </div>
+    <MyPortfolio 
+        slider={slider}
+    />
 
-            <div className="service-show">
-                {/* <ServiceBox props={isSelected === "web" ? webData : isSelected === "mobile" ? mobileData : isSelected === "cross" ? crossData : null} />  */}
-                <div className="service-grid-box">
-                    <h2 className="service-help-title">I CAN HELP YOU</h2>
-                    {isSelected === "web" ?  <ServiceBox /> : isSelected === "mobile" ? <ServiceBoxMobile /> : isSelected === "cross" ? <ServiceBoxAi /> : isSelected === "cyber" ? <ServiceBoxCyber/> : null}
-                </div>
-                {isSelected === "web" ?   
-                <div className="specific-project-show" >
-                    
-                    <div onClick={() => handlePortfolioNavigation("Lupody")} className="project-show">
-                        <h3>Lupody</h3>
-                        <div>
-                            <h6>Social Media Platform</h6>
-                            <h6>Ai Powered</h6>
-                            <h6>Firebase Backend</h6>
-                        </div>
-                        
-                    </div>
 
-                    <div onClick={() => handlePortfolioNavigation("Clippify")} className="project-show">
-                        <h3>Clippify</h3>
-                        <div>
-                            <h6>Ai Clip Analysing</h6>
-                            <h6>Clip Saving and Storing</h6>
-                            <h6>Firebase Backend</h6>
-                        </div>
-                        
-                    </div>
-                </div>  : 
-                isSelected === "mobile" ?  
-                <div className="specific-project-show" >
-                    
-                    <div onClick={() => handlePortfolioNavigation("Lupody Mobile")} className="project-show">
-                        <h3>Lupody Mobile</h3>
-                        <div>
-                            <h6>Social Media Platform</h6>
-                            <h6>Ai Powered</h6>
-                            <h6>Firebase Backend</h6>
-                        </div>
-                        
-                    </div>
-
-                    <div onClick={() => handlePortfolioNavigation("Clippify-Mobile")} className="project-show">
-                        <h3>Clippify Mobile</h3>
-                        <div>
-                            <h6>Ai Clip Analysing</h6>
-                            <h6>Clip Saving and Storing</h6>
-                            <h6>Firebase Backend</h6>
-                        </div>
-                        
-                    </div>
-                </div> 
-                : isSelected === "cross" ? 
-                <div className="specific-project-show" >
-                    
-                <div onClick={() => handlePortfolioNavigation("Clippify")} className="project-show">
-                    <h3>Speech To Text</h3>
-                    <div>
-                        <h6>Self-Made with Tensorflow</h6>
-                        <h6>Recurrent Neural Network</h6>
-                        <h6>CTC loss & Word Error Rate</h6>
-                        <h6>Embedded into Web Application</h6>
-                    </div>
-                    
-                </div>
-
-                <div onClick={() => handlePortfolioNavigation("Clippify")} className="project-show">
-                    <h3>Object Detection</h3>
-                    <div>
-                        <h6>Self-Made with Tensorflow</h6>
-                        <h6>OpenCV</h6>
-                        <h6>Convolutional Neural Network</h6>
-                        <h6>Process for Detecting anything</h6>
-                        <h6>Embedded into Web Application</h6>
-                    </div>
-                    
-                </div>
-
-                <div onClick={() => handlePortfolioNavigation("Clippify")} className="project-show">
-                    <h3>Kaggle Solutions</h3>
-                    <div>
-                        <h6>Free Time Activity</h6>
-                        <h6>ML Algorythms for Competitions</h6>
-                    </div>
-                    
-                </div>
-                </div>  
-                : isSelected === "cyber" ? 
-                <div className="specific-project-show" >
-                    <div onClick={() => handlePortfolioNavigation("Clippify")} className="project-show">
-                        <h3>Capture The Flag</h3>
-                        <div>
-                            <h6>Free Time Activity</h6>
-                            <h6>Hack The Box</h6>
-                            <h6>Try Hack Me</h6>
-                            <h6>Kali Linux</h6>
-                        </div>
-                    </div>
-
-                    <div onClick={() => handlePortfolioNavigation("Clippify")} className="project-show">
-                        <h3>Pentesting My Web Apps</h3>
-                        <div>
-                            <h6>Free Time Activity</h6>
-                            <h6>Hack The Box</h6>
-                            <h6>Try Hack Me</h6>
-                            <h6>Kali Linux</h6>
-                        </div>
-                    </div>
-
-                    <div onClick={() => handlePortfolioNavigation("Clippify")} className="project-show">
-                        <h3>Pentesting My Mobile Apps</h3>
-                        <div>
-                            <h6>Free Time Activity</h6>
-                            <h6>Hack The Box</h6>
-                            <h6>Try Hack Me</h6>
-                            <h6>Kali Linux</h6>
-                        </div>
-                    </div>
-
-                </div> :
-                    null}
-            </div>
-
-            <div id="portfolio">
-                <div className="portfolio-title">
-                    <h1 style={{fontWeight:400,padding:"8px 13px",borderRadius:10,opacity:0.8,boxShadow:"inset -3px -3px 5px 1px black",zIndex:999}}>Portfolio</h1>
-                </div>
-
-                <div style={{marginTop:50, maxWidth:1000,width: 1000,marginBottom:100}}>
-                    <Swiper 
-                        className='myswiper'
-                        modules={[Pagination, EffectCoverflow, Autoplay]}
-                        effect={"coverflow"}
-                        grabCursor={true}
-                        centeredSlides={true}
-                        coverflowEffect={{
-                            rotate: 0,
-                            stretch: 0,
-                            depth: 100,
-                            modifier: 3,
-                            slideShadows: true
-                        }}
-                        loop={true}
-                        pagination={{clickable: true}}
-                        autoplay={{
-                            delay: 5000,
-                            disableOnInteraction: false
-                        }}
-                        breakpoints={{
-                            640: {
-                                slidesPerView: 2
-                            },
-                            768: {
-                                slidesPerView: 1
-                            },
-                            1024: {
-                                slidesPerView: 2
-                            },
-                            1560: {
-                                slidesPerView: 3
-                            },
-                        }}
-                    >
-                        {
-                        slider.map(data => (
-                            <SwiperSlide key={data.title} style={{ backgroundImage: `url(${data.url})` }} className="myswiper-slider">
-                                <div>
-                                    <h2>{data.title}</h2>
-                                    <p>{data.description}</p>
-                                    <div style={{display:"flex",flexDirection:"row",alignItems:"center",justifyContent:"space-between",width:"0%",height:100,marginTop:30}}>
-                                        <img src={data.logo} className="swiper-image" alt="" />
-                                        <a onClick={() => handlePortfolioNavigation(data.title)} target="_blank" className='slider-btn'>explore</a>
-                                    </div>
-                                    
-                                </div>
-                            </SwiperSlide>
-                        ))
-                        }
-                    </Swiper>
-                </div>
-            </div>
-            
+    <div style={{borderTop:"1px solid black", display:"flex",flexDirection:"column", height:"100%"}}>
+        <div id="services">           
             <div className="divider-row">
                 <h4 style={{fontWeight:550,padding:"8px 20px",borderRadius:10,opacity:0.8,boxShadow: "inset -3px -3px 5px 1px black"}} >Worked with ...</h4>
                 <img src={GetconLogo} onClick={() => handleSeeMore("Getcon")}/>
@@ -467,7 +239,7 @@ return (
                         </div>
 
                         <div className="bubble-type2">
-                        <h3>Live Coding</h3>
+                        <h3 className="font-black text-lg">Live Coding</h3>
                             <h5 style={{opacity:0.7,fontWeight:400,marginTop:5}}>Hacking / Data Science<br /> <span style={{fontWeight:800}}>Programming </span><br/></h5>
                             <div className="see-more_btn" onClick={()=> handleSeeMore("Youtube")}>
                                 <h5>Videos</h5>
@@ -478,7 +250,7 @@ return (
                     {/* COL 2 */}
                     <div className="bubbleCol">
                         <div className="bubble-type2">
-                        <h3>Github</h3>
+                        <h3 className="font-black text-lg">Github</h3>
                             <h5 style={{opacity:0.7,fontWeight:400,marginTop:5}}>All of my personal projects<br /> <span style={{fontWeight:800}}>Passion</span><br/></h5>
                             <div style={{display:"flex",flexDirection:"column",justifyContent:"center",alignItems:"center",marginTop:20}}>
                                 <SocialIcon url="https://github.com/orbant12" />
@@ -511,7 +283,7 @@ return (
                         </div>
 
                         <div className="bubble-type2">
-                            <h3>Socials</h3>
+                            <h3 className="font-black text-lg">Socials</h3>
                                 <h5 style={{opacity:0.7,fontWeight:400,marginTop:5}}>Feel free to check me out<br /> <span style={{fontWeight:800}}>Budapest, Hungary</span><br/></h5>
                                 <div className="social_accs">
                                     <SocialIcon url="https://twitter.com/TamasOrban12" />
@@ -535,9 +307,9 @@ return (
                         </div>
 
                         <div className="bubble-type2">
-                            <h3>University</h3>
+                            <h3 className="font-black text-lg">University</h3>
                             <h5 style={{opacity:0.7,fontWeight:400,marginTop:5}}>Vrije University Amsterdam <br /> <span style={{fontWeight:800}}>Computer Science</span><br/></h5>
-                            <div className="see-more_btn">
+                            <div className="see-more_btn text-sm">
                                 <h5>See More</h5>
                             </div>
                         </div>
@@ -546,9 +318,9 @@ return (
                     {/* COL 5 */}
                     <div className="bubbleCol">
                     <div className="bubble-type2">
-                    <h3>Intern Experience</h3>
-                            <h5 style={{opacity:0.7,fontWeight:400,marginTop:5}}>Company: <a href="https://getcon.hu">Getcon</a><br />Duration: 6 months</h5>
-                            <div className="see-more_btn">
+                    <h3 className="text-lg font-black">Intern Experience</h3>
+                            <h5 style={{opacity:0.7,fontWeight:400,marginTop:5, fontSize:12}}>Company: <a  className="text-sm font-black" href="https://getcon.hu">Getcon</a><br />Duration: 6 months</h5>
+                            <div className="see-more_btn text-sm">
                                 <h5>See More</h5>
                             </div>
                     </div>
@@ -568,11 +340,11 @@ return (
             </div>
 
             <div className="aboutme-section">
-                <h2>About Me</h2>
+                <h2 className="font-black text-lg">About Me</h2>
                 <h5 style={{padding:"8px 20px",borderRadius:30,opacity:0.7,boxShadow: "inset 1px 1px 5px 1px black",marginTop:5,fontWeight:550}}>Let me show you with another perspective</h5>
                 <div onClick={() => handlePortfolioNavigation("Vr")} style={{cursor:"pointer"}}> 
                     <div className="spline-visionPro" > 
-                        <Spline scene="https://prod.spline.design/KX8f-KHZwA3H06Gs/scene.splinecode" />
+                        
                     </div>
                 </div>
             </div>
@@ -581,7 +353,7 @@ return (
             <QuestionMarkIcon />
             </div>
 
-            {isAiChatOpen ? 
+            {isAiChatOpen &&
             <div className="ai-chat">
                 <div className="cancel-icon" onClick={() => setIsAiChatOpen(!isAiChatOpen)}>
                     <CancelIcon />
@@ -613,43 +385,415 @@ return (
                         
                     </div>
                 </div>
-            </div> : null}
-
-            <footer className="footer">
-                <div className="container">
-                    <div className="row">
-                        <div className="footer-col">
-                            <h4>Orban Tamas</h4>
-                            <ul>
-                                <li><a href="/about-me">about Me</a></li>
-                                <li><a href="/services">my services</a></li>
-                                
-                            </ul>
-                        </div>
-                        <div className="footer-col">
-                            <h4>Contact Me</h4>
-                            <ul>
-                                <li><a href="#">Discrod</a></li>
-                                <li><a href="#">LinkedIn</a></li>
-                                <li><a href="#">Instagram</a></li>
-                            </ul>
-                        </div>
-                        <div className="footer-col">
-                            <h4>Hire me</h4>
-                            <ul>
-                                <li><a href="#">Upwork</a></li>
-                                <li><a href="#">Email</a></li>
-
-                            </ul>
-                        </div>
-                
-                    </div>
-                </div>
-            </footer>
-
+            </div>}
         </div>
     </div>
 </div>
 )};
 
 export default LandingPage;
+
+
+const PortfolioItem = ({ title, subtitle1, subtitle2, subtitle3, onClick }) => {
+    return (
+      <div
+        onClick={onClick}
+        className="bg-white shadow-lg rounded-lg cursor-pointer hover:shadow-xl hover:border transition duration-300 ease-in-out w-[100%]"
+      >
+        <div className="p-6">
+          <h3 className="text-2xl font-bold text-gray-800 mb-2">{title}</h3>
+          <div className="text-gray-600">
+            <h6 className="text-sm mb-1">{subtitle1}</h6>
+            <h6 className="text-sm mb-1">{subtitle2}</h6>
+            <h6 className="text-sm mb-1">{subtitle3}</h6>
+          </div>
+        </div>
+      </div>
+    );
+  };
+
+
+
+//   const OldHero = () => {
+//     return(
+//         <div className="row1">
+//         <div className="hero">
+//             <div className="wrapper">
+//                 <motion.div
+//                     className="textContainer"
+//                     variants={textVariants}
+//                     initial="initial"
+//                     animate="animate"
+//                 >
+//                     <motion.h2 variants={textVariants}>Hi, I'm <span>Tamas. 👋</span></motion.h2>
+//                     <motion.h1 variants={textVariants}>
+//                     <span className="hero-span">Fullstack Developer</span> and <span className="hero-span">IT Enthusiast</span> in <span className="hero-span">Several Subject</span>. I'm responsible to code your ideas into reality.
+//                     </motion.h1>
+//                     <motion.div variants={textVariants} className="buttons">
+//                         <motion.button className="p-4" variants={textVariants}>
+//                             <a onClick={openResume}  href="">See my career resume</a>
+//                         </motion.button>
+//                         <motion.button className="p-4 ml-5" variants={textVariants}><a href="/contact">Contact Me</a></motion.button>
+//                     </motion.div>
+//                     <motion.img
+//                         variants={textVariants}
+//                         animate="scrollButton"
+//                         src={downArrow}
+//                         alt="dasdsd"
+//                         className="scrollButton"
+//                     />
+//                 </motion.div>
+//             </div>
+
+//             <div className="spline3D">
+//                 <img src={betterByteLogo} className="profile-image" alt="" />
+//             </div>
+//         </div>
+//     </div>
+//     )
+//   }
+
+
+// const OldServices = () => {
+//     return(
+//         <>
+//         <div className="services-pick">
+//         <h3 onClick={() => setIsSelected("web")} className={isSelected === "web" ? "selected" : "select"}>Fullstack</h3>
+//         <h3 onClick={() => setIsSelected("cross")} className={isSelected === "cross" ? "selected" : "select"} >Machine Learning</h3>
+//         <h3  onClick={() => setIsSelected("cyber")} className={isSelected === "cyber" ? "selected" : "select"}>Cyber Security</h3>
+//         <h3 onClick={() => setIsSelected("mobile")} className={isSelected === "mobile" ? "selected" : "select"}>Mobile</h3>
+//     </div>
+
+//     <div className="service-show">
+//         {/* <ServiceBox props={isSelected === "web" ? webData : isSelected === "mobile" ? mobileData : isSelected === "cross" ? crossData : null} />  */}
+//         <div className="service-grid-box">
+//             <h2 className="service-help-title font-bold">I CAN HELP YOU</h2>
+//             {isSelected === "web" ?  <ServiceBox /> : isSelected === "mobile" ? <ServiceBoxMobile /> : isSelected === "cross" ? <ServiceBoxAi /> : isSelected === "cyber" ? <ServiceBoxCyber/> : null}
+//         </div>
+//         {isSelected === "web" ?   
+//         <div className="specific-project-show" >
+            
+//             <PortfolioItem
+//                 title="Lupody"
+//                 subtitle1="Social Media Platform"
+//                 subtitle2="AI Powered"
+//                 subtitle3="Firebase Backend"
+//                 onClick={() => handlePortfolioNavigation("Lupody")}
+//             />
+
+//             <div onClick={() => handlePortfolioNavigation("Clippify")} className="project-show">
+//                 <h3>Clippify</h3>
+//                 <div>
+//                     <h6>Ai Clip Analysing</h6>
+//                     <h6>Clip Saving and Storing</h6>
+//                     <h6>Firebase Backend</h6>
+//                 </div>
+                
+//             </div>
+//         </div>  : 
+//         isSelected === "mobile" ?  
+//         <div className="specific-project-show" >
+            
+//             <div onClick={() => handlePortfolioNavigation("Lupody Mobile")} className="project-show">
+//                 <h3>Lupody Mobile</h3>
+//                 <div>
+//                     <h6>Social Media Platform</h6>
+//                     <h6>Ai Powered</h6>
+//                     <h6>Firebase Backend</h6>
+//                 </div>
+                
+//             </div>
+
+//             <div onClick={() => handlePortfolioNavigation("Clippify-Mobile")} className="project-show">
+//                 <h3>Clippify Mobile</h3>
+//                 <div>
+//                     <h6>Ai Clip Analysing</h6>
+//                     <h6>Clip Saving and Storing</h6>
+//                     <h6>Firebase Backend</h6>
+//                 </div>
+                
+//             </div>
+//         </div> 
+//         : isSelected === "cross" ? 
+//         <div className="specific-project-show" >
+            
+//         <div onClick={() => handlePortfolioNavigation("Clippify")} className="project-show">
+//             <h3>Speech To Text</h3>
+//             <div>
+//                 <h6>Self-Made with Tensorflow</h6>
+//                 <h6>Recurrent Neural Network</h6>
+//                 <h6>CTC loss & Word Error Rate</h6>
+//                 <h6>Embedded into Web Application</h6>
+//             </div>
+            
+//         </div>
+
+//         <div onClick={() => handlePortfolioNavigation("Clippify")} className="project-show">
+//             <h3>Object Detection</h3>
+//             <div>
+//                 <h6>Self-Made with Tensorflow</h6>
+//                 <h6>OpenCV</h6>
+//                 <h6>Convolutional Neural Network</h6>
+//                 <h6>Process for Detecting anything</h6>
+//                 <h6>Embedded into Web Application</h6>
+//             </div>
+            
+//         </div>
+
+//         <div onClick={() => handlePortfolioNavigation("Clippify")} className="project-show">
+//             <h3>Kaggle Solutions</h3>
+//             <div>
+//                 <h6>Free Time Activity</h6>
+//                 <h6>ML Algorythms for Competitions</h6>
+//             </div>
+            
+//         </div>
+//         </div>  
+//         : isSelected === "cyber" ? 
+//         <div className="specific-project-show" >
+//             <div onClick={() => handlePortfolioNavigation("Clippify")} className="project-show">
+//                 <h3>Capture The Flag</h3>
+//                 <div>
+//                     <h6>Free Time Activity</h6>
+//                     <h6>Hack The Box</h6>
+//                     <h6>Try Hack Me</h6>
+//                     <h6>Kali Linux</h6>
+//                 </div>
+//             </div>
+
+//             <div onClick={() => handlePortfolioNavigation("Clippify")} className="project-show">
+//                 <h3>Pentesting My Web Apps</h3>
+//                 <div>
+//                     <h6>Free Time Activity</h6>
+//                     <h6>Hack The Box</h6>
+//                     <h6>Try Hack Me</h6>
+//                     <h6>Kali Linux</h6>
+//                 </div>
+//             </div>
+
+//             <div onClick={() => handlePortfolioNavigation("Clippify")} className="project-show">
+//                 <h3>Pentesting My Mobile Apps</h3>
+//                 <div>
+//                     <h6>Free Time Activity</h6>
+//                     <h6>Hack The Box</h6>
+//                     <h6>Try Hack Me</h6>
+//                     <h6>Kali Linux</h6>
+//                 </div>
+//             </div>
+
+//         </div> :
+//             null}
+//     </div>
+//     </>
+//     )
+// }
+
+  export const HeroSection = ({openResume}) => {
+    return(
+        <div className="row1">
+        <div className="hero-left">
+            <div className="hero-m-title">
+                <h2>Hey I'm Tamas 👋</h2>
+            </div>
+            <div className="hero-s-title">
+                <h4>Fullstack Developer and IT Enthusiast in Several Subject. I'm responsible to code your ideas into reality.</h4>
+            </div>
+            <div className="hero-b-row">
+                <div onClick={openResume} className="filled-btn">
+                    <h4>My Resume</h4>
+                </div>
+                <div className="unfilled-btn">
+                    <h4>About me</h4>
+                </div>
+            </div>
+            <div className="trust-row">
+                <h6>Worked for</h6>
+                <GoogleOriginal size={30} style={{opacity:0.5}} />
+                <FacebookOriginal size={30} style={{opacity:0.5}} />
+                <OpenalOriginal size={30} style={{opacity:0.5}} />
+            </div>
+        </div>
+        <img src={betterByteLogo} alt="" className="w-80 h-80 object-cover rounded border border-gray-200 shadow-md relative hidden lg:block" />
+    </div>
+    )
+};
+
+export const WidgetSection = () => {
+    return(    
+    <section id="why-us">
+        <div className="why-us-divider">
+            <hr />
+            <h6 className="text-xs ">Why Choose me ?</h6>
+            <hr style={{borderImage:"linear-gradient(to left, rgba(0, 0, 0, 0.3), rgba(83, 83, 83)) 1"}} />
+        </div>
+        <h3 className="why-us-title text-center"> <span className="gradient-span-purple">Modern</span> & <span className="gradient-span-green">Powerful</span> skills</h3>
+        <h5 className="why-us-desc">Each member of our team is highly skilled and experienced in their domain, which makes our service quick, powerful and most up to date to the current market</h5>
+
+        <div className="why-bubble-container">
+            <div className="why-us-cont_t-1">
+                <div className="why-bubble-t">
+                    <div className="bubble-title">
+                        <h4>Delightful and <span style={{color:"white",fontWeight:700}}>simple</span> stat</h4>    
+                    </div>
+                    <div className="bubble-badge-green">
+                        <h3>+ 10 000 hours of experience </h3>
+                    </div>
+                </div>
+                
+                <div className="why-bubble-b">
+                    App Developers
+                </div>
+            </div>
+
+            <div className="why-us-cont_t-2">
+                <div className="why-bubble-t">
+                    Machine Learning
+                </div>
+                <div className="why-bubble-b">
+                    Web Developers
+                </div>
+            </div>
+            <div className="why-us-cont_t-3">
+            
+                <div className="why-bubble-t">
+                    Web Developers
+                </div>
+                
+                <div className="why-bubble-b">
+                    Mobile Developers
+                </div>
+            </div>
+        </div>
+
+        <Swiper
+            modules={[Pagination, EffectCoverflow, Autoplay]}
+            spaceBetween={10}
+            slidesPerView={1}
+            centeredSlides={true}
+            navigation
+            loop={true}
+            className="why-bubble-container pager"
+        >
+            <SwiperSlide className="why-us-cont_t-1 self-center flex direction-col">
+                <div className="why-bubble-t">
+                    <div className="bubble-title">
+                    <h4>
+                        Delightful and <span style={{ color: "white", fontWeight: 700 }}>simple</span> stat
+                    </h4>
+                    </div>
+                    <div className="bubble-badge-green">
+                    <h3>+ 10 000 hours of experience </h3>
+                    </div>
+                </div>
+                <div className="why-bubble-b">App Developers</div>
+            </SwiperSlide>
+
+            <SwiperSlide className="why-us-cont_t-2 self-center flex direction-col">
+            <div className="why-bubble-t">Machine Learning</div>
+            <div className="why-bubble-b">Web Developers</div>
+            </SwiperSlide>
+
+            <SwiperSlide className="why-us-cont_t-3 self-center flex direction-col">
+            <div className="why-bubble-t">Web Developers</div>
+            <div className="why-bubble-b">Mobile Developers</div>
+            </SwiperSlide>
+        </Swiper>
+    
+
+</section>)
+};
+
+const MyPortfolio = ({
+    slider
+}) => {
+    return(
+        <section id="services">
+            <div className="why-us-divider">
+                <hr />
+                <h6 className="text-xs ">Why Choose me ?</h6>
+                <hr style={{borderImage:"linear-gradient(to left, rgba(0, 0, 0, 0.3), rgba(83, 83, 83)) 1"}} />
+            </div>
+            <h3 className="why-us-title"> Our <span className="gradient-span-purple">Services</span> </h3>
+            <h5 className="why-us-desc">Each member of our team is highly skilled and experienced in their domain, which makes our service quick, powerful and most up to date to the current market</h5>
+            
+        
+    
+     
+            <div className="services-container">
+                <div id="portfolio">
+                        <Swiper 
+                            className='myswiper'
+                            modules={[Pagination, EffectCoverflow, Autoplay]}
+                            effect={"coverflow"}
+                            grabCursor={true}
+                            centeredSlides={true}
+                            coverflowEffect={{
+                                rotate: 0,
+                                stretch: 0,
+                                depth: 100,
+                                modifier: 3,
+                                slideShadows: true
+                            }}
+                            loop={true}
+                            pagination={{clickable: true}}
+                            autoplay={{
+                                delay: 5000,
+                                disableOnInteraction: false
+                            }}
+                            breakpoints={{
+                                640: {
+                                    slidesPerView: 2
+                                },
+                                768: {
+                                    slidesPerView: 1
+                                },
+                                1024: {
+                                    slidesPerView: 2
+                                },
+                                1560: {
+                                    slidesPerView: 3
+                                },
+                            }}
+                        >
+                            {
+                            slider.map(data => (
+                                <SwiperSlide key={data.title} style={{ backgroundImage: `url(${data.url})` }} className="myswiper-slider">
+                                    <div>
+                                        <h2>{data.title}</h2>
+                                        <p>{data.description}</p>
+                                        <div style={{display:"flex",flexDirection:"row",alignItems:"center",justifyContent:"space-between",width:"0%",height:100,marginTop:30}}>
+                                            <img src={data.logo} className="swiper-image" alt="" />
+                                            <a onClick={() => handlePortfolioNavigation(data.title)} target="_blank" className='slider-btn'>explore</a>
+                                        </div>
+                                        
+                                    </div>
+                                </SwiperSlide>
+                            ))
+                            }
+                        </Swiper>
+                </div>
+            </div>
+    
+            <div className="service-bottom-row">
+                <div className="consultation-box">
+                    <h5>We are up for the challange</h5>
+                    <h2>Appoint a <span>Free</span> consultation</h2>
+                    <h3>In order to make an appointment you will need to answer a few crutial questions designed for understanding your needs ...</h3>
+                    <div className="consultation-btn">
+                        <h4>Get Started</h4>
+                    </div>
+                </div>
+    
+                <div className="consultation-box">
+                    <h5>We are up for the challange</h5>
+                    <h2>Appoint a <span>Free</span> consultation</h2>
+                    <h3>In order to make an appointment you will need to answer a few crutial questions designed for understanding your needs ...</h3>
+                    <div className="consultation-btn">
+                        <h4>Get Started</h4>
+                    </div>
+                </div>
+            </div>
+    
+        </section>
+    )
+}

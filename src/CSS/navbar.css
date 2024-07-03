@@ -12,7 +12,7 @@
 /*NAV BAR*/
 /* ===== Colours ===== */
 :root{
-    --body-color: white;
+    --body-color: rgb(0, 0, 0);
     --nav-color: black;
     --side-nav: #010718;
     --text-color: #FFF;
@@ -21,13 +21,14 @@
 }
 
 body{
-  height: 100vh;
+  height: 100%;
   background-color: var(--body-color);
 }
 
 .landing-page{
-  height: 3500px;
+  height: 100%;
   overflow: hidden;
+  background-color: var(--body-color);
 }
 
 body.dark{
@@ -170,7 +171,7 @@ body.dark .search-field i{
     color: var(--text-color);
 }
 
-@media (max-width: 790px) {
+@media (max-width: 1200px) {
     nav .nav-bar .sidebarOpen{
         display: block;
     }
@@ -222,18 +223,6 @@ body.dark .search-field i{
 }
 
 /*INDEX*/
-
-.row1{
-    position: relative;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    width: 100%;
-    justify-content:space-around;
-    margin-top: 0px;
-    margin-bottom: 50px;
-
-}
 
 .profile-image{
   border: 5px solid whitesmoke;
@@ -354,8 +343,6 @@ a{
     height: 280px;
     object-fit: cover;
     opacity: 1;
-
- 
 }
 
 .cube-bg{
@@ -373,9 +360,8 @@ a{
 #services{
     display: flex;
     flex-direction: column;
-    height: 650px;
-    padding-top: 40px;
-    background-color: white;
+    padding-top: 0px;
+    background-color: rgb(0, 0, 0);
     border-bottom: 1px solid black;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
@@ -532,9 +518,11 @@ a{
 #portfolio{
     display: flex;
     flex-direction: column;
-    height: calc(100vh - 100px);
+    height: 400px;
     align-items: center;
-    margin-top: 200px;
+    align-self: center;
+    margin-top: 0px;
+    width: 100%;
 }
 
 .portfolio-title h1{
@@ -544,8 +532,7 @@ a{
 
 .slider-btn {
     color: #717171;
-    background: black;
-    padding: 0.625rem 1.875rem;
+    background: black;    padding: 0.625rem 1.875rem;
     margin-top: 2.125rem;
     text-decoration: none;
     text-transform: uppercase;
@@ -555,15 +542,16 @@ a{
 }
 
 .slider-btn:hover {
-    border: 0.125rem solid #00a4aa;
-    color: #00a4aa;
+    border: 0.125rem solid #ff88eb;;
+    color: #ff88eb;
 }
 
 
 .myswiper {
     width: 100%;
     padding-top: 3.125rem;
-    height: 280px;
+    height: 300px;
+    margin-top: 50px;
     
 }
 
@@ -582,6 +570,7 @@ a{
     opacity: 1;
     background-color: rgba(0, 0, 0, 0.5);
     height: 300px;
+
 }
 
 .swiper-slide-active div a {
@@ -596,6 +585,7 @@ a{
     margin-bottom: 0.625rem;
     padding: 0 0 0 1.563rem;
     text-transform: uppercase;
+
 }
 
 .myswiper-slider p {
@@ -610,7 +600,7 @@ a{
 }
 
 .myswiper-slider a:hover {
-    color: #00a4aa;
+    color: #ff88eb;
 }
 
 .swiper-pagination-bullet,
@@ -645,10 +635,9 @@ a{
     }
 
     .myswiper {
-      width: 30%;
+      width: 100%;
       padding-top: 3.125rem;
       height: 280px;
-      
   }
 
     .highlight-span2{
@@ -1143,8 +1132,9 @@ body .bubble-type2{
   width: 100%;
   padding:70px;
   height: 100px;
-  background-color: white;
-  box-shadow: 1px 8px 10px 1px black;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 1px 0px 10px 7px rgb(254, 130, 234);
+  opacity: 1;
 }
 
 .divider-row h4{
@@ -1167,7 +1157,7 @@ body .bubble-type2{
 .aboutme-section{
     display: flex;
     flex-direction: column;
-    height: 350px;
+    height:350px;
     margin-top: 30px;
     margin-bottom: 50px;
     width: 800px;
@@ -1175,8 +1165,9 @@ body .bubble-type2{
     margin-right: auto;
     margin-left: auto;
     align-items: center;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
     border-radius: 30px;
+    background-color: white;
 }
 
 .aboutme-section:hover{
@@ -1237,7 +1228,8 @@ body .bubble-type2{
   border-radius: 20px;
   margin-bottom: 30px;
   text-align: center;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  background-color: rgb(255, 255, 255);
 }
 
 .bubble-type2{
@@ -1252,6 +1244,8 @@ body .bubble-type2{
   justify-content: center;
   border-radius: 20px;
   margin-bottom: 30px;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  background-color: rgb(255, 255, 255);
 }
 
 .cert-logo{
@@ -1307,76 +1301,6 @@ body .bubble-type2{
 
 /*FOOTER*/
 
-.container{
-	max-width: 1170px;
-	margin:auto;
-}
-.row{
-	display: flex;
-	flex-wrap: wrap;
-}
-ul{
-	list-style: none;
-}
-.footer{
-	background-color: #24262b;
-    padding: 70px 0;
-}
-.footer-col{
-   width: 25%;
-   padding: 0 15px;
-}
-.footer-col h4{
-	font-size: 18px;
-	color: #ffffff;
-	text-transform: capitalize;
-	margin-bottom: 35px;
-	font-weight: 500;
-	position: relative;
-}
-.footer-col h4::before{
-	content: '';
-	position: absolute;
-	left:0;
-	bottom: -10px;
-	background-color: #e91e63;
-	height: 2px;
-	box-sizing: border-box;
-	width: 50px;
-}
-.footer-col ul li:not(:last-child){
-	margin-bottom: 10px;
-}
-.footer-col ul li a{
-	font-size: 16px;
-	text-transform: capitalize;
-	color: #ffffff;
-	text-decoration: none;
-	font-weight: 300;
-	color: #bbbbbb;
-	display: block;
-	transition: all 0.3s ease;
-}
-.footer-col ul li a:hover{
-	color: #ffffff;
-	padding-left: 8px;
-}
-.footer-col .social-links a{
-	display: inline-block;
-	height: 40px;
-	width: 40px;
-	background-color: rgba(255,255,255,0.2);
-	margin:0 10px 10px 0;
-	text-align: center;
-	line-height: 40px;
-	border-radius: 50%;
-	color: #ffffff;
-	transition: all 0.5s ease;
-}
-.footer-col .social-links a:hover{
-	color: #24262b;
-	background-color: #ffffff;
-}
 
 /*AI BUTOTNS*/
 
@@ -1387,14 +1311,14 @@ ul{
     height: 60px;
     width: 60px;
     border-radius: 50%;
-    background-color: black;
+    background-color: rgb(255, 255, 255);
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     z-index: 100;
-    color: white;
+    color: rgb(0, 0, 0);
 }
 
 .ai-chat-support:hover{
@@ -2656,4 +2580,6 @@ body {
     width: 100%;
 }
 }
+
+
 

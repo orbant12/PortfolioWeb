@@ -1,27 +1,60 @@
 
 //REACT
 import { useParams } from "react-router-dom";
-import {useEffect,useState} from 'react';
-
-//CSS
 import "./f-projects.css"
-
-//DATA JSON --> portfolio.jsx
+import {useEffect,useState} from 'react';
+import ClippifyLogo from "../../assets/Clippify-log.svg";
+import ClippifyThumbnail from "../../assets/ClippifyScreen.png"
+import { FirebaseOriginal, GooglecloudOriginal, NodejsOriginal,ViteOriginalWordmark,AndroidOriginal, AppleOriginal, ExpressOriginal, ReactOriginal, Css3Original } from 'devicons-react';
+import {
+    ClippifyData
+} from '../../portfolio.jsx'
+import {FaArrowRight} from "react-icons/fa";
+import { SocialIcon } from "react-social-icons";
+import LupodyThumbnail from "../../assets/LupodyScreen2.png"
+import PortfolioThumbnail from "../../assets/Portfolio.png"
+import "./f-projects.css"
 import {
     LupodyData
 } from '../../portfolio.jsx'
-
-//ICONS
 import GitHubIcon from '@mui/icons-material/GitHub';
+import { BoxProgressRow, IconRow, MadeMeExpertIn, TableMiddleStat, TableNavbar, TableTagRow, TableTitle } from "./Clippify.jsx";
 
 
-import {FaArrowRight} from "react-icons/fa";
 
 const LupodyPage = () => {
 
     const [isSelectedDate, setIsSelectedDate] = useState("Month");
+    const [isSelected, setIsSelected] = useState("web");
 
     const { id } = useParams();
+
+    const handleVisitClick = (navigationTitle) => {
+        //Coursera Notes
+        if(navigationTitle == "Clippify"){
+            window.location.href = "https://clippify.net/landing"
+        }
+    }
+
+    const Mobile_data = {
+        "project": 11,
+        "total_users": 0,
+        "record_live_users": 0,
+    }
+
+    const Clippify_data = {
+        "project": 11,
+        "total_users": 31,
+        "record_live_users": 13,
+        "thumbnail":ClippifyThumbnail 
+      }
+
+      const Portfolio_data = {
+        "project": 0,
+        "total_users": 0,
+        "record_live_users": 0,
+        "thumbnail": PortfolioThumbnail
+      }
 
     const [pageData,setPageData] = useState({
         title:"",
@@ -52,77 +85,24 @@ const LupodyPage = () => {
                 </div>
             </div>
             </div>
-            <div className="project-stat">
-                <div className="stat-top">
-                    <h4 onClick={() => setIsSelectedDate("Month")} className={isSelectedDate == "Month"?("selected-date"):("not-selected-date")}>Month</h4>
-                    <h4 onClick={() => setIsSelectedDate("Year")} className={isSelectedDate == "Year"?("selected-date"):("not-selected-date")}>Year</h4>
-                    <h4 onClick={() => setIsSelectedDate("All-Time")} className={isSelectedDate == "All-Time"?("selected-date"):("not-selected-date")}>All Time</h4>
-                </div>
-                <div className="stat-bottom">
-                    <div className="stat-item">
-                        <h2>2 lvl</h2>
-                        <h5>Are currently spam</h5>
-                    </div>
-                    <div className="stat-item">
-                        <h2>2 lvl</h2>
-                        <h5>Are currently spam</h5>
-                    </div>
-                    <div className="stat-item">
-                        <h2>2 lvl</h2>
-                        <h5>Are currently spam</h5>
-                    </div>
-                    <div className="stat-item" style={{border:"none"}}>
-                        <h2>2 lvl</h2>
-                        <h5>Are currently spam</h5>
-                    </div>
-                </div>
-            </div>
+     
             <div className="project-details-page">
-                <h4 className="d-p-title">About The Project</h4>
+                {/* <h4 className="d-p-title">About The Project</h4> */}
                 <div className="portfolio-page" >
-                    <div className="intro-box">
-                        <div className="intro-left-bar">
-                            <h3 className="intro-left-title">{id}</h3>
-                            <ul className="intro-left-list">
-                                {pageData.list.map((item,index) => {
-                                    return(
-                                        <li key={index}>{item}</li>
-                                    )
-                                })}
-                            </ul>
-                        </div>
-                        <div className="youtube-frameDiv">
-                            <iframe className="youtube-frame" src={pageData.youtube} title="YouTube video player" frameBorder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
-                        </div>
-                    </div>
-
-                    <div className="this-project-box">
-                        <h3 className="this-project-title">This Project <br /> Made Me an Expert In</h3>
-                        {pageData.expertise.map((item, index) => {
-                            return (
-                                <div key={index}>
-                                    <div className="github-link">
-                                        <GitHubIcon />
-                                    </div>
-                                <div className={index % 2 == 0 ? "experience-box" : "experience-box-reverse"} key={index}>
-                                    <img className="exp-img" src={item.logo} alt="" />
-                                    <div className="exp-text">
-                                        
-                                        <h4 className="exp-title">{item.title}</h4>
-                                        <ul>
-                                            {item.text.map((item2, index2) => {
-                                                return (
-                                                    <li key={index2}>{item2}</li>
-                                                )
-                                            })}
-                                        </ul> 
-                                    </div>
-                                </div>
-                                    {item.show && item.show()}
-                            </div>
-                            );
-                        })}
-                    </div>
+                    <VideoContainer 
+                        pageData={pageData}
+                    />
+                    <TableForStats 
+                        isSelected={isSelected}
+                        setIsSelected={setIsSelected}
+                        Clippify_data={Clippify_data}
+                        Portfolio_data={Portfolio_data}
+                        handleVisitClick={handleVisitClick}
+                        Mobile_data={Mobile_data}
+                    />
+                    <MadeMeExpertIn 
+                        pageData={pageData}
+                    />
                 </div>
             </div>
         </div>
@@ -130,3 +110,141 @@ const LupodyPage = () => {
 }
 
 export default LupodyPage;
+
+const VideoContainer = ({
+    pageData,
+}) => {
+    return(
+        <div className="details-container">
+        <div className="d-cont-left">
+            <div className="l-title">
+                <div className="l-logo">
+                    <img src={ClippifyLogo} alt="" />
+                </div>
+                <h6>What is Clippify ?</h6>
+                <h1>Clippify</h1>
+            </div>
+            <div className="l-desc">
+            <h5>Clippify enables you to effortlessly collect and store video clips from various sources. Whether it's the funny moments from your family gatherings, educational tutorials, or your favorite movie quotes, Clippify helps you organize and access them with ease.</h5><br />
+                <h5>Clippify enables you to effortlessly collect and store video clips from various sources. Whether it's the funny moments from your family gatherings, educational tutorials, or your favorite movie quotes, Clippify helps you organize and access them with ease.</h5>
+            </div>
+        </div>
+
+        <div className="d-video-frame">
+            <iframe className="m-video-frame" src={pageData.youtube} title="YouTube video player" frameBorder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+        </div>
+    </div>
+    )
+}
+
+const TableForStats = ({
+    isSelected,
+    setIsSelected,
+    Clippify_data,
+    Lupody_data,
+    Portfolio_data,
+    handleVisitClick,
+    Mobile_data 
+}) => {
+    return(
+        <div className='fullstack-stat'>
+        <TableTitle />
+  
+        <TableNavbar
+            setValue={setIsSelected}
+            titles={[
+                {text:"Web",value:"web"},
+                {text:"Mobile",value:"mobile"},
+                
+            ]}
+            value={isSelected}
+        />
+        { isSelected == "web" ? (
+        <>
+            <TableMiddleStat
+                    Clippify_data={Clippify_data}
+                    handleVisitClick={handleVisitClick}
+                    socials={[
+                        {url:"https://github.com/orbant12/Podcast-Social-Media---WebApp.git"},
+                        {url:"https://https://www.tiktok.com/@lupody.tv"}
+                    ]}
+            />
+
+            <IconRow
+                icons={[
+                    <ReactOriginal size={50} />,
+                    <FirebaseOriginal size={50} />,
+                    <Css3Original size={50} />,
+                    <ViteOriginalWordmark size={50} />
+                ]}
+            />
+
+        <BoxProgressRow
+            items={[
+                {title:"React",progress:"100%"},
+                {title:"Firebase Utils",progress:"100%"},
+                {title:"Node JS",progress:"100%"},
+                {title:"Google Cloud",progress:"100%"},
+                {title:"Vite",progress:"100%"}
+            ]}
+        />
+  
+        <TableTagRow
+            tags={[
+                "Skit Learn Libary",
+                "Git",
+                "Anaconda",
+                "Convolutional Neural Network",
+                "OS Script Automation",
+                "Own Data Collection",
+                "NVDIA Cuda"
+            ]}
+          />
+          </>
+        ):isSelected == "mobile" &&(
+            (
+                <>
+                <TableMiddleStat 
+                    Clippify_data={Mobile_data}
+                    handleVisitClick={handleVisitClick}
+                    socials={[
+                        {url:"https://github.com/orbant12/Podcast-Social-Media---WebApp.git"},
+                        {url:"https://https://www.tiktok.com/@lupody.tv"}
+                    ]}
+                />
+
+                <IconRow 
+                    icons={[
+                        <ReactOriginal size={50} />,
+                        <ExpressOriginal size={50} />,
+                        <FirebaseOriginal size={50} />,
+                        <AppleOriginal size={50} />,
+                        <AndroidOriginal size={50} />
+                    ]}
+                />
+                <BoxProgressRow
+                    items={[
+                        {title:"React Native",progress:"100%"},
+                        {title:"Expo",progress:"80%"},
+                        {title:"Firebase Utils",progress:"100%"},
+                        {title:"Appstore",progress:"100%"},
+                        {title:"PlayStore",progress:"100%"}
+                    ]}
+                />
+                <TableTagRow
+                    tags={[
+                        "Skit Learn Libary",
+                        "Git",
+                        "Anaconda",
+                        "Convolutional Neural Network",
+                        "OS Script Automation",
+                        "Own Data Collection",
+                        "NVDIA Cuda"
+                    ]}
+                />
+                </>
+              )
+        )}
+      </div>
+    )
+}

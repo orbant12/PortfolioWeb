@@ -230,7 +230,7 @@ html {
     width: 100%;
     margin-right: auto;
     margin-left: auto;
-    margin-top: 50px;
+    margin-top: 20px;
     align-items: center;
 }
 
@@ -541,6 +541,7 @@ html {
     height: 100%;
     align-items: center;
     justify-content: center;
+    margin: 30px;
 }
 
 .m-video-frame{
@@ -560,10 +561,12 @@ html {
     flex-direction: column;
     width: 10%;
     justify-content: space-between;
-    border-left: 0.1px solid black;
+    border-left: 3px solid rgb(212, 212, 212);
     padding: 5px 15px;
     height: 50%;
     margin-left: 50px;
+    position: absolute;
+    right: 0;
 }
 
 .d-cont-right a{
@@ -635,16 +638,7 @@ html {
         border-radius: 50px;
     }
     .d-cont-right{
-        display: flex;
-        flex-direction: row;
-        width: 80%;
-        justify-content: space-between;
-        border-top: 0.1px solid black;
-        border-left: 0px solid black;
-        padding: 5px 15px;
-        height: 10%;
-        margin-left: 0px;
-        margin-bottom: 70px;
+        display: none;
     }
 }
 
@@ -677,6 +671,39 @@ html {
         height: 300px;
         align-items: center;
         justify-content: center;
+        margin-bottom: 30px;
+    }
+    .experience-box{
+        width: 400px;
+        margin-left: auto;
+        margin-right: auto;
+        
+    }
+    .experience-box .exp-text{
+        font-size: 13px;
+       
+    }
+    .experience-box-reverse{
+        width: 400px;
+        margin-left: auto;
+        margin-right: auto;
+        
+    }
+    .experience-box-reverse .exp-text{
+        font-size: 13px;
+       
+    }
+    .experience-show{
+        display: flex;
+        flex-direction: column;
+        width: 400px;
+        height: 250px;
+        margin-right: auto;
+        margin-left: auto;
+        align-items: center;
+        box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
         margin-bottom: 30px;
     }
 }

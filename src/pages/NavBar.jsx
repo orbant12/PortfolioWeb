@@ -1,3 +1,4 @@
+
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import '../CSS/NavBar.css';
@@ -22,28 +23,35 @@ const handleBurgerMenuClose2 = () => {
 
 
 return (
-  <nav>
-    <div className="nav-bar active">
-      <i className='bx bx-menu sidebarOpen' onClick={handleBurgerMenuOpen2}/>
-      <span className="logo navLogo"><a href="/">betterByte</a></span>
-      <div className="menu show">
-        <div className="logo-toggle ">
-          <span className="logo"><a href="#">betterByte</a></span>
-          <i className='bx bx-x siderbarClose' onClick={handleBurgerMenuClose2}></i>
-        </div>
-        <ul className="nav-links">
+  <>
+    <div className='add-bar'>
+          <span>Get 20% off on all services</span>
+    </div>
+    <nav className='sticky'>
+      <div className="nav-bar active">
+        <i className='bx bx-menu sidebarOpen' onClick={handleBurgerMenuOpen2}/>
+        <span className="logo navLogo"><a href="/">Tamas Orban</a></span>
+        <div className="menu show">
+          <div className="logo-toggle ">
+            <span className="logo"><a href="#">betterByte</a></span>
+            <i className='bx bx-x siderbarClose' onClick={handleBurgerMenuClose2}></i>
+          </div>
+          <ul className="nav-links">
           <li><a href="/fullstack-projects">Fullstack</a></li>
           <li><a href="/machine_learning-projects">Machine Learning</a></li>
           <li><a href="/cyber_security-projects">Pentesting</a></li>
           <li><a href="/mobile-projects">Mobile</a></li>
-        </ul>
+          </ul>
+        </div>
+      
+        <div className="nav-more">
+            <a href="/about-me">About</a>
+            <a>|</a>
+            <a href="/contact">Contact</a>
+        </div>
       </div>
-      <div className="nav-more">
-          <a href="/about-me">About</a>
-          <a href="/contact">Contact</a>
-      </div>
-    </div>
-  </nav>
+    </nav>
+  </>
 )};
 
 export default NavBar;
