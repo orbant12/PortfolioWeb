@@ -44,6 +44,46 @@ const FullstackPage = () => {
 
   //<**********-DATA-*****************>
 
+  const AnimatedBackground = () => (
+    <>
+      <style jsx>{`
+        @keyframes backgroundFade {
+          0% {
+            background-color: rgba(255, 255, 255, 0.1);
+          }
+          50% {
+            background-color: rgba(255, 255, 255, 0.3);
+          }
+          100% {
+            background-color: rgba(255, 255, 255, 0.1);
+          }
+        }
+  
+        .animated-bg {
+          animation: backgroundFade 5s infinite;
+        }
+      `}</style>
+    </>
+  );
+
+  const FadeIn = () => (
+    <style jsx>{`
+      @keyframes fadeIn {
+        0% {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .fade-in {
+        animation: fadeIn 1s ease-in-out;
+      }
+    `}</style>
+  )
 
 const handleOpen = (certInput) => {
   setOpen(true);
@@ -55,7 +95,8 @@ const handleClose = () => setOpen(false);
 return(
   <div ref={scroll} className="fullstack">
     {/*1.) Hero SECTION*/}
-    <div className='flex flex-col w-[70%] p-0 mt-20'>
+    <FadeIn />
+    <div className='flex flex-col w-[70%] p-0 mt-20 fade-in'>
 
         <div className="flex flex-row justify-between mb-5 mt-0 bg-white px-5 py-2 rounded relative" style={{ width: 180 }}>
           <h5 className='absolute bottom-11 text-white text-xs opacity-60 left-0 font-medium'>Click to switch</h5>
@@ -77,16 +118,17 @@ return(
  
       {selectedFullstack === 'web' ? (
         <>
-          <div className="flex flex-col mt-10 items-center p-5 bg-gray-900 rounded lg:flex-row lg:justify-between ">
-            <h1 className="text-white text-md opacity-85 self-center font-bold lg:self-left">Frontend: </h1>
-              <div className="flex flex-row items-center p-5 bg-gray-900 rounded">
+          <AnimatedBackground />
+          <div className="flex flex-col mt-10 items-center p-5 bg-gray-900 rounded lg:flex-row lg:justify-between animated-bg">
+            <h1 className="text-white text-md opacity-85 self-center font-bold lg:self-left mb-5 lg:mb-0">Frontend: </h1>
+              <div className="flex flex-row items-center p-5 rounded" style={{backgroundColor:"rgba(0,0,0,0.4)"}}>
                 <JavascriptOriginal className="mr-8 mt-4 lg:mt-0" size={35} />
                 <TypescriptOriginal className="mr-8 mt-4 lg:mt-0" size={35} />
                 <Html5Original className="mr-8 mt-4 lg:mt-0" size={35} />
                 <Css3Original className="mr-0 mt-4 lg:mt-0" size={35} />
               </div>
                 <h3 className="text-white lg:ml-0 lg:mt-0 lg:mb-0 my-5">•</h3>
-                <div className="flex flex-wrap items-center p-3 bg-gray-600 rounded lg:ml-8 justify-center">
+                <div className="flex flex-wrap items-center p-3 rounded lg:ml-8 justify-center" style={{backgroundColor:"rgba(0,0,0,0.4)"}}>
                   <ReactOriginal className="m-3 mx-4" size={35} />
                   <VitejsOriginal color='white' className='m-3 mx-4' size={35} />
                   <NextjsOriginal className='m-3 mx-4' size={35} />
@@ -94,16 +136,16 @@ return(
                 </div>
         </div>
 
-        <div className="flex flex-col mt-10 items-center p-3 bg-gray-900 rounded lg:flex-row lg:justify-between" >
-            <h1 className="text-white text-md opacity-85 self-center font-bold lg:self-left">Backend: </h1>
-              <div className="flex flex-row items-center p-5 bg-gray-900 rounded">
+        <div className="flex flex-col mt-10 items-center p-5 bg-gray-900 rounded lg:flex-row lg:justify-between animated-bg">
+            <h1 className="text-white text-md opacity-85 self-center font-bold lg:self-left mb-5 lg:mb-0">Backend: </h1>
+              <div className="flex flex-row items-center p-5 bg-gray-900 rounded" style={{backgroundColor:"rgba(0,0,0,0.4)"}}>
                 <GoOriginal className="mr-8 mt-4 lg:mt-0" size={35} />
                 <JavascriptOriginal className="mr-8 mt-4 lg:mt-0" size={35} />
                 <TypescriptOriginal className="mr-8 mt-4 lg:mt-0" size={35} />
                 <PythonOriginal className="ml-0 mt-4 lg:mt-0" size={35} />
               </div>
                 <h3 className="text-white lg:ml-0 lg:mt-0 lg:mb-0 my-5">•</h3>
-                <div className="flex flex-wrap items-center p-3 bg-gray-600 rounded lg:ml-8 justify-center">
+                <div className="flex flex-wrap items-center p-3 bg-gray-600 rounded lg:ml-8 justify-center" style={{backgroundColor:"rgba(0,0,0,0.4)"}}>
                   <NodejsOriginal className="m-3 mx-4" size={35} />
                   <ExpressOriginal color='white' className='m-3 bg-white rounded p-1 mx-4' size={35} />
                   <FlaskOriginal className='m-3 mx-4 bg-white rounded p-1' size={35} />

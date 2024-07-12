@@ -27,7 +27,7 @@ return (
     <div className='add-bar'>
           <span>Get 20% off on all services</span>
     </div>
-    <nav className='sticky'>
+    <nav className='sticky' style={{zIndex:100}}>
       <div className="nav-bar active">
         <i className='bx bx-menu sidebarOpen' onClick={handleBurgerMenuOpen2}/>
         <span className="logo navLogo ml-3"><a href="/" className='text-sm'>Tamas Orban</a></span>

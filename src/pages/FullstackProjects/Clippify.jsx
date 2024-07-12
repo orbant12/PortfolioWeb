@@ -1,7 +1,7 @@
 
 import "./f-projects.css"
 import { useParams } from "react-router-dom";
-import {useEffect,useState} from 'react';
+import {useEffect,useState,useRef} from 'react';
 import ClippifyLogo from "../../assets/Clippify-log.svg";
 import ClippifyThumbnail from "../../assets/ClippifyScreen.png"
 import { FirebaseOriginal, GooglecloudOriginal, NodejsOriginal,ViteOriginalWordmark,AndroidOriginal, AppleOriginal, ExpressOriginal, ReactOriginal } from 'devicons-react';
@@ -20,6 +20,25 @@ const ClippifyPage = () => {
 
     const [isSelectedDate, setIsSelectedDate] = useState("Month");
     const [isSelected, setIsSelected] = useState("web");
+
+    const [isScrolledPassed, setIsScrolledPassed] = useState(false);
+    const [selectedFullstack, setSelectedFullstack] = useState('web');
+
+    const scroll = useRef(null);
+
+    useEffect(() => {
+        const handleScroll = () => {
+          if (scroll.current.getBoundingClientRect().top < -1000) {
+            setIsScrolledPassed(true);
+          } else {
+            setIsScrolledPassed(false);
+          }
+        };
+        window.addEventListener("scroll", handleScroll);
+        return () => {
+          window.removeEventListener("scroll", handleScroll);
+        };
+      }, []);
 
       const Portfolio_data = {
         "project": 0,
@@ -52,7 +71,7 @@ const ClippifyPage = () => {
     },[]);
 
     return (
-        <div className="project-page" id="clippify">
+        <div ref={scroll} className="project-page" id="clippify">
             <Header 
                 handleVisitClick={handleVisitClick}
                 setIsSelectedDate={setIsSelectedDate}
@@ -75,6 +94,25 @@ const ClippifyPage = () => {
                     />
                 </div>
             </div>
+            {isScrolledPassed &&
+                <div className='fixed w-[100%]' style={{borderTopWidth:3,top:70}}>
+                <div className="flex flex-row justify-between mb-5 mt-0 bg-black px-5 py-3" style={{ width: 200,borderColor:"white", borderWidth:3,borderTop:0, marginLeft:40,borderRadius:10, borderTopLeftRadius:0, borderTopRightRadius:0, boxShadow:"0px 0px 0px 0px white" }}>
+                <h4 
+                    className={`text-white cursor-pointer ${selectedFullstack === 'web' ? 'font-bold opacity-100' : 'opacity-40'}`}
+                    onClick={() => setSelectedFullstack('web')}
+                >
+                    Web
+                </h4>
+                <h4 className='text-white'>|</h4>
+                <h4 
+                    className={`text-white cursor-pointer ${selectedFullstack === 'mobile' ? 'font-bold opacity-100' : 'opacity-40'}`}
+                    onClick={() => setSelectedFullstack('mobile')}
+                >
+                    Mobile
+                </h4>
+            </div>
+                </div>
+            }
         </div>
     );
 }
@@ -88,22 +126,22 @@ const Header = ({
     isSelectedDate
 }) => {
     return(
-        <>
+        <div className="flex -mt-10 mb-20">
             <div className="project-hero">
             <div className="hero-top">
                 <h2>Clippify</h2>
-                <h1>Your second brain software for storing video information</h1>
-                <h5>Clippify enables you to effortlessly collect and store video clips from various sources. Whether it's the funny moments from your family gatherings, educational tutorials...</h5>
+                <h1 className="text-3xl text-white w-[90%] md:w-[50%] md:text-5xl ">Your second brain software for storing video information</h1>
+                <h5 className="text-xs text-white opacity-50 w-[90%] md:w-[50%] md:text-5xs">Clippify enables you to effortlessly collect and store video clips from various sources. Whether it's the funny moments from your family gatherings, educational tutorials...</h5>
             </div>
 
             <div className="hero-bottom">
             <div className="visit-p-btn" onClick={() => handleVisitClick("Clippify")}>
                 <h4>Visit Clippify WebApp</h4>
-                <FaArrowRight />
+                <FaArrowRight className="arrow active" />
             </div>
         </div>
             </div>
-            <div className="d-cont-right">
+            <div className="d-cont-right" style={{marginRight:40}}>
                 <a href="#Skills">Skills & Version</a>
                 <a href="#Skills">Problems</a>
                 <a href="#Lexical Rich Text Editor">Text Editor</a>
@@ -139,7 +177,7 @@ const Header = ({
                     </div>
                 </div>
             </div> */}
-        </>
+        </div>
     )
 }
 
@@ -158,7 +196,6 @@ const VideoContainer = ({
             </div>
             <div className="l-desc">
             <h5>Clippify enables you to effortlessly collect and store video clips from various sources. Whether it's the funny moments from your family gatherings, educational tutorials, or your favorite movie quotes, Clippify helps you organize and access them with ease.</h5><br />
-                <h5>Clippify enables you to effortlessly collect and store video clips from various sources. Whether it's the funny moments from your family gatherings, educational tutorials, or your favorite movie quotes, Clippify helps you organize and access them with ease.</h5>
             </div>
         </div>
 
@@ -242,6 +279,10 @@ const TableForStats = ({
             <TableMiddleStat 
                     Clippify_data={Clippify_data}
                     handleVisitClick={handleVisitClick}
+                    socials={[
+                        {url:"https://github.com/orbant12/Podcast-Social-Media---WebApp.git"},
+                        {url:"https://https://www.tiktok.com/@lupody.tv"}
+                    ]}
             />
 
             <IconRow 
@@ -298,20 +339,10 @@ const TableForStats = ({
                         <AndroidOriginal size={50} />
                     ]}
                 />
-                <BoxProgressRow
-                    items={[
-                        {title:"React Native",progress:"100%"},
-                        {title:"Expo",progress:"80%"},
-                        {title:"Firebase Utils",progress:"100%"},
-                        {title:"Appstore",progress:"100%"},
-                        {title:"PlayStore",progress:"100%"}
-                    ]}
-                />
-        
                 <TableTagRow
                     tags={[
-                        "Skit Learn Libary",
-                        "Git",
+                        "Unit Tested",
+                        "Version Controlled",
                         "Anaconda",
                         "Convolutional Neural Network",
                         "OS Script Automation",
@@ -329,8 +360,8 @@ const TableForStats = ({
 export const TableTitle = ({}) => {
     return(
         <div className='stat-title'>
-            <h5 style={{border:"0px solid black",padding:"5px 10px",borderRadius:10,opacity:0.4,boxShadow: "inset 1px 1px 5px 1px black",marginBottom:10}}>Skills & Versions</h5>
-            <h2>Get Useful Insight</h2>
+            <h5 style={{border:"0px solid white",padding:"5px 10px",borderRadius:10,opacity:0.4,boxShadow: "inset 1px 1px 5px 1px white",marginBottom:10,color:"white"}}>Skills & Versions</h5>
+            <h2 className="text-white text-xl">Get Useful Insight</h2>
         </div>
     )
 }
@@ -360,7 +391,7 @@ export const TableTagRow = ({
             {tags.map((tag, index) => {
                 return (
                     <div key={index} className='tagbar'>
-                        <h5>{tag}</h5>
+                        <h5 className="text-white text-md font-medium">{tag}</h5>
                     </div>
                 )
             })}
@@ -375,9 +406,9 @@ export const BoxProgressRow = ({
         <div className='stat-bottom'>
             {items.map((item, index) => {
                 return (
-                    <div key={index} className='bottom-box' style={{background: `linear-gradient(to right, cyan ${item.progress}, transparent ${item.progress})`}}>
-                        <h3>{item.title}</h3>
-                        <h6>{item.progress}</h6>
+                    <div key={index} className='bottom-box' style={{background: `linear-gradient(to right, #cc87fc ${item.progress}, transparent ${item.progress})`}}>
+                        <h3 className="text-lg font-bold">{item.title}</h3>
+                        <h6 className="text-md font-bold">{item.progress}</h6>
                     </div>
                 )
             })}
@@ -412,17 +443,17 @@ export const TableMiddleStat = ({
         <div className='middle-table'>
             <div className='table-row'>
                 <h2>Project: </h2>
-                <h4>{Clippify_data.project}</h4>
+                <h4>{Clippify_data?.project}</h4>
             </div>
 
             <div className='table-row'>
                 <h2>Registered Users: </h2>
-                <h4>{Clippify_data.total_users}</h4>
+                <h4>{Clippify_data?.total_users}</h4>
             </div>
 
             <div className='table-row'>
                 <h2>Record traffic: </h2>
-                <h4>{Clippify_data.record_live_users}</h4>
+                <h4>{Clippify_data?.record_live_users}</h4>
             </div>
             <div className="social_accs">
                    {socials.map((social, index) => {
@@ -434,7 +465,7 @@ export const TableMiddleStat = ({
         </div>
 
         <div className='middle-thumbnail'>
-            <img src={Clippify_data.thumbnail} className='thumbnail-image' alt="CTF" />
+            <img src={Clippify_data?.thumbnail} className='thumbnail-image' alt="CTF" />
             <div className='visit-btn' onClick={() => handleVisitClick("Clippify")}> 
                 <h3>See All</h3>
             </div>
