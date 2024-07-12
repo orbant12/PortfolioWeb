@@ -30,8 +30,8 @@ return (
     <nav className='sticky'>
       <div className="nav-bar active">
         <i className='bx bx-menu sidebarOpen' onClick={handleBurgerMenuOpen2}/>
-        <span className="logo navLogo"><a href="/">Tamas Orban</a></span>
-        <div className="menu show">
+        <span className="logo navLogo ml-3"><a href="/" className='text-sm'>Tamas Orban</a></span>
+        <div className="menu show"> 
           <div className="logo-toggle ">
             <span className="logo"><a href="#">betterByte</a></span>
             <i className='bx bx-x siderbarClose' onClick={handleBurgerMenuClose2}></i>
@@ -40,7 +40,6 @@ return (
           <li><a href="/fullstack-projects">Fullstack</a></li>
           <li><a href="/machine_learning-projects">Machine Learning</a></li>
           <li><a href="/cyber_security-projects">Pentesting</a></li>
-          <li><a href="/mobile-projects">Mobile</a></li>
           </ul>
         </div>
       

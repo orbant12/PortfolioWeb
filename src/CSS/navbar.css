@@ -85,8 +85,10 @@ nav .nav-bar .logo a{
     font-weight: 500;
     color: var(--text-color);
     text-decoration: none;
-    width: 100%;
+    width: 100%
 }
+
+
 
 .menu .logo-toggle{
     display: none;

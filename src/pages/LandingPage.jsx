@@ -5,8 +5,6 @@ import "../CSS/mian.css"
 import React from "react";
 
 //IMAGE
-import downArrow from "../assets/down-arrow.png";
-import mePicture from "../assets/mePic.png"
 import GetconLogo from "../assets/gtcon.png"
 import '../../node_modules/swiper/swiper-bundle.css';
 //ICONS
@@ -626,22 +624,28 @@ export const WidgetSection = () => {
             <h6 className="text-xs ">Why Choose me ?</h6>
             <hr style={{borderImage:"linear-gradient(to left, rgba(0, 0, 0, 0.3), rgba(83, 83, 83)) 1"}} />
         </div>
-        <h3 className="why-us-title text-center"> <span className="gradient-span-purple">Modern</span> & <span className="gradient-span-green">Powerful</span> skills</h3>
+        <h3 className="why-us-title text-center"> <span className="gradient-span-purple">Modern</span> & <span className="gradient-span-green">Powerful</span> skillsett</h3>
         <h5 className="why-us-desc">Each member of our team is highly skilled and experienced in their domain, which makes our service quick, powerful and most up to date to the current market</h5>
 
         <div className="why-bubble-container">
             <div className="why-us-cont_t-1">
                 <div className="why-bubble-t">
                     <div className="bubble-title">
-                        <h4>Delightful and <span style={{color:"white",fontWeight:700}}>simple</span> stat</h4>    
+                        <h4>My <span style={{color:"white",fontWeight:700}}>tech-stack</span> solutions</h4>    
                     </div>
                     <div className="bubble-badge-green">
-                        <h3>+ 10 000 hours of experience </h3>
+                        <h3>+ University of amsterdam</h3>
                     </div>
                 </div>
                 
-                <div className="why-bubble-b">
-                    App Developers
+                <div className="why-bubble-b" style={{position:"relative"}}>
+                    <h2 className="mb-3">Fullstack App Development</h2>
+                    <div className="bubble-badge-green-hoverable" style={{marginBottom:0}}>
+                        <h3>See projects</h3>
+                    </div>
+                    <div style={{position:"absolute",width:100,height:40,background:"rgba(0,0,0,0.8)",display:"flex",flexDirection:"column",borderBottomLeftRadius:20,right:0,top:0}}>
+                        
+                    </div>
                 </div>
             </div>
 
@@ -675,6 +679,7 @@ export const WidgetSection = () => {
             className="why-bubble-container pager"
         >
             <SwiperSlide className="why-us-cont_t-1 self-center flex direction-col">
+                {/*Fullstack Web Stack*/}
                 <div className="why-bubble-t">
                     <div className="bubble-title">
                     <h4>
@@ -682,20 +687,24 @@ export const WidgetSection = () => {
                     </h4>
                     </div>
                     <div className="bubble-badge-green">
-                    <h3>+ 10 000 hours of experience </h3>
+                    <h3>+ University of Amsterdam</h3>
                     </div>
                 </div>
+                {/*Web Tools Stack*/}
                 <div className="why-bubble-b">App Developers</div>
             </SwiperSlide>
 
             <SwiperSlide className="why-us-cont_t-2 self-center flex direction-col">
-            <div className="why-bubble-t">Machine Learning</div>
-            <div className="why-bubble-b">Web Developers</div>
+                {/*Native Mobile Stack*/}
+                <div className="why-bubble-t">Machine Learning</div>
+                {/*MObile tools Stack*/}
+                <div className="why-bubble-b">Web Developers</div>
             </SwiperSlide>
 
             <SwiperSlide className="why-us-cont_t-3 self-center flex direction-col">
-            <div className="why-bubble-t">Web Developers</div>
-            <div className="why-bubble-b">Mobile Developers</div>
+                {/*ML Stack*/}
+                <div className="why-bubble-t">Web Developers</div>
+                <div className="why-bubble-b">Mobile Developers</div>
             </SwiperSlide>
         </Swiper>
     
@@ -713,7 +722,7 @@ const MyPortfolio = ({
                 <h6 className="text-xs ">Why Choose me ?</h6>
                 <hr style={{borderImage:"linear-gradient(to left, rgba(0, 0, 0, 0.3), rgba(83, 83, 83)) 1"}} />
             </div>
-            <h3 className="why-us-title"> Our <span className="gradient-span-purple">Services</span> </h3>
+            <h3 className="why-us-title"> My <span className="gradient-span-purple">Projects</span> </h3>
             <h5 className="why-us-desc">Each member of our team is highly skilled and experienced in their domain, which makes our service quick, powerful and most up to date to the current market</h5>
             
         
