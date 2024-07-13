@@ -203,7 +203,7 @@ return(
         activeType={selectedFullstack}
         description="Skin Cancer Detection APP ♋ --> CNN model and/or Dermotologist assist with web app filled with tools. Other: Blood Work Analasis wit LLM🩸-- Store skin data, and set reminders for reccomended mole updates. The Backend is connceted with the Mobile APP and the Web APP !"
         tags={["Next JS", "React Native", "Typescript", "Go", "Python + Tensorflow + Flask","ISIC Skin Cancer Dataset"]}
-        navigation={"fullstack-projects/lupody"}
+        navigation={"/fullstack-projects/pocket-protect"}
         level={"Senior"}
       />
       <ProductView 

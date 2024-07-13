@@ -14,6 +14,7 @@ import CyberSecurityPage from './pages/CyberSecurity';
 import MobilePage from './pages/MobilePage';
 import ClippifyPage from './pages/FullstackProjects/Clippify';
 import LupodyPage from './pages/FullstackProjects/Lupody';
+import PocketProtectPage from './pages/FullstackProjects/PocketProtect';
 //import UserAuthContext from './context/UserAuthContext';
 
 
@@ -37,6 +38,7 @@ return (
         <Route path="/portfolio" element={<Portfolio/>} />
         <Route path="/fullstack-projects/clippify" element={<ClippifyPage/>} />
         <Route path="/fullstack-projects/lupody" element={<LupodyPage/>} />
+        <Route path="/fullstack-projects/pocket-protect" element={<PocketProtectPage/>} />
       </Routes>
       
   </Router>

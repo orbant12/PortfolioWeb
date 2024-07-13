@@ -4,6 +4,9 @@ import VideoFrame from './components/ClippifyComponents/videoFrame/videoFrame';
 import TranscripterConvert from './components/ClippifyComponents/transcriptShow/transcripterConvert';
 import StripePanel from './components/ClippifyComponents/Stripe/stripePanel';
 
+//IMPORTS
+import clippifyLogo from './assets/Clippify-log.svg';
+
 import LexicalJPG from './assets/Lexical.jpeg';
 import openAiJPG from './assets/openAi.jpeg';
 import FFMPEGjpg from './assets/FFMPEG.png';
@@ -21,6 +24,8 @@ import RichTextEditorIcon from './assets/richTE.png';
 import ImageFrame from './components/ClippifyComponents/videoFrame/imageFrame';
 import HoverFrame from './components/ClippifyComponents/videoFrame/hoverFrame';
 import HovermeImage from './assets/hoverME2.jpeg';
+
+
 
 import ExpoIcon from './assets/expoGo.png';
 
@@ -145,7 +150,8 @@ export const ClippifyData = {
             "• Limitations of Isolation"
         ],
       },
-    ]
+    ],
+    logo: clippifyLogo
 };
 
 export const LupodyData = {
@@ -393,4 +399,98 @@ export const ClippifyMobileData = {
         show: () => <HoverFrame logo={HovermeImage} video={chatbotClip} />
       },
     ]
+};
+
+export const PocketProtectData = {
+  title: "Pocket Protect",
+  youtube: clippifyYoutube,
+  navigation: "https://clippify.net",
+  youtubeHref: "https://www.youtube.com/watch?v=u0Unxzzn6vc&ab_channel=Clippify",
+  list: [
+      "Clip trimming, saving, storing",
+      "Machine Learning Model for transcript extraction",
+      "Built-in OpenAi API - Fine Tuned",
+      "Rich Text Editor",
+      "Smooth Subscription and Payment with Stripe API",
+      "Firebase Backend"
+  ],
+  expertise: [
+  {
+      logo: LexicalJPG,
+      title: "Note Taking",
+      tech: "Lexical Rich Text Editor",
+      text: [
+          "• Serialization & Deserialization (HTML, JSON)",
+          "• Nodes (Transforms, Overrides)",
+          "• Listeners",
+          "• Custom Plugins (CODE, MARKDOWN, LINK, LIST)",
+      ],
+      show: () => <Editor />
+    },
+    {
+      logo: openAiJPG,
+      title: "LLM with Transcript",
+      tech: "RNN & Open AI",
+      text: [
+        "• Video type manipulation (blob, data:url, base64)",
+        "• FFmpeg syntax for video manipulation",
+        "• Timeline Bar from thumbnails"
+      ],
+      show: () => <AiText />
+    },
+    {
+      logo: FFMPEGjpg,
+      title: "Video Clipper",
+      tech: "FFmpeg",
+      text: [
+        "• Video type manipulation (blob, data:url, base64)",
+        "• FFmpeg syntax for video manipulation",
+        "• Timeline Bar from thumbnails"
+      ],
+      show: () => <VideoFrame videoSrc={clippifyClip} />
+    },
+    {
+      logo: SpeechToTextjpg,
+      tech: "Python, Tensorflow",
+      title: "Speech To Text Model",
+      text: [
+          "• Video type manipulation (blob, data:url, base64)",
+          "• FFmpeg syntax for video manipulation",
+          "• Timeline Bar from thumbnails"
+      ],
+      show: () => <ImageFrame image={imageImport} />
+    },
+    {
+      logo: Stripejpg,
+      title: "Payment System",
+      tech: "Stripe API",
+      text: [
+          "• Video type manipulation (blob, data:url, base64)",
+          "• FFmpeg syntax for video manipulation",
+          "• Timeline Bar from thumbnails"
+      ],
+      show: () => null
+    },
+    {
+      logo: FirebaseIcon,
+      title: "User Authentication",
+      text: [
+          "• Video type manipulation (blob, data:url, base64)",
+          "• FFmpeg syntax for video manipulation",
+          "• Timeline Bar from thumbnails"
+      ],
+    
+    },
+    {
+      logo: CORSIcon,
+      title: "Cross Origin Isolation",
+      text: [
+          "• Proxy Server",
+          "• CORS Policy",
+          "• Header Manipulation",
+          "• Limitations of Isolation"
+      ],
+    },
+  ],
+  logo: clippifyLogo
 };

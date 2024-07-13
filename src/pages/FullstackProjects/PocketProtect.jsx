@@ -4,9 +4,10 @@ import { useParams } from "react-router-dom";
 import {useEffect,useState,useRef} from 'react';
 import ClippifyLogo from "../../assets/Clippify-log.svg";
 import ClippifyThumbnail from "../../assets/ClippifyScreen.png"
-import { FirebaseOriginal, GooglecloudOriginal, NodejsOriginal,ViteOriginalWordmark,AndroidOriginal, AppleOriginal, ExpressOriginal, ReactOriginal, VitejsOriginal } from 'devicons-react';
+import { FirebaseOriginal, GooglecloudOriginal, NodejsOriginal,ViteOriginalWordmark,AndroidOriginal, AppleOriginal, ExpressOriginal, ReactOriginal, VitejsOriginal, GoOriginal, NextjsOriginal, Html5Original, TailwindcssOriginal, ReactOriginalWordmark } from 'devicons-react';
 import {
-    ClippifyData
+    ClippifyData,
+    PocketProtectData
 } from '../../portfolio.jsx'
 import GitHubIcon from '@mui/icons-material/GitHub';
 import {FaArrowRight} from "react-icons/fa";
@@ -18,7 +19,7 @@ import { Link } from "react-router-dom";
 import { div } from "@tensorflow/tfjs";
 
 
-const ClippifyPage = () => {
+const PocketProtectPage = () => {
 
     const [isSelectedDate, setIsSelectedDate] = useState("Month");
     const [isSelected, setIsSelected] = useState("web");
@@ -28,27 +29,27 @@ const ClippifyPage = () => {
 
     const scroll = useRef(null);
 
-    const [visibleItems, setVisibleItems] = useState(2);
+    const [visibleItems, setVisibleItems] = useState(3);
     const blogs = [
         {
-            title: "Serverless To Node REST API",
+            title: "Switcing Backend from TS to Go ",
+            name: "Problem & Solution",
+            description: "Problem: The project fetching operation was taking too long, and the app required a faster backend to handle the data fetching.",
+            tags: ["Go", "REST API", "Echo", "TS to Go Switch"],
+            navigation: "/"
+        },
+        {
+            title: "Discovering the Power of Tailwind CSS",
             name: "Problem & Solution",
             description: "Problem: The project was initially built with Firebase Serverless, but as the project grew, the limitations of Firebase became apparent.",
             tags: ["Node", "REST API", "Express", "Serverless Switch"],
             navigation: "/"
         },
         {
-            title: "S",
+            title: "Regret of not using Statically Typed Languages Earlier",
             name: "Problem & Solution",
             description: "Problem: The project was initially built with Firebase Serverless, but as the project grew, the limitations of Firebase became apparent.",
-            tags: ["Node", "REST API", "Express", "Serverless Switch"],
-            navigation: "/"
-        },
-        {
-            title: "Serverless To Node REST API",
-            name: "Problem & Solution",
-            description: "Problem: The project was initially built with Firebase Serverless, but as the project grew, the limitations of Firebase became apparent.",
-            tags: ["Node", "REST API", "Express", "Serverless Switch"],
+            tags: ["Typescript", "Go", "Javascript", "Functional Programming", "Statically Typed Languages"],
             navigation: "/"
         },
         {
@@ -75,10 +76,10 @@ const ClippifyPage = () => {
       }, []);
 
       const Portfolio_data = {
-        "project": 0,
-        "total_users": 0,
-        "record_live_users": 0,
-        "thumbnail": PortfolioThumbnail
+        project: 10,
+        total_users: 0,
+        record_live_users: 0,
+        thumbnail: PortfolioThumbnail
       }
     
 
@@ -101,7 +102,7 @@ const ClippifyPage = () => {
     });
 
     useEffect(() => {
-        setPageData(ClippifyData);
+        setPageData(PocketProtectData);
     },[]);
 
     return (
@@ -111,7 +112,7 @@ const ClippifyPage = () => {
                 setIsSelectedDate={setIsSelectedDate}
                 isSelectedDate={isSelectedDate}
             />
-            <div className="project-details-page border-y-2 sm:border-0">
+            <div className="project-details-page border-y-2 sm:border-0 mt-20 sm:mt-0">
                 {/* <h4 className="d-p-title">About The Project</h4> */}
                 <div className="portfolio-page" >
                     <VideoContainer 
@@ -123,7 +124,7 @@ const ClippifyPage = () => {
                         Portfolio_data={Portfolio_data}
                         handleVisitClick={handleVisitClick}
                         setVisibleItems={setVisibleItems}
-                        visibleItems={visibleItems}
+                        visibleItems={visibleItems}y
                         blogs={blogs}
                     />
                     <MadeMeExpertIn 
@@ -155,7 +156,7 @@ const ClippifyPage = () => {
     );
 }
 
-export default ClippifyPage;
+export default PocketProtectPage;
 
 
 const Header = ({
@@ -168,15 +169,23 @@ const Header = ({
             <div className="project-hero">
             <div className="hero-top">
                 <h2>Clippify</h2>
-                <h1 className="text-3xl text-white w-[90%] md:w-[50%] md:text-5xl ">Your second brain software for storing video information</h1>
-                <h5 className="text-xs text-white opacity-50 w-[90%] md:w-[50%] md:text-5xs">Clippify enables you to effortlessly collect and store video clips from various sources. Whether it's the funny moments from your family gatherings, educational tutorials...</h5>
+                <h1 className="text-3xl text-white w-[90%] md:w-[50%] lg:text-5xl ">Your dermotologist software for keeping you safe from skin cancer</h1>
+                <h5 className="text-xs text-white opacity-50 w-[90%] md:w-[50%] md:text-5xs">Pocket Protect enables you to scan and store you moles with features like CNN model scan, reminder for recommended update base on sevirity, scan by a real life dermotologist and get a professional report ... </h5>
             </div>
 
-            <div className="hero-bottom">
-            <div className="visit-p-btn" onClick={() => handleVisitClick("Clippify")}>
-                <h4>Visit Clippify WebApp</h4>
-                <FaArrowRight className="arrow active" />
-            </div>
+            <div className="flex flex-wrap items-center w-[100%] justify-center relative my-10">
+                <div className="visit-p-btn m-3" onClick={() => handleVisitClick("Clippify")}>
+                    <h4>Pocket Protect Web</h4>
+                    <FaArrowRight className="arrow active" />
+                </div>
+                <div className="visit-p-btn m-3" onClick={() => handleVisitClick("Clippify")}>
+                    <h4>App Store</h4>
+                    <FaArrowRight className="arrow active" />
+                </div>
+                <div className="visit-p-btn m-3" onClick={() => handleVisitClick("Clippify")}>
+                    <h4>Play Store</h4>
+                    <FaArrowRight className="arrow active" />
+                </div>
         </div>
             </div>
             <div className="d-cont-right" style={{marginRight:40}}>
@@ -227,10 +236,10 @@ const VideoContainer = ({
         <div className="d-cont-left">
             <div className="l-title">
                 <div className="l-logo">
-                    <img src={ClippifyLogo} alt="" />
+                    <img src={pageData.logo} alt="" />
                 </div>
-                <h6>What is Clippify ?</h6>
-                <h1>Clippify</h1>
+                <h6>What is {pageData.title} ?</h6>
+                <h1>{pageData.title}</h1>
             </div>
             <div className="l-desc">
             <h5>Clippify enables you to effortlessly collect and store video clips from various sources. Whether it's the funny moments from your family gatherings, educational tutorials, or your favorite movie quotes, Clippify helps you organize and access them with ease.</h5><br />
@@ -297,40 +306,6 @@ const FeatureComponent = ({data}) => {
     )
 }
 
-
-const OldMadeMeExpertIn = ({pageData}) => {
-    return(
-        <div className="this-project-box">
-        <ExpertTitle />
-       {pageData.expertise.map((item, index) => {
-           return (
-               <div key={index} id={item.title}>
-                   <div className="github-link">
-                       <GitHubIcon />
-                   </div>
-               <div className={index % 2 == 0 ? "experience-box" : "experience-box-reverse"} key={index}>
-                   <img className="exp-img" src={item.logo} alt="" />
-                   <div className="exp-text">
-                       
-                       <h4 className="exp-title">{item.title}</h4>
-                       <ul>
-                           {item.text.map((item2, index2) => {
-                               return (
-                                   <li key={index2}>{item2}</li>
-                               )
-                           })}
-                       </ul> 
-                   </div>
-               </div>
-                {item.show && item.show()}
-           </div>
-           );
-       })}
-       </div>
-    )
-}
-
-
 const TableForStats = ({
     isSelected,
     setIsSelected,
@@ -359,7 +334,7 @@ const TableForStats = ({
         { isSelected == "web" ? (
         <>
             <TableMiddleStat 
-                    Clippify_data={Clippify_data}
+                    Clippify_data={Portfolio_data}
                     handleVisitClick={handleVisitClick}
                     socials={[
                         {url:"https://github.com/orbant12/Podcast-Social-Media---WebApp.git"},
@@ -373,10 +348,10 @@ const TableForStats = ({
             <IconRow 
                 icons={[
                     <ReactOriginal size={50} />,
-                    <FirebaseOriginal size={50} />,
-                    <NodejsOriginal size={50} />,
-                    <GooglecloudOriginal size={50} />,
-                    <VitejsOriginal size={50} />
+                    <GoOriginal size={50} />,
+                    <NextjsOriginal size={50} />,
+                    <Html5Original size={50} />,
+                    <TailwindcssOriginal size={50} />
                 ]}
             />
 
@@ -410,9 +385,9 @@ const TableForStats = ({
 
                 <IconRow 
                     icons={[
-                        <ReactOriginal size={50} />,
+                        <ReactOriginalWordmark size={50} />,
                         <ExpressOriginal size={50} />,
-                        <FirebaseOriginal size={50} />,
+                        <GoOriginal size={50} />,
                         <AppleOriginal size={50} />,
                         <AndroidOriginal size={50} />
                     ]}
@@ -527,17 +502,17 @@ export const TableMiddleStat = ({
         <div className='middle-table'>
             <div className='table-row' style={{display:"flex", flexDirection:"row",padding:30}}>
                 <h2 className=" font-bold">Project: </h2>
-                <h4 className="text-white">{Clippify_data?.project} 1</h4>
+                <h4 className="text-white">{Clippify_data?.project}</h4>
             </div>
 
             <div className='table-row' style={{display:"flex", flexDirection:"row",padding:30}}>
                 <h2 className="text-white font-bold">Registered Users: </h2>
-                <h4 className="text-white">{Clippify_data?.total_users} 1</h4>
+                <h4 className="text-white">{Clippify_data?.total_users}</h4>
             </div>
 
             <div className='table-row' style={{display:"flex", flexDirection:"row",padding:30}}>
                 <h2 className="text-white font-bold">Record traffic: </h2>
-                <h4 className="text-white">{Clippify_data?.record_live_users} 1</h4>
+                <h4 className="text-white">{Clippify_data?.record_live_users}</h4>
             </div>
             <div className="social_accs">
                    {socials.map((social, index) => {
@@ -616,4 +591,4 @@ const ProductView = ({ title, description, tags, navigation,name }) => {
         </div>
       </>
     );
-  };
+};
