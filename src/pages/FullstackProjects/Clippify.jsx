@@ -1,4 +1,4 @@
-
+import FFmpeg from "../../assets/FFMPEG.png"
 import "./f-projects.css"
 import { useParams } from "react-router-dom";
 import {useEffect,useState,useRef} from 'react';
@@ -14,6 +14,8 @@ import { SocialIcon } from "react-social-icons";
 import LupodyThumbnail from "../../assets/LupodyScreen2.png"
 //PORTFOLIO
 import PortfolioThumbnail from "../../assets/Portfolio.png"
+import { Link } from "react-router-dom";
+import { div } from "@tensorflow/tfjs";
 
 
 const ClippifyPage = () => {
@@ -26,9 +28,41 @@ const ClippifyPage = () => {
 
     const scroll = useRef(null);
 
+    const [visibleItems, setVisibleItems] = useState(2);
+    const blogs = [
+        {
+            title: "Serverless To Node REST API",
+            name: "Problem & Solution",
+            description: "Problem: The project was initially built with Firebase Serverless, but as the project grew, the limitations of Firebase became apparent.",
+            tags: ["Node", "REST API", "Express", "Serverless Switch"],
+            navigation: "/"
+        },
+        {
+            title: "S",
+            name: "Problem & Solution",
+            description: "Problem: The project was initially built with Firebase Serverless, but as the project grew, the limitations of Firebase became apparent.",
+            tags: ["Node", "REST API", "Express", "Serverless Switch"],
+            navigation: "/"
+        },
+        {
+            title: "Serverless To Node REST API",
+            name: "Problem & Solution",
+            description: "Problem: The project was initially built with Firebase Serverless, but as the project grew, the limitations of Firebase became apparent.",
+            tags: ["Node", "REST API", "Express", "Serverless Switch"],
+            navigation: "/"
+        },
+        {
+            title: "Serverless To Node REST API",
+            name: "Problem & Solution",
+            description: "Problem: The project was initially built with Firebase Serverless, but as the project grew, the limitations of Firebase became apparent.",
+            tags: ["Node", "REST API", "Express", "Serverless Switch"],
+            navigation: "/"
+        }
+    ];
+
     useEffect(() => {
         const handleScroll = () => {
-          if (scroll.current.getBoundingClientRect().top < -1000) {
+          if (scroll.current.getBoundingClientRect().top < 230) {
             setIsScrolledPassed(true);
           } else {
             setIsScrolledPassed(false);
@@ -71,13 +105,13 @@ const ClippifyPage = () => {
     },[]);
 
     return (
-        <div ref={scroll} className="project-page" id="clippify">
+        <div ref={scroll} className="project-page" style={{overflowX:"hidden", width:"100%"}} id="clippify">
             <Header 
                 handleVisitClick={handleVisitClick}
                 setIsSelectedDate={setIsSelectedDate}
                 isSelectedDate={isSelectedDate}
             />
-            <div className="project-details-page">
+            <div className="project-details-page border-y-2 sm:border-0">
                 {/* <h4 className="d-p-title">About The Project</h4> */}
                 <div className="portfolio-page" >
                     <VideoContainer 
@@ -88,14 +122,18 @@ const ClippifyPage = () => {
                         setIsSelected={setIsSelected}
                         Portfolio_data={Portfolio_data}
                         handleVisitClick={handleVisitClick}
+                        setVisibleItems={setVisibleItems}
+                        visibleItems={visibleItems}
+                        blogs={blogs}
                     />
                     <MadeMeExpertIn 
                         pageData={pageData}
                     />
                 </div>
             </div>
+
             {isScrolledPassed &&
-                <div className='fixed w-[100%]' style={{borderTopWidth:3,top:70}}>
+                <div className='fixed w-[100%]' style={{borderTopWidth:3,top:70,zIndex:"100"}}>
                 <div className="flex flex-row justify-between mb-5 mt-0 bg-black px-5 py-3" style={{ width: 200,borderColor:"white", borderWidth:3,borderTop:0, marginLeft:40,borderRadius:10, borderTopLeftRadius:0, borderTopRightRadius:0, boxShadow:"0px 0px 0px 0px white" }}>
                 <h4 
                     className={`text-white cursor-pointer ${selectedFullstack === 'web' ? 'font-bold opacity-100' : 'opacity-40'}`}
@@ -209,45 +247,86 @@ const VideoContainer = ({
 
 const ExpertTitle = ({}) => {
     return(
-        <div className='stat-title' style={{marginBottom:-50,marginTop:50,borderTop:"2px dashed lightgray",width:"80%"}}>
-            <h5 style={{border:"0px solid black",padding:"5px 10px",borderRadius:10,opacity:0.4,boxShadow: "inset 1px 1px 5px 1px black",marginBottom:10}}>Features</h5>
-            <h2>This project made me an expert in</h2>
+        <div className='bg-gradient-primary flex flex-col w-[100%] p-5 justify-center items-center mt-10'>
+            <h5 style={{border:"0px solid white",padding:"5px 10px",borderRadius:10,opacity:0.4,boxShadow: "inset 1px 1px 5px 1px white",marginBottom:10,color:"white"}}>Under the hood</h5>
+            <h2 className="text-white text-3xl pb-10 text-center">Fetures and Components</h2>
         </div>
     )
 }
  
 export const MadeMeExpertIn = ({
-    pageData,
-
+    pageData
 }) => {
     return(
-        <div className="this-project-box">
-         <ExpertTitle />
-        {pageData.expertise.map((item, index) => {
-            return (
-                <div key={index} id={item.title}>
-                    <div className="github-link">
-                        <GitHubIcon />
-                    </div>
-                <div className={index % 2 == 0 ? "experience-box" : "experience-box-reverse"} key={index}>
-                    <img className="exp-img" src={item.logo} alt="" />
-                    <div className="exp-text">
-                        
-                        <h4 className="exp-title">{item.title}</h4>
-                        <ul>
-                            {item.text.map((item2, index2) => {
-                                return (
-                                    <li key={index2}>{item2}</li>
-                                )
-                            })}
-                        </ul> 
+      <div className="flex flex-col w-[100%] border-t mt-20">
+            <ExpertTitle />
+            {pageData.expertise.map((item, index) => {
+                return (
+                    <FeatureComponent data={item} />
+                )
+            })}
+      </div>
+    )
+}
+
+const FeatureComponent = ({data}) => {
+    return(
+        <div className="flex flex-col w-[100%] border-b-2 border-white p-5 py-18 justify-between items-center bg-gradient-sec pr-[5%] lg:flex-row lg:py-24">
+            <div className="flex  flex-col mb-10 lg:mb-0">
+                <div className="flex flex-row items-center">
+                    <img src={data.logo} alt="" className="relative w-24 h-24 mr-3 border-4 bg-white" />
+                    <div className="flex flex-col">
+                        <h4 className="text-white text-md mb-2 font-medium opacity-70">{data.tech}</h4>
+                        <h4 className="text-white text-4xl font-bold">{data.title}</h4>
                     </div>
                 </div>
-                    {item.show && item.show()}
+                <div className="flex flex-col border-l-4 pl-5">
+                    {data.text.map((item, index) => {
+                        return(
+                        <h1 key={index} className="text-white mt-5">{item}</h1>
+                        )   
+                    })}
+                    <div className="border-2 border-magenta flex flex-row justify-center items-center w-80 h-16 rounded mt-20 cursor-pointer hover:scale-90 hover:border-white">
+                        <GitHubIcon className="mr-3" color="secondary" />
+                        <h3 className="text-white">Visit Source Code</h3>
+                    </div>
+                </div>
             </div>
-            );
-        })}
-    </div>
+            {data.show && data.show()}
+        </div>
+    )
+}
+
+
+const OldMadeMeExpertIn = ({pageData}) => {
+    return(
+        <div className="this-project-box">
+        <ExpertTitle />
+       {pageData.expertise.map((item, index) => {
+           return (
+               <div key={index} id={item.title}>
+                   <div className="github-link">
+                       <GitHubIcon />
+                   </div>
+               <div className={index % 2 == 0 ? "experience-box" : "experience-box-reverse"} key={index}>
+                   <img className="exp-img" src={item.logo} alt="" />
+                   <div className="exp-text">
+                       
+                       <h4 className="exp-title">{item.title}</h4>
+                       <ul>
+                           {item.text.map((item2, index2) => {
+                               return (
+                                   <li key={index2}>{item2}</li>
+                               )
+                           })}
+                       </ul> 
+                   </div>
+               </div>
+                   {item.show && item.show()}
+           </div>
+           );
+       })}
+       </div>
     )
 }
 
@@ -259,7 +338,10 @@ const TableForStats = ({
     Lupody_data,
     Portfolio_data,
     handleVisitClick,
-    Mobile_data 
+    Mobile_data ,
+    blogs,
+    visibleItems,
+    setVisibleItems
 }) => {
     return(
         <div className='fullstack-stat'>
@@ -283,6 +365,9 @@ const TableForStats = ({
                         {url:"https://github.com/orbant12/Podcast-Social-Media---WebApp.git"},
                         {url:"https://https://www.tiktok.com/@lupody.tv"}
                     ]}
+                    setVisibleItems={setVisibleItems}
+                    visibleItems={visibleItems}
+                    blogs={blogs}
             />
 
             <IconRow 
@@ -295,16 +380,6 @@ const TableForStats = ({
                 ]}
             />
 
-        <BoxProgressRow 
-            items={[
-                {title:"React",progress:"100%"},
-                {title:"Firebase Utils",progress:"100%"},
-                {title:"Node JS",progress:"100%"},
-                {title:"Google Cloud",progress:"100%"},
-                {title:"Vite",progress:"100%"}
-            ]}
-        />
-  
         <TableTagRow 
             tags={[
                 "Skit Learn Libary",
@@ -327,6 +402,9 @@ const TableForStats = ({
                         {url:"https://github.com/orbant12/Podcast-Social-Media---WebApp.git"},
                         {url:"https://https://www.tiktok.com/@lupody.tv"}
                     ]}
+                    setVisibleItems={setVisibleItems}
+                    visibleItems={visibleItems}
+                    blogs={blogs}
                 />
 
 
@@ -375,7 +453,7 @@ export const TableNavbar = ({
         <div className="services-pick-fullstack">
             {titles.map((title, index) => {
                 return (
-                    <h3 key={index} onClick={() => setValue(title.value)} className={value === title.value ? "selected" : "select"}>{title.text}</h3>
+                    <h3 key={index} onClick={() => setValue(title.value)} className={value === title.value ? (index != titles.length -1) ? ("selected -ml-20") : ("selected ml-5") : "select mx-5"}>{title.text}</h3>
                 )
             })}
     </div>
@@ -420,10 +498,10 @@ export const IconRow = ({
     icons
 }) => {
     return(
-        <div className='language-row-fullstack'>
+        <div className='language-row-fullstack overflow-x-scroll sm:overflow-x-hidden'>
             {icons.map((icon, index) => {
                 return (
-                    <div key={index} className='icon-box'>
+                    <div key={index} className='icon-box mr-10 sm:mr-0'>
                         {icon}
                     </div>
                 )
@@ -436,24 +514,30 @@ export const IconRow = ({
 export const TableMiddleStat = ({
     Clippify_data,
     handleVisitClick,
-    socials
+    socials,
+    blogs,
+    visibleItems,
+    setVisibleItems
 }) => {
+    const handleLoadMore = () => {
+        setVisibleItems(blogs.length);
+    };
     return(
         <div className='stat-middle'>
         <div className='middle-table'>
-            <div className='table-row'>
-                <h2>Project: </h2>
-                <h4>{Clippify_data?.project}</h4>
+            <div className='table-row' style={{display:"flex", flexDirection:"row",padding:30}}>
+                <h2 className=" font-bold">Project: </h2>
+                <h4 className="text-white">{Clippify_data?.project} 1</h4>
             </div>
 
-            <div className='table-row'>
-                <h2>Registered Users: </h2>
-                <h4>{Clippify_data?.total_users}</h4>
+            <div className='table-row' style={{display:"flex", flexDirection:"row",padding:30}}>
+                <h2 className="text-white font-bold">Registered Users: </h2>
+                <h4 className="text-white">{Clippify_data?.total_users} 1</h4>
             </div>
 
-            <div className='table-row'>
-                <h2>Record traffic: </h2>
-                <h4>{Clippify_data?.record_live_users}</h4>
+            <div className='table-row' style={{display:"flex", flexDirection:"row",padding:30}}>
+                <h2 className="text-white font-bold">Record traffic: </h2>
+                <h4 className="text-white">{Clippify_data?.record_live_users} 1</h4>
             </div>
             <div className="social_accs">
                    {socials.map((social, index) => {
@@ -463,14 +547,73 @@ export const TableMiddleStat = ({
                    })}            
             </div>
         </div>
-
-        <div className='middle-thumbnail'>
-            <img src={Clippify_data?.thumbnail} className='thumbnail-image' alt="CTF" />
-            <div className='visit-btn' onClick={() => handleVisitClick("Clippify")}> 
-                <h3>See All</h3>
+        
+        <div className="flex flex-col items-center">
+            {blogs.slice(0, visibleItems).map((product, index) => (
+                <ProductView
+                    key={index}
+                    title={product.title}
+                    name={product.name}
+                    description={product.description}
+                    tags={product.tags}
+                    navigation={product.navigation}
+                />
+            ))}
+            {visibleItems < blogs.length ? (
+                <div 
+                    onClick={handleLoadMore} 
+                    className="flex cursor-pointer flex-col hover:border-magenta items-center p-3 border rounded w-[100%] mb-10 hover:opacity-100 opacity-60"
+                >
+                    <h4 className="text-white">Load More</h4>
+                </div>
+            ):(
+                <div 
+                    onClick={() => setVisibleItems(2)} 
+                    className="flex cursor-pointer flex-col hover:border-magenta items-center p-3 border rounded w-[100%] mb-10 hover:opacity-100 opacity-60"
+                >
+                <h4 className="text-white">Show Less</h4>
             </div>
-            <h5 style={{position:"absolute",color:"black",marginTop:-290,borderBottom:"1px solid black",opacity:"0.3"}}>Click to see more</h5>
-        </div> 
+            )            
+            }
+        </div>
+        
       </div>
     )
 }
+
+
+const ProductView = ({ title, description, tags, navigation,name }) => {
+    return (
+      <>
+        <div className="flex flex-col md:flex-row md:items-center p-10 border border-magenta rounded shadow-lg mb-10 bg-gradient-primary relative w-[100%] md:w-[100%]">
+          <div className="flex flex-col flex-grow">
+            <h6 className="text-sm opacity-50 text-white mb-1 font-bold">{name}</h6>
+            <h3 className="text-xl font-semibold mb-2 text-white">{title}</h3>
+            <p className="text-gray-400 mb-2 max-w-[90%] text-bac md:text-md lg:text-sd">{description}</p>
+            <div className="flex flex-wrap">
+              {tags.map((tag, index) => (
+                <span
+                  key={index}
+                  className="bg-blue-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded m-2"
+                >
+                  {tag}
+                </span>
+              ))}
+            </div>
+          </div>
+          <div className="flex flex-col mt-4 md:mt-0 md:ml-4 md:self-stretch justify-end md:justify-center">
+            <div className="relative inline-block">
+              <div className="group">
+                <div className="flex flex-col justify-center bg-white p-4 rounded pr-10 pl-10 transition duration-300 ease-in-out">
+                  <h5 className="text-black">Open</h5>
+                </div>
+                <Link to={navigation} className="absolute inset-0 bg-black opacity-90 rounded pr-10 pl-10 flex justify-center items-center group-hover:opacity-100 transition duration-300 ease-in-out cursor-pointer rounded border border-white-800">
+                  <h5 className="text-white font-bolder">Open</h5>
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </>
+    );
+  };

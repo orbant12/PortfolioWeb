@@ -29,7 +29,7 @@ import ExpoIcon from './assets/expoGo.png';
 import imageImport from "./assets/trans.png"
 
 //YOUTUBE
-const clippifyYoutube = 'https://firebasestorage.googleapis.com/v0/b/betterbyte-fbd6c.appspot.com/o/ClippifyYoutube.mp4?alt=media&token=83522971-5cdd-4d30-a83c-aff216ace91c'
+const clippifyYoutube = 'https://firebasestorage.googleapis.com/v0/b/betterbyte-fbd6c.appspot.com/o/clippifyx.mp4?alt=media&token=ff6425b3-0599-4ffb-bf3e-45609c7387ba'
 
 //FFMPEG
 const clippifyClip = "https://firebasestorage.googleapis.com/v0/b/betterbyte-fbd6c.appspot.com/o/ClippifyClip.mp4?alt=media&token=0e41e7dd-52ce-4475-b7c5-6effe7e35aae"
@@ -59,7 +59,7 @@ export const ClippifyData = {
     title: "Clippify",
     youtube: clippifyYoutube,
     navigation: "https://clippify.net",
-    youtubeHref: "https://www.youtube.com/shorts/GkKWCNvXhrE",
+    youtubeHref: "https://www.youtube.com/watch?v=u0Unxzzn6vc&ab_channel=Clippify",
     list: [
         "Clip trimming, saving, storing",
         "Machine Learning Model for transcript extraction",
@@ -71,7 +71,8 @@ export const ClippifyData = {
     expertise: [
     {
         logo: LexicalJPG,
-        title: "Lexical Rich Text Editor",
+        title: "Note Taking",
+        tech: "Lexical Rich Text Editor",
         text: [
             "• Serialization & Deserialization (HTML, JSON)",
             "• Nodes (Transforms, Overrides)",
@@ -82,7 +83,8 @@ export const ClippifyData = {
       },
       {
         logo: openAiJPG,
-        title: "Dealing with Video - FFmpeg",
+        title: "LLM with Transcript",
+        tech: "RNN & Open AI",
         text: [
           "• Video type manipulation (blob, data:url, base64)",
           "• FFmpeg syntax for video manipulation",
@@ -92,7 +94,8 @@ export const ClippifyData = {
       },
       {
         logo: FFMPEGjpg,
-        title: "Dealing with Video - FFmpeg",
+        title: "Video Clipper",
+        tech: "FFmpeg",
         text: [
           "• Video type manipulation (blob, data:url, base64)",
           "• FFmpeg syntax for video manipulation",
@@ -102,7 +105,8 @@ export const ClippifyData = {
       },
       {
         logo: SpeechToTextjpg,
-        title: "Machine Learning Model",
+        tech: "Python, Tensorflow",
+        title: "Speech To Text Model",
         text: [
             "• Video type manipulation (blob, data:url, base64)",
             "• FFmpeg syntax for video manipulation",
@@ -112,13 +116,14 @@ export const ClippifyData = {
       },
       {
         logo: Stripejpg,
-        title: "Stripe Payment",
+        title: "Payment System",
+        tech: "Stripe API",
         text: [
             "• Video type manipulation (blob, data:url, base64)",
             "• FFmpeg syntax for video manipulation",
             "• Timeline Bar from thumbnails"
         ],
-        show: () => <StripePanel />
+        show: () => null
       },
       {
         logo: FirebaseIcon,

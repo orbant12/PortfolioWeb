@@ -20,6 +20,9 @@ export default {
         '.bg-gradient-primary': {
           backgroundImage: 'linear-gradient(360deg, var(--primary-color) 5%, #000 20%)',
         },
+        '.bg-gradient-sec': {
+          backgroundImage: 'linear-gradient(180deg, var(--primary-color) 10%, #000 50%)',
+        },
       }
       addUtilities(newUtilities, ['responsive', 'hover']);
     })

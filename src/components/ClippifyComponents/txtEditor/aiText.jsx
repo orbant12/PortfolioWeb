@@ -124,44 +124,44 @@ const handleSummerising = async () =>{
 return (
 <div className="experience-show">
     <div className="editor-container" >
-      <div className={`editor-inner ${!isFirstQuestion ? 'active' : ''}`} style={{border:"0px solid black",background:"transparent"}}>
+      <div className={`editor-inner-ai ${!isFirstQuestion ? 'active' : ''}`} style={{border:"0px solid black",background:"transparent"}}>
       {isFirstQuestion ? (
         <div className="ai-input-cont">
-          <h1 className="ai_title">Ai Chat</h1>
+          <h1 className="ai_title mt-3">Ai Chat</h1>
          
           
           <div className="feature-boxes">
        { !isScriptLoaded?( 
             !isScriptLoading? ( 
               <div className="feature_1"  onClick={handleScriptLoading}>
-                  <h2>Analyze the Script</h2>
-                  <h5>Ask your question if it's highlighted</h5>
+                  <h2 className="text-xs font-bold lg:text-sm">Analyze the Script</h2>
+                  <h5 className="text-3xs font-medium opacity-60">Ask your question if it's highlighted</h5>
               </div>):(
                  <div className="feature_1">
-                 <h2>Scipt Loading</h2>
-                 <h5>It may take some times...</h5>
+                 <h2 className="text-sm font-bold" >Scipt Loading</h2>
+                 <h5 className="text-3xs font-medium opacity-60">It may take some times...</h5>
              </div>
               )
               ):(
                 <div className="feature_1" style={{borderColor:"aquamarine"}} >
-                 <h2>Scipt is Ready</h2>
-                 <h5>Ask Anyithing I Click to Undo</h5>
+                 <h2 className="text-sm font-bold" >Scipt is Ready</h2>
+                 <h5 className="text-3xs font-medium opacity-60" >Ask Anyithing I Click to Undo</h5>
              </div>
              )}
 
             {!summerisingIsLoading?(
               <div className="feature_2" onClick={handleSummerising}>
-                  <h2>Summarise the video</h2>
-                  <h5>However you want</h5>
+                  <h2 className="text-xs font-bold lg:text-sm">Summarise the video</h2>
+                  <h5 className="text-3xs font-medium opacity-60">However you want</h5>
               </div>):(
                   <div className="feature_2" style={{borderColor:"aquamarine"}} onClick={handleSummerising}>
-                  <h2>Processing</h2>
+                  <h2 className="text-sm font-bold">Processing</h2>
                   <h5>It may take some times</h5>
               </div>
               )}
           </div>
           {!isScriptLoaded ? (
-        <input type="text" value={aiTxt} className="ai-input" placeholder="Ask me anything" onChange={handleInputChange} onKeyPress={handleEnterPress}/>
+          <input type="text" value={aiTxt} className="ai-input" placeholder="Ask me anything" onChange={handleInputChange} onKeyPress={handleEnterPress}/>
         ):(
           <input type="text" value={aiTxt} className="ai-input" placeholder="The Video Script is Loaded" onChange={handleInputChange} onKeyPress={handleEnterPress}/>
         )
@@ -171,57 +171,57 @@ return (
          ) : (
           <>
           <div className="editor-inner2">
-          <div className="chat-cont">
+            <div className="chat-cont">
               <h1 className="chat-log-title">Chat Log</h1>
               <hr className="chat-log-hr"/>
-      {chatLog.map((message,index) => (
-           <ChatMessage key={index} message={message}/>
+        {chatLog.map((message,index) => (
+            <ChatMessage key={index} message={message}/>
             ))}
             </div>
             
           </div>
-          <div className="input_bar_2_stage">
-          <div className="cancel-ai-input" onClick={() => setIsFirstQuestion(!isFirstQuestion)}>
+          <div className="input_bar_2_stage pt-10 " style={{zIndex:900, background:"rgba(0,0,0,0.8)"}}>
+          <div className="cancel-ai-input" style={{zIndex:900}} onClick={() => setIsFirstQuestion(!isFirstQuestion)}>
             <h3>Close Bar</h3>
         </div>
           <div className="feature-boxes">
           { !isScriptLoaded?( 
               !isScriptLoading? ( 
               <div className="feature_1" onClick={handleScriptLoading}>
-                  <h2>Analyze the Script</h2>
-                  <h5>If it's green you can ask your question</h5>
+                  <h2 className="text-sm font-bold">Analyze the Script</h2>
+                  <h5 className="text-xs font-medium opacity-60" style={{fontSize:8}}>If it's green you can ask your question</h5>
               </div>):(
                  <div className="feature_1">
-                 <h2>Scipt Loading</h2>
-                 <h5>It may take some times...</h5>
+                 <h2 className="text-sm font-bold">Scipt Loading</h2>
+                 <h5 className="text-3xs font-medium opacity-60">It may take some times...</h5>
              </div>
               )
               ):(
               <div className="feature_1" style={{borderColor:"aquamarine"}} >
-                 <h2>Scipt is Ready</h2>
-                 <h5>Click to Undo</h5>
+                 <h2 className="text-sm font-bold">Scipt is Ready</h2>
+                 <h5 className="text-3xs font-medium opacity-60">Click to Undo</h5>
              </div>
              )}
 
 {!summerisingIsLoading?(
               <div className="feature_2" onClick={handleSummerising}>
-                  <h2>Summarise the video</h2>
-                  <h5>However you want</h5>
+                  <h2 className="text-sm font-bold">Summarise the video</h2>
+                  <h5 className="text-3xs font-medium opacity-60">However you want</h5>
               </div>):(
                   <div className="feature_2" style={{borderColor:"aquamarine"}} onClick={handleSummerising}>
-                   <h2>Processing</h2>
-                  <h5>It may take some times</h5>
+                   <h2 className="text-sm font-bold">Processing</h2>
+                  <h5 className="text-3xs font-medium opacity-60">It may take some times</h5>
               </div>
               )}
           </div>
       {!isScriptLoaded ? (
-        <input type="text" value={aiTxt} className="ai-input" placeholder="Ask me anything" onChange={handleInputChange} onKeyPress={handleEnterPress}/>
+        <input type="text" value={aiTxt} style={{zIndex:100}} className="ai-input" placeholder="Ask me anything" onChange={handleInputChange} onKeyPress={handleEnterPress}/>
         ):(
-          <input type="text" value={aiTxt} className="ai-input" placeholder="The Video Script is Loaded" onChange={handleInputChange} onKeyPress={handleEnterPress}/>
+          <input type="text" value={aiTxt} style={{zIndex:100}} className="ai-input" placeholder="The Video Script is Loaded" onChange={handleInputChange} onKeyPress={handleEnterPress}/>
         )
       }
   
-        </div>
+          </div>
     
         </>
         )}

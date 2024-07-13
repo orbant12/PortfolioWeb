@@ -58,7 +58,7 @@ export default function Editor({setData,setContent}) {
 const editorStateRef = useRef();
 
 return (
-  <div className="experience-show">
+  <div className="experience-show" style={{marginTop:40,paddingBottom:40}}>
   <LexicalComposer initialConfig={editorConfig}>
     <div className="editor-container">
       <ToolbarPlugin />

@@ -197,7 +197,8 @@ return(
       <h1 className='text-3xl font-medium m-10 p-3 text-white' >Projects</h1>
       <ProductView 
         icon={ClippifyImage}
-        title="Pocket Protect"
+        title={selectedFullstack == "web" ? "Skin Cancer Detection Tools for Dermotologist" : "Skin Cancer Detection Mobile App"}
+        name={"Pocket Protect • ( Connected with Mobile App )"}
         type="both"
         activeType={selectedFullstack}
         description="Skin Cancer Detection APP ♋ --> CNN model and/or Dermotologist assist with web app filled with tools. Other: Blood Work Analasis wit LLM🩸-- Store skin data, and set reminders for reccomended mole updates. The Backend is connceted with the Mobile APP and the Web APP !"
@@ -209,7 +210,8 @@ return(
         icon={ClippifyImage}
         type="web"
         activeType={selectedFullstack}
-        title="Clippify"
+        title={selectedFullstack == "web" ? "Video Clipper with Transcript Export for ChatGPT API and Notes App " : "Skin Cancer Detection Mobile App"}
+        name={"Clippify"}
         description="FULLSTACK WEB APP - For Storing Valuable Snippets from Videos with I Featuers -> ✂️ Trimming, ✍🏻Notes Section, 🗃️Storing (Folder-Style) , 📝Transcript Exporting, 👾AI-Chatbot with acces to video transcript."
         tags={["React & Vite", "Node & Express", "+ Chrome Extension", "FFMPEG", "JS, HTML, CSS & Tailwind", "Stripe & OpenAi API", "Firebase"]}
         navigation={"/fullstack-projects/clippify"}
@@ -217,7 +219,8 @@ return(
       />
       <ProductView 
         icon={ClippifyImage}
-        title="Lupody"
+        title={selectedFullstack == "web" ? "Video Social Media Platform with Serverless Backend" : "Video Social Media Mobile App with Serverless Backend"}
+        name={"Lupody"}
         type="both"
         activeType={selectedFullstack}
         description="Social Media Platform for Podcasting --> 🧠 Recommender System, 🎞️ Clipping from Video, 🕓 Watch Later, 💬 Real Time Comment-Section, 🔎 Searchable & Visitable Users, ⚙️Profile Customization ( avatar, usename, thubnail, uploaded videos[ delete, edit] )"
@@ -228,6 +231,7 @@ return(
       <ProductView 
         icon={ClippifyImage}
         title="Portfolio Website"
+        name={"Portfolio Website"}
         type="web"
         activeType={selectedFullstack}
         description="A comprehensive course on Fullstack Web Development, covering Frontend, Backend, and Databases."
@@ -629,12 +633,13 @@ export default FullstackPage;
 
 
 
-const ProductView = ({ icon, title, description, tags, navigation, level, type, activeType }) => {
+const ProductView = ({ icon, title, description, tags, navigation, level, type, activeType, name }) => {
   return (
     <>
     { (activeType == type || type == "both") &&
       <div className="flex flex-col md:flex-row md:items-center p-10 border border-magenta rounded shadow-lg mb-10 bg-gradient-primary relative w-[90%] md:w-[70%]">
         <div className="flex flex-col flex-grow">
+          <h6 className="text-sm opacity-50 text-white mb-1 font-bold">{name}</h6>
           <h3 className="text-xl font-semibold mb-2 text-white">{title}</h3>
           <p className="text-gray-400 mb-2 max-w-[90%] text-bac md:text-md lg:text-sd">{description}</p>
           <div className="flex flex-wrap">
