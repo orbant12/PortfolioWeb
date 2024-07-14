@@ -23,6 +23,15 @@ export default {
         '.bg-gradient-sec': {
           backgroundImage: 'linear-gradient(180deg, var(--primary-color) 10%, #000 50%)',
         },
+        '.bg-gradient-primary-rev': {
+          backgroundImage: 'linear-gradient(50deg, var(--primary-color) 50%, #ffff 90%)',
+        },
+        '.bg-overlay':{
+          background: 'rgba(0, 0, 0, 0.8)',
+        },
+        '.border-red':{
+          border: '2px solid red',
+        }
       }
       addUtilities(newUtilities, ['responsive', 'hover']);
     })
