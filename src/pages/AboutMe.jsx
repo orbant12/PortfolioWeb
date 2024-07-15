@@ -37,7 +37,7 @@ useEffect(() => {
 }, []);
 
 return(
-  <div className="aboutMePage">
+  <div className="flex flex-col w-[100%]">
           {mobileModal ?(
           <>
           <div style={{display:"block",width:"100%",height:"100%",backgroundColor:"black",position:"absolute",opacity:0.8}}></div>
@@ -47,7 +47,7 @@ return(
           </div>
           </>
       ):null}
-      <Spline scene="https://prod.spline.design/yDvGHB5Cg3y7eB3c/scene.splinecode" />
+       <Spline scene="https://prod.spline.design/yDvGHB5Cg3y7eB3c/scene.splinecode" />
   </div>
 )}
 

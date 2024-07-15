@@ -8,6 +8,7 @@ import React from "react";
 import GetconLogo from "../assets/gtcon.png"
 import '../../node_modules/swiper/swiper-bundle.css';
 import getcon from "../assets/getcon.png"
+import vrImage from "../assets/vr.png"
 //ICONS
 import { SocialIcon } from "react-social-icons";
 
@@ -276,7 +277,8 @@ const HeroSection = ({openResume}) => {
             </div>
         </div>
         <div className="bg-gradient-primary-rev p-2 rounded lg:block imageHero">
-            <img src={OT} alt="" className="w-80 h-100 object-cover rounded  shadow-lg  relative hidden lg:block" />
+            <div className="loader hidden lg:block"></div>
+            <img loading="lazy" src={OT} alt="" className="w-80 h-100 object-cover rounded  shadow-lg  relative hidden lg:block" />
         </div>
     </div>
     )
@@ -833,10 +835,8 @@ const AboutMe = ({
         <div className="aboutme-section">
         <h2 className="font-black text-lg">About Me</h2>
         <h5 className="text-sm text-center" style={{padding:"8px 20px",borderRadius:30,opacity:0.7,boxShadow: "inset 1px 1px 5px 1px black",marginTop:5,fontWeight:550}}>Let me show you with another perspective</h5>
-        <div onClick={() => handlePortfolioNavigation("Vr")} style={{cursor:"pointer"}}> 
-            <div className="spline-visionPro" > 
-                
-            </div>
+        <div onClick={() => handlePortfolioNavigation("Vr")} className="flex flex-col w-[100%] items-center justify-center h-[100%]" style={{cursor:"pointer"}}> 
+            <img src={vrImage} className="w-[300px] h-[150px]" alt="" />
         </div>
     </div>
     )

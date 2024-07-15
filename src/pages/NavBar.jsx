@@ -24,9 +24,9 @@ const handleBurgerMenuClose2 = () => {
 
 return (
   <>
-    <div className='add-bar'>
+    {/* <div className='add-bar'>
           <span>Get 20% off on all services</span>
-    </div>
+    </div> */}
     <nav className='sticky' style={{zIndex:100}}>
       <div className="nav-bar active">
         <i className='bx bx-menu sidebarOpen' onClick={handleBurgerMenuOpen2}/>

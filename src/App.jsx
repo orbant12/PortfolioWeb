@@ -8,7 +8,6 @@ import NavBar from './pages/NavBar';
 import AboutMe from './pages/AboutMe';
 import FullstackPage from './pages/FullstackPage';
 import Contact from './pages/Contact';
-import Portfolio from './pages/Portfolio';
 import MLPage from './pages/MLPage';
 import CyberSecurityPage from './pages/CyberSecurity';
 import MobilePage from './pages/MobilePage';
@@ -35,7 +34,6 @@ return (
         <Route path="/cyber_security-projects" element={<CyberSecurityPage />} />
         <Route path="/mobile-projects" element={<MobilePage />} />
         <Route path="/contact" element={<Contact />} />
-        <Route path="/portfolio" element={<Portfolio/>} />
         <Route path="/fullstack-projects/clippify" element={<ClippifyPage/>} />
         <Route path="/fullstack-projects/lupody" element={<LupodyPage/>} />
         <Route path="/fullstack-projects/pocket-protect" element={<PocketProtectPage/>} />
