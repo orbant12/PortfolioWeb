@@ -853,6 +853,29 @@ a{
   cursor: pointer;
 }
 
+.custom-scrollbar::-webkit-scrollbar {
+  width: 20px;
+  height: 30px;
+}
+
+.custom-scrollbar::-webkit-scrollbary-track {
+  background: white;
+
+}
+
+.custom-scrollbar::-webkit-scrollbary-thumb {
+  background-color: black;
+  border-radius: 6px;
+  border: 3px solid magenta;
+
+}
+
+/* For browsers that support scrollbar-color and scrollbar-width */
+.custom-scrollbar {
+  scrollbar-color: black magenta;
+  scrollbar-width: thin;
+
+}
 
 
 /*ABOUTME SECTION*/
@@ -863,7 +886,7 @@ a{
     height:350px;
     margin-top: 30px;
     margin-bottom: 50px;
-    width: 800px;
+    width: 80%;
     padding: 18px;
     margin-right: auto;
     margin-left: auto;
@@ -875,6 +898,8 @@ a{
 
 .aboutme-section:hover{
     box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    transform: scale(0.95);
 }
 
 .spline-visionPro{

@@ -11,6 +11,9 @@ export default {
       borderColor: {
         magenta: '#cc87fc', // Add your magenta color code here
       },
+      screens: {
+        'xxl': '1300px',
+      },
 
     },
   },
@@ -19,6 +22,12 @@ export default {
       const newUtilities = {
         '.bg-gradient-primary': {
           backgroundImage: 'linear-gradient(360deg, var(--primary-color) 5%, #000 20%)',
+        },
+        '.bg-gradient-primary-bigger': {
+          backgroundImage: 'linear-gradient(360deg, var(--primary-color) 10%, #000 25%)',
+        },
+        '.bg-gradient': {
+          backgroundImage: 'linear-gradient(360deg, var(--primary-color) 2%, #000 10%)',
         },
         '.bg-gradient-sec': {
           backgroundImage: 'linear-gradient(180deg, var(--primary-color) 10%, #000 50%)',
@@ -29,11 +38,15 @@ export default {
         '.bg-overlay':{
           background: 'rgba(0, 0, 0, 0.8)',
         },
+        '.bg-widget':{
+          backgroundImage:'linear-gradient(-370deg, var(--primary-color)20%, #000 80%)',
+        },
         '.border-red':{
           border: '2px solid red',
         }
       }
       addUtilities(newUtilities, ['responsive', 'hover']);
-    })
+    }),
+    require('tailwind-scrollbar'),
   ],
 }

@@ -16,9 +16,13 @@ export default function BasicModal({input}) {
     onClose={handleClose}
     aria-labelledby="modal-modal-title"
     aria-describedby="modal-modal-description"
+    className='flex justify-center items-center'
     >
-    <div style={{display:"flex",flexDirection:"column",width:"100%",alignItems:"center",marginTop:200}}>
-        <img className='cert-image'  src={input} alt="" />
+    <div className='flex flex-col w-[80%] md:w-[50%] m-auto justify-center fixed items-center h-[100%]'>
+         <div onClick={handleClose} className='absolute bottom-5 w-[100%] flex flex-col items-center justify-center left-0 border-red p-2 px-4 bg-black cursor-pointer hover:scale-90 active:scale-50' style={{borderRadius:10}} >
+            <h2 className='text-lg' style={{color:"red"}}>Close</h2>
+         </div>
+        <img className='w-[80%] relative'  src={input} alt="" />
     </div>
         
    

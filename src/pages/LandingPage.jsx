@@ -38,7 +38,7 @@ import OT from "../assets/OT.jpg"
 import LupodyMobileScreen from '../assets/LupodyMobileScreen.png';
 import { Link } from "react-router-dom";
 import MyResume from '../assets/OT_Resume.pdf'
-import { AmazonwebservicesOriginalWordmark, AndroidOriginal, AppleOriginal, Css3Original, ExpressOriginal, ExpressOriginalWordmark, FirebaseOriginal, FlaskOriginal, GoOriginal, Html5Original, JavascriptOriginal, NextjsOriginal, NodejsOriginal, PythonOriginal, ReactOriginal, ReactOriginalWordmark, TailwindcssOriginal, TypescriptOriginal, VitejsOriginal, ViteOriginal } from 'devicons-react';
+import { AmazonwebservicesOriginalWordmark, AndroidOriginal, AppleOriginal, Css3Original, ExpressOriginal, ExpressOriginalWordmark, FirebaseOriginal, FlaskOriginal, GoOriginal, Html5Original, JavascriptOriginal, NextjsOriginal, NodejsOriginal, NumpyOriginal, OpencvOriginal, PandasOriginal, PythonOriginal, ReactOriginal, ReactOriginalWordmark, TailwindcssOriginal, TensorflowOriginal, TypescriptOriginal, VitejsOriginal, ViteOriginal } from 'devicons-react';
 import zIndex from "@mui/material/styles/zIndex";
 
 const LandingPage = () => {
@@ -250,12 +250,13 @@ export default LandingPage;
 
 
 
+
 const HeroSection = ({openResume}) => {
     return(
         <div className="row1">
         <div className="hero-left">
             <div className="hero-m-title">
-                <h2>Hey I'm Tamas 👋</h2>
+                <h2 className="max-w-[200px] md:max-w-[500px]">Hey I'm Tamas 👋</h2>
             </div>
             <div className="hero-s-title">
                 <h4>Fullstack Developer and IT Enthusiast in Several Subject. I'm responsible to code your ideas into reality.</h4>
@@ -269,12 +270,12 @@ const HeroSection = ({openResume}) => {
                 </div>
             </div>
             <div className="trust-row">
-                <h6>Worked for:</h6>
+                <h6 className="text-lg font-medium">Worked for:</h6>
                 <img src={getcon} className="w-20 h-20 relative pb-1 hover:scale-110 cursor-pointer" title="Visit Getcon" onClick={() => window.location.href = "https://www.getcon.com/"} alt="" />
                 
             </div>
         </div>
-        <div className="bg-gradient-primary-rev p-2 rounded ">
+        <div className="bg-gradient-primary-rev p-2 rounded lg:block imageHero">
             <img src={OT} alt="" className="w-80 h-100 object-cover rounded  shadow-lg  relative hidden lg:block" />
         </div>
     </div>
@@ -312,15 +313,15 @@ const TechModal = ({
     return(
         <>
         {visible &&
-        <div className="w-[100%] h-[100%] fixed bg-overlay top-0 flex flex-col justify-center items-center" style={{zIndex:200}}>
-            <div className="w-[80%] h-[90%] min-h-[0px] lg:min-h-[500px] lg:h-[60%] bg-gradient-primary relative rounded border lg:overflow-y-hidden overflow-y-scroll flex flex-col justify-center p-10 lg:pr-20 pr-10 lg:pt-10">
+        <div className="w-[100%] h-[100%] fixed bg-overlay top-0 flex flex-col justify-center items-center" style={{zIndex:9990}}>
+            <div className="w-[80%] h-[90%] min-h-[0px] lg:min-h-[500px] lg:h-[60%] bg-gradient relative rounded border-4 border-magenta lg:overflow-y-hidden overflow-y-scroll flex flex-col justify-center p-10 lg:pr-20 pr-10 pt-[400px] sm:pt-40 lg:pt-10" style={selectedModal === 'ml' ? {paddingTop:0}:{}}>
                 <div onClick={() => setSelectedModal(null)} className="flex flex-col absolute top-5 right-5 px-3 p-1 bg-black border-3 border-red cursor-pointer hover:scale-90 active:scale-50" style={{borderRadius:100}}>
                 <h2 className="text-sm font-medium" style={{color:"red"}}>Close</h2>
                 </div>
-                {selectedModal === 'mobile' ? (
-                <>
-                <h1 className="mb-5 text-white opacity-80 font-bold ">Native Mobile Technologies</h1>
                 <AnimatedBackground />
+                {selectedModal === 'web' ? (
+                <>
+                <h1 className="mb-5 text-white opacity-80 font-bold ">Web Technologies</h1>
                 <div className="flex flex-col items-center p-5 bg-gray-900 rounded lg:flex-row lg:justify-between animated-bg">
                     <h1 className="text-white text-md opacity-85 self-center font-bold lg:self-left mb-5 lg:mb-0">Frontend: </h1>
                     <div className="flex flex-wrap items-center p-5 rounded justify-center" style={{backgroundColor:"rgba(0,0,0,0.4)"}}>
@@ -356,11 +357,10 @@ const TechModal = ({
                         </div>
                 </div>
                 </>
-                ):(
+                ):selectedModal === 'mobile' ?(
                     <>
-                    <h1 className="text-white absolute top-16 font-bold text-md opacity-80 lg:text-xl lg:self-center lg:top-8">Native Mobile Technologies</h1>
-                    <AnimatedBackground />
-                    <div className="flex flex-col items-center p-5 bg-gray-900 rounded mt-16 lg:mt-0 lg:flex-row lg:justify-between animated-bg ">
+                     <h1 className="mb-5 text-white opacity-80 font-bold ">Mobile Technologies</h1>
+                    <div className="flex flex-col items-center p-5 bg-gray-900 rounded lg:flex-row lg:justify-between animated-bg">
                     <h1 className="text-white text-md opacity-85 self-center font-bold lg:self-left">Frontend: </h1>
                         <div className="flex flex-wrap justify-center items-center p-5 bg-gray-900 rounded" style={{backgroundColor:"rgba(0,0,0,0.4)"}}>
                         <JavascriptOriginal className='m-3 mx-4' size={35} />
@@ -374,7 +374,7 @@ const TechModal = ({
                         </div>
                 </div>
 
-                <div className="flex flex-col mt-10 items-center p-3 bg-gray-900 rounded lg:flex-row lg:justify-between animated-bg" style={{zIndex:200}} >
+                <div className="flex flex-col mt-10 items-center p-5 bg-gray-900 rounded lg:flex-row lg:justify-between animated-bg">
                     <h1 className="text-white text-md opacity-85 self-center font-bold lg:self-left">Backend: </h1>
                         <div className="flex flex-wrap justify-center items-center p-5 bg-gray-900 rounded" style={{backgroundColor:"rgba(0,0,0,0.4)"}}>
                         <GoOriginal className='m-3 mx-4' size={35} />
@@ -392,7 +392,25 @@ const TechModal = ({
                         </div>
                 </div>
                 </>
-                )}
+                ):selectedModal === 'ml' ?(
+                    <>
+                    <h1 className="mb-5 text-white opacity-80 font-bold ">Machine Learning Technologies</h1>
+                    <div className="flex flex-col mt-10 items-center p-5 bg-gray-900 rounded lg:flex-row lg:justify-between animated-bg">
+                    <h1 className="text-white text-md opacity-85 self-center font-bold lg:self-left">Tools: </h1>
+                    <div className="flex flex-row items-center p-5 rounded" style={{backgroundColor:"rgba(0,0,0,0.4)"}}>
+                        <JavascriptOriginal className="mr-8 mt-4 lg:mt-0" size={35} />
+                        <PythonOriginal className="mr-8 mt-4 lg:mt-0" size={35} />
+                      </div>
+                        <h3 className="text-white lg:ml-0 lg:mt-0 lg:mb-0 my-5">•</h3>
+                        <div className="flex flex-wrap items-center p-3 rounded lg:ml-8 justify-center" style={{backgroundColor:"rgba(0,0,0,0.4)"}}>
+                          <TensorflowOriginal className="m-3 mx-4" size={35} />
+                          <NumpyOriginal color='white' className='m-3 mx-4' size={35} />
+                          <PandasOriginal className='m-3 mx-4' size={35} />
+                          <OpencvOriginal className='m-3 mx-4' size={35} />
+                        </div>
+                </div>
+                </>
+                ):null}
             </div>
         </div>
         }
@@ -410,7 +428,7 @@ const WidgetSection = ({
             <h6 className="text-xs ">Why Choose me ?</h6>
             <hr style={{borderImage:"linear-gradient(to left, rgba(0, 0, 0, 0.3), rgba(83, 83, 83)) 1"}} />
         </div>
-        <h3 className="why-us-title text-center"> <span className="gradient-span-purple">Modern</span> & <span className="gradient-span-green">Powerful</span> skillsett</h3>
+        <h3 className="why-us-title text-center text-3xl max-w-[300px] lg:max-w-[500px] lg:text-5xl"> <span className="gradient-span-purple">Modern</span> & <span className="gradient-span-green">Powerful</span> skillsett</h3>
         <h5 className="why-us-desc">Each member of our team is highly skilled and experienced in their domain, which makes our service quick, powerful and most up to date to the current market</h5>
 
         <div className="why-bubble-container">
@@ -424,36 +442,62 @@ const WidgetSection = ({
                     </div>
                 </div>
                 
-                <div className="why-bubble-b" style={{position:"relative"}}>
-                    <h2 className="mb-3">Fullstack App Development</h2>
-                    <Link to={"/fullstack-projects"} className="bubble-badge-green-hoverable" style={{marginBottom:0}}>
+                <div className="why-bubble-b bg-widget" style={{position:"relative"}}>
+                    <h2 className="mb-3 max-w-[300px] xxl:max-w-[1000px] ">Fullstack App Development</h2>
+                    <Link to={"/fullstack-projects"} className="bubble-badge-green mr-[130px] xxl:mr-0 " style={{marginBottom:0}}>
                         <h3>See More</h3>
                     </Link>
                     <div onClick={() => setSelectedModal("mobile")} className="cursor-pointer right-0 bottom-0 hover:scale-99 hover:-right-0.5 hover:-bottom-0.5 active:scale-90 active:-right-3 transition-all" style={{position:"absolute",width:150,height:30,background:"rgba(0,0,0,0.8)",display:"flex",flexDirection:"column",borderTopLeftRadius:20,justifyContent:"center"}}>
                        <h6 className="text-xs ml-4">Known Technologies</h6>
                     </div>
-                    <div style={{position:"absolute",width:100,height:30,background:"rgba(0,0,0,0.8)",display:"flex",flexDirection:"column",borderTopRightRadius:20,left:0,bottom:0,justifyContent:"center"}}>
+                    <div className="left-[200px] xxl:top-[120px] rounded-bl-[20px] xxl:rounded-bl-[00px] rounded-tr-[0px] xxl:rounded-tr-[20px] top-0 bottom-0 xxl:left-0 border-b xxl:border-0" style={{position:"absolute",width:100,height:30,background:"rgba(0,0,0,0.8)",display:"flex",flexDirection:"column",justifyContent:"center"}}>
                        <h6 className="text-xs ml-4">+2 Projects</h6>
                     </div>
                 </div>
             </div>
 
             <div className="why-us-cont_t-2">
-                <div className="why-bubble-t">
-                    Machine Learning
+                <div className="why-bubble-t relative bg-widget">
+                    <h2 className="mb-3">s</h2>
+                    <Link to={"/fullstack-projects"} className="bubble-badge-green" style={{marginBottom:0}}>
+                        <h3>+ University</h3>
+                    </Link>
                 </div>
-                <div className="why-bubble-b">
-                    Web Developers
+                <div className="why-bubble-b relative bg-gradient-primary-bigger">
+                <h2 className="mb-3 text-center">Web Development</h2>
+                    <Link to={"/fullstack-projects"} className="bubble-badge-green" style={{marginBottom:0}}>
+                        <h3>See More</h3>
+                    </Link>
+                    <div onClick={() => setSelectedModal("web")} className="cursor-pointer right-0 bottom-0 hover:scale-99 hover:-right-0.5 hover:-bottom-0.5 active:scale-90 active:-right-3 transition-all" style={{position:"absolute",width:150,height:30,background:"rgba(0,0,0,0.8)",display:"flex",flexDirection:"column",borderTopLeftRadius:20,justifyContent:"center"}}>
+                       <h6 className="text-xs ml-4">Known Technologies</h6>
+                    </div>
+                    <div className="left-[100px] xxl:top-[370px] rounded-bl-[20px] xxl:rounded-bl-[00px] rounded-tr-[0px] xxl:rounded-tr-[20px] top-0 bottom-0 xxl:left-0 border-b xxl:border-0" style={{position:"absolute",width:100,height:30,background:"rgba(0,0,0,0.8)",display:"flex",flexDirection:"column",justifyContent:"center"}}>
+                       <h6 className="text-xs ml-4">+4 Projects</h6>
+                    </div>
                 </div>
             </div>
+
             <div className="why-us-cont_t-3">
             
-                <div className="why-bubble-t">
-                    Web Developers
+                <div className="why-bubble-t relative bg-gradient-primary-bigger">
+                <h2 className="mb-3 text-center">Machine Learning</h2>
+                    <Link to={"/fullstack-projects"} className="bubble-badge-green" style={{marginBottom:0}}>
+                        <h3>See More</h3>
+                    </Link>
+                    <div onClick={() => setSelectedModal("ml")} className="cursor-pointer right-0 bottom-0 hover:scale-99 hover:-right-0.5 hover:-bottom-0.5 active:scale-90 active:-right-3 transition-all" style={{position:"absolute",width:150,height:30,background:"rgba(0,0,0,0.8)",display:"flex",flexDirection:"column",borderTopLeftRadius:20,justifyContent:"center"}}>
+                       <h6 className="text-xs ml-4">Known Technologies</h6>
+                    </div>
+                    <div className="left-[100px] xxl:top-[370px] rounded-bl-[20px] xxl:rounded-bl-[00px] rounded-tr-[0px] xxl:rounded-tr-[20px] top-0 bottom-0 xxl:left-0 border-b xxl:border-0" style={{position:"absolute",width:100,height:30,background:"rgba(0,0,0,0.8)",display:"flex",flexDirection:"column",justifyContent:"center"}}>
+                       <h6 className="text-xs ml-4">+3 Projects</h6>
+                    </div>
                 </div>
                 
-                <div className="why-bubble-b">
-                    Mobile Developers
+                <div className="why-bubble-b bg-widget relative">
+                <h2 className="mb-3">s</h2>
+                    <Link to={"/fullstack-projects"} className="bubble-badge-green" style={{marginBottom:0}}>
+                        <h3>+ University</h3>
+                    </Link>
+     
                 </div>
             </div>
         </div>
@@ -469,38 +513,94 @@ const WidgetSection = ({
             modules={[Pagination, EffectCoverflow, Autoplay]}
             spaceBetween={10}
             slidesPerView={1}
+            grabCursor={true}   
             centeredSlides={true}
-            navigation
+            effect={"coverflow"}
+            scrollbar={{ draggable: true }}
+            autoplay={{delay: 3500}}
+            navigation={{
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev'
+              }}
             loop={true}
-            className="why-bubble-container pager"
+            coverflowEffect={{
+                rotate: 0,
+                stretch: 0,
+                depth: 100,
+                modifier: 3,
+                slideShadows: true
+            }}
+            pagination={{clickable:true}}
+            className="why-bubble-container pager pb-20"
         >
             <SwiperSlide className="why-us-cont_t-1 self-center flex direction-col">
                 {/*Fullstack Web Stack*/}
                 <div className="why-bubble-t">
-                    <div className="bubble-title">
-                    <h4>
-                        Delightful and <span style={{ color: "white", fontWeight: 700 }}>simple</span> stat
-                    </h4>
+                    <div className="bubble-title" style={{height:120}}>
+                        <h4>My <span style={{color:"white",fontWeight:700}}>tech-stack</span> solutions</h4>    
                     </div>
                     <div className="bubble-badge-green">
-                    <h3>+ University of Amsterdam</h3>
+                        <h3>+ University of amsterdam</h3>
                     </div>
                 </div>
                 {/*Web Tools Stack*/}
-                <div className="why-bubble-b">App Developers</div>
+                <div className="why-bubble-b bg-widget" style={{position:"relative"}}>
+                    <h2 className="mb-3 max-w-[300px] xxl:max-w-[1000px] ">Fullstack App Development</h2>
+                    <Link to={"/fullstack-projects"} className="bubble-badge-green mr-[130px] xxl:mr-0 " style={{marginBottom:0}}>
+                        <h3>See More</h3>
+                    </Link>
+                    <div onClick={() => setSelectedModal("mobile")} className="cursor-pointer right-0 bottom-0 hover:scale-99 hover:-right-0.5 hover:-bottom-0.5 active:scale-90 active:-right-3 transition-all" style={{position:"absolute",width:150,height:30,background:"rgba(0,0,0,0.8)",display:"flex",flexDirection:"column",borderTopLeftRadius:20,justifyContent:"center"}}>
+                       <h6 className="text-xs ml-4">Known Technologies</h6>
+                    </div>
+                    <div className="left-[200px] xxl:top-[120px] rounded-bl-[20px] xxl:rounded-bl-[00px] rounded-tr-[0px] xxl:rounded-tr-[20px] top-0 bottom-0 xxl:left-0 border-b xxl:border-0" style={{position:"absolute",width:100,height:30,background:"rgba(0,0,0,0.8)",display:"flex",flexDirection:"column",justifyContent:"center"}}>
+                       <h6 className="text-xs ml-4">+2 Projects</h6>
+                    </div>
+                </div>
             </SwiperSlide>
 
             <SwiperSlide className="why-us-cont_t-2 self-center flex direction-col">
-                {/*Native Mobile Stack*/}
-                <div className="why-bubble-t">Machine Learning</div>
-                {/*MObile tools Stack*/}
-                <div className="why-bubble-b">Web Developers</div>
+                <div className="why-bubble-t relative bg-widget flex flex-col justify-center" style={{width:200, height:190, alignItems:"center"}}>
+                    <h2 className="mb-3">s</h2>
+                    <Link to={"/fullstack-projects"} className="bubble-badge-green ml-[20px]" style={{marginBottom:0}}>
+                        <h3>+ University</h3>
+                    </Link>
+                </div>
+                <div className="why-bubble-b relative bg-gradient-primary-bigger">
+                <h2 className="mb-3 text-center">Web Development</h2>
+                    <Link to={"/fullstack-projects"} className="bubble-badge-green ml-[25px]" style={{marginBottom:0}}>
+                        <h3>See More</h3>
+                    </Link>
+                    <div onClick={() => setSelectedModal("web")} className="cursor-pointer right-0 bottom-0 hover:scale-99 hover:-right-0.5 hover:-bottom-0.5 active:scale-90 active:-right-3 transition-all" style={{position:"absolute",width:150,height:30,background:"rgba(0,0,0,0.8)",display:"flex",flexDirection:"column",borderTopLeftRadius:20,justifyContent:"center"}}>
+                       <h6 className="text-xs ml-4">Known Technologies</h6>
+                    </div>
+                    <div className="left-[100px] xxl:top-[370px] rounded-bl-[20px] xxl:rounded-bl-[00px] rounded-tr-[0px] xxl:rounded-tr-[20px] top-0 bottom-0 xxl:left-0 border-b xxl:border-0" style={{position:"absolute",width:100,height:30,background:"rgba(0,0,0,0.8)",display:"flex",flexDirection:"column",justifyContent:"center"}}>
+                       <h6 className="text-xs ml-4">+4 Projects</h6>
+                    </div>
+                </div>
             </SwiperSlide>
 
             <SwiperSlide className="why-us-cont_t-3 self-center flex direction-col">
                 {/*ML Stack*/}
-                <div className="why-bubble-t">Web Developers</div>
-                <div className="why-bubble-b">Mobile Developers</div>
+                <div className="why-bubble-t relative bg-gradient-primary-bigger">
+                <h2 className="mb-3 text-center">Machine Learning</h2>
+                    <Link to={"/fullstack-projects"} className="bubble-badge-green ml-[25px]" style={{marginBottom:0}}>
+                        <h3>See More</h3>
+                    </Link>
+                    <div onClick={() => setSelectedModal("ml")} className="cursor-pointer right-0 bottom-0 hover:scale-99 hover:-right-0.5 hover:-bottom-0.5 active:scale-90 active:-right-3 transition-all" style={{position:"absolute",width:150,height:30,background:"rgba(0,0,0,0.8)",display:"flex",flexDirection:"column",borderTopLeftRadius:20,justifyContent:"center"}}>
+                       <h6 className="text-xs ml-4">Known Technologies</h6>
+                    </div>
+                    <div className="left-[100px] xxl:top-[370px] rounded-bl-[20px] xxl:rounded-bl-[00px] rounded-tr-[0px] xxl:rounded-tr-[20px] top-0 bottom-0 xxl:left-0 border-b xxl:border-0" style={{position:"absolute",width:100,height:30,background:"rgba(0,0,0,0.8)",display:"flex",flexDirection:"column",justifyContent:"center"}}>
+                       <h6 className="text-xs ml-4">+3 Projects</h6>
+                    </div>
+                </div>
+                
+                <div className="why-bubble-b bg-widget relative" style={{width:200, height:190, alignItems:"center"}}>
+                <h2 className="mb-3">s</h2>
+                    <Link to={"/fullstack-projects"} className="bubble-badge-green ml-[19px]" style={{marginBottom:0}}>
+                        <h3>+ University</h3>
+                    </Link>
+     
+                </div>
             </SwiperSlide>
         </Swiper>
     
@@ -607,7 +707,8 @@ const Bubbles = ({
     handleSeeMore
 }) => {
     return(
-        <div className="review-bubbles">
+        
+        <div className="flex flex-col w-[100%] px-5 scrollbar scrollbar-thumb-slate-700 scrollbar-track-slate-300 overflow-x-scroll">
         <div className="bubble-rows">
             {/* COL 1 */}
             <div className="bubbleCol">
@@ -720,7 +821,8 @@ const Bubbles = ({
 
             </div>
         </div>
-    </div>
+        </div>
+    
     )
 }
 
@@ -730,7 +832,7 @@ const AboutMe = ({
     return(
         <div className="aboutme-section">
         <h2 className="font-black text-lg">About Me</h2>
-        <h5 style={{padding:"8px 20px",borderRadius:30,opacity:0.7,boxShadow: "inset 1px 1px 5px 1px black",marginTop:5,fontWeight:550}}>Let me show you with another perspective</h5>
+        <h5 className="text-sm text-center" style={{padding:"8px 20px",borderRadius:30,opacity:0.7,boxShadow: "inset 1px 1px 5px 1px black",marginTop:5,fontWeight:550}}>Let me show you with another perspective</h5>
         <div onClick={() => handlePortfolioNavigation("Vr")} style={{cursor:"pointer"}}> 
             <div className="spline-visionPro" > 
                 

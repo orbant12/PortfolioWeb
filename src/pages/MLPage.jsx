@@ -46,20 +46,23 @@ const handleOpen = (certInput) => {
 const handleClose = () => setOpen(false);
 
 
+
+
 return(
   <div className="fullstack">
     {/*1.) Hero SECTION*/}
     <div className='flex flex-col w-[70%] p-0 mt-20'>
         <h1 className='text-white text-md'>Main Menu</h1>
         <h1 className='text-white text-4xl'>Machine Learning</h1>
-        <div className="flex flex-col mt-10 items-center p-5 bg-gray-900 rounded lg:flex-row lg:justify-between ">
+        <AnimatedBackground />
+        <div className="flex flex-col mt-10 items-center p-5 bg-gray-900 rounded lg:flex-row lg:justify-between animated-bg">
           <h1 className="text-white text-md opacity-85 self-center font-bold lg:self-left">Tools: </h1>
-            <div className="flex flex-row items-center p-5 bg-gray-900 rounded">
+          <div className="flex flex-row items-center p-5 rounded" style={{backgroundColor:"rgba(0,0,0,0.4)"}}>
               <JavascriptOriginal className="mr-8 mt-4 lg:mt-0" size={35} />
               <PythonOriginal className="mr-8 mt-4 lg:mt-0" size={35} />
             </div>
               <h3 className="text-white lg:ml-0 lg:mt-0 lg:mb-0 my-5">•</h3>
-              <div className="flex flex-wrap items-center p-3 bg-gray-600 rounded lg:ml-8 justify-center">
+              <div className="flex flex-wrap items-center p-3 rounded lg:ml-8 justify-center" style={{backgroundColor:"rgba(0,0,0,0.4)"}}>
                 <TensorflowOriginal className="m-3 mx-4" size={35} />
                 <NumpyOriginal color='white' className='m-3 mx-4' size={35} />
                 <PandasOriginal className='m-3 mx-4' size={35} />
@@ -392,3 +395,26 @@ const ProductView = ({ icon, title, description, tags, navigation, level }) => {
 };
 
 
+
+
+export const AnimatedBackground = () => (
+  <>
+    <style jsx>{`
+      @keyframes backgroundFade {
+        0% {
+          background-color: rgba(255, 255, 255, 0.1);
+        }
+        50% {
+          background-color: rgba(255, 255, 255, 0.3);
+        }
+        100% {
+          background-color: rgba(255, 255, 255, 0.1);
+        }
+      }
+
+      .animated-bg {
+        animation: backgroundFade 5s infinite;
+      }
+    `}</style>
+  </>
+);

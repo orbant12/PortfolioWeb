@@ -13,6 +13,7 @@ import BootcampFullstack_cert from "../assets/BootcampFullstack.jpeg"
 import { AmazonwebservicesOriginalWordmark, AndroidOriginal, AppleOriginal, Css3Original, ExpressOriginal, ExpressOriginalWordmark, FirebaseOriginal, FlaskOriginal, GoOriginal, Html5Original, JavascriptOriginal, NextjsOriginal, NodejsOriginal, PythonOriginal, ReactOriginal, ReactOriginalWordmark, TailwindcssOriginal, TypescriptOriginal, VitejsOriginal, ViteOriginal } from 'devicons-react';
 import { div } from '@tensorflow/tfjs';
 import LupodyImage from "../assets/Lupody_Black.png"
+import { AnimatedBackground } from "./MLPage";
 
 
 const FullstackPage = () => {
@@ -44,27 +45,7 @@ const FullstackPage = () => {
 
   //<**********-DATA-*****************>
 
-  const AnimatedBackground = () => (
-    <>
-      <style jsx>{`
-        @keyframes backgroundFade {
-          0% {
-            background-color: rgba(255, 255, 255, 0.1);
-          }
-          50% {
-            background-color: rgba(255, 255, 255, 0.3);
-          }
-          100% {
-            background-color: rgba(255, 255, 255, 0.1);
-          }
-        }
-  
-        .animated-bg {
-          animation: backgroundFade 5s infinite;
-        }
-      `}</style>
-    </>
-  );
+
 
   const FadeIn = () => (
     <style jsx>{`
