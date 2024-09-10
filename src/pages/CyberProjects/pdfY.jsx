@@ -5,7 +5,10 @@ const PdfY = () => {
 
     return(
         <div className="w-[100%] bg p-10 flex flex-col justify-center items-center">
-            <div className="w-[80%] bg border-[3px] p-10 flex flex-col items-center rounded bg-[rgba(255,255,255,0.1)] ">
+            <div className="w-[80% relative bg border-[3px] p-10 flex flex-col items-center rounded bg-[rgba(255,255,255,0.1)] ">
+                <div className="absolute border right-0 top-0" style={{borderBottomLeftRadius:10}}>
+                    <h3 className="text-white p-2 text-[5px] md:text-[12px] md:p-3">Created at: <span className="opacity-80">11/09/2024</span></h3>
+                </div>
                 <h2 className="text-white text-[30px] md:text-[50px]" >PDFy</h2>
                 <h2 className="text-white text-[10px] opacity-80 font-thin text-center md:text-[20px]" >Welcome to PDFy, the exciting challenge where you turn your favorite web pages into portable PDF documents! It's your chance to capture, share, and preserve the best of the internet with precision and creativity. Join us and transform the way we save and cherish web content! NOTE: Leak /etc/passwd to get the flag!</h2>
             </div>
