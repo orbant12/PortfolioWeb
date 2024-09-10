@@ -178,6 +178,15 @@ body.dark .search-field i{
 @media (max-width: 1200px) {
     nav .nav-bar .sidebarOpen{
         display: block;
+        width: 39px;
+        border-radius: 10px;
+        border-width: 2px;
+    }
+    nav .nav-bar {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      justify-content: space-between;
     }
 
     .menu{

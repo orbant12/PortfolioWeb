@@ -7,7 +7,7 @@ import SurferboyLogo from "../assets/SurferboyLogo.jpeg"
 import Modal from '@mui/material/Modal';
 import ClippifyImage from "../assets/Clippify-log.svg"
 import { Link } from 'react-router-dom';
-import { AmazonwebservicesOriginalWordmark, Css3Original, ExpressOriginal, FirebaseOriginal, FlaskOriginal, GoOriginal, Html5Original, JavascriptOriginal, NextjsOriginal, NodejsOriginal, NumpyOriginal, OpenclOriginal, OpencvOriginal, PandasOriginal, PythonOriginal, ReactOriginal, TailwindcssOriginal, TensorflowOriginal, TypescriptOriginal, VitejsOriginal, ViteOriginal } from 'devicons-react';
+import { AmazonwebservicesOriginalWordmark, CplusplusLine, CplusplusOriginal, Css3Original, ExpressOriginal, FirebaseOriginal, FlaskOriginal, GoOriginal, Html5Original, JavascriptOriginal, NextjsOriginal, NodejsOriginal, NumpyOriginal, OpenclOriginal, OpencvOriginal, PandasOriginal, PythonOriginal, ReactOriginal, TailwindcssOriginal, TensorflowOriginal, TypescriptOriginal, VitejsOriginal, ViteOriginal } from 'devicons-react';
 
 
 import AndrewNg from "../assets/AndrewNg.jpeg"
@@ -55,20 +55,22 @@ return(
         <h1 className='text-white text-md'>Main Menu</h1>
         <h1 className='text-white text-4xl'>Machine Learning</h1>
         <AnimatedBackground />
-        <div className="flex flex-col mt-10 items-center p-5 bg-gray-900 rounded lg:flex-row lg:justify-between animated-bg">
-          <h1 className="text-white text-md opacity-85 self-center font-bold lg:self-left">Tools: </h1>
-          <div className="flex flex-row items-center p-5 rounded" style={{backgroundColor:"rgba(0,0,0,0.4)"}}>
-              <JavascriptOriginal className="mr-8 mt-4 lg:mt-0" size={35} />
-              <PythonOriginal className="mr-8 mt-4 lg:mt-0" size={35} />
-            </div>
-              <h3 className="text-white lg:ml-0 lg:mt-0 lg:mb-0 my-5">•</h3>
-              <div className="flex flex-wrap items-center p-3 rounded lg:ml-8 justify-center" style={{backgroundColor:"rgba(0,0,0,0.4)"}}>
-                <TensorflowOriginal className="m-3 mx-4" size={35} />
-                <NumpyOriginal color='white' className='m-3 mx-4' size={35} />
-                <PandasOriginal className='m-3 mx-4' size={35} />
-                <OpencvOriginal className='m-3 mx-4' size={35} />
-              </div>
-      </div>
+
+      <div className="flex flex-col items-center p-5 bg-gray-900 rounded lg:flex-row lg:justify-between animated-bg mt-10">
+                    <h1 className="text-white text-md opacity-85 self-center font-bold lg:self-left mb-5 lg:mb-0">Tools: </h1>
+                    <div className="flex flex-wrap items-center p-5 rounded justify-center" style={{backgroundColor:"rgba(0,0,0,0.4)"}}>
+                        <JavascriptOriginal className="m-3 mx-4" size={35} />
+                        <PythonOriginal className="m-3 mx-4" size={35} />
+                        <CplusplusOriginal className="m-3 mx-4" size={35} />
+                    </div>
+                        <h3 className="text-white lg:ml-0 lg:mt-0 lg:mb-0 my-5">•</h3>
+                        <div className="flex flex-wrap items-center p-3 rounded lg:ml-8 justify-center" style={{backgroundColor:"rgba(0,0,0,0.4)"}}>
+                        <TensorflowOriginal className="m-3 mx-4" size={35} />
+                        <NumpyOriginal color='white' className='m-3 mx-4' size={35} />
+                        <PandasOriginal className='m-3 mx-4' size={35} />
+                        <OpencvOriginal className='m-3 mx-4' size={35} />
+                    </div>
+                </div>
 
     </div>
     <div className='flex flex-col items-center border-t mt-16'>

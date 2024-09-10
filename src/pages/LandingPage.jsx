@@ -8,19 +8,16 @@ import React from "react";
 import GetconLogo from "../assets/gtcon.png"
 import '../../node_modules/swiper/swiper-bundle.css';
 import getcon from "../assets/getcon.png"
+import vuSec from "../assets/vusec.png"
 import vrImage from "../assets/vr.png"
 //ICONS
 import { SocialIcon } from "react-social-icons";
 
 //COMPONENTS
-import ServiceBox from "../components/serviceBox";
-import ServiceBoxCyber from "../components/serviceBoxCyber";
+
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Pagination, EffectCoverflow, Autoplay } from 'swiper/modules'
-import ChatMessage from "../components/ClippifyComponents/chatMessage";
 import CancelIcon from '@mui/icons-material/Cancel';
-import ServiceBoxMobile from "../components/serviceBoxMobile";
-import ServiceBoxAi from "../components/serviceBoxAi";
 import QuestionMarkIcon from '@mui/icons-material/QuestionMark';
 import BasicModal from "../components/CertificateModal/certifitaceModal";
 import metaLogo from "../assets/meta-logo.jpeg";
@@ -28,8 +25,6 @@ import metaCertificate from '../assets/META.jpg'
 import udemyLogo from '../assets/udemyIMAGE.png'
 import UdemyIosCertificate from '../assets/UdemyIosCert.jpeg'
 import ibmLogo from '../assets/ibm.svg'
-import InstagramIcon from '@mui/icons-material/Instagram';
-import betterByteLogo from '../assets/BetterByteLogo.png'
 import ClippifyLogo from '../assets/Clippify-log.svg'
 import LupodyLogo from '../assets/Lupody_Black.png';
 import LupodyScreen from '../assets/LupodyScreen2.png';
@@ -39,42 +34,31 @@ import OT from "../assets/OT.jpg"
 import LupodyMobileScreen from '../assets/LupodyMobileScreen.png';
 import { Link } from "react-router-dom";
 import MyResume from '../assets/OT_Resume.pdf'
-import { AmazonwebservicesOriginalWordmark, AndroidOriginal, AppleOriginal, Css3Original, ExpressOriginal, ExpressOriginalWordmark, FirebaseOriginal, FlaskOriginal, GoOriginal, Html5Original, JavascriptOriginal, NextjsOriginal, NodejsOriginal, NumpyOriginal, OpencvOriginal, PandasOriginal, PythonOriginal, ReactOriginal, ReactOriginalWordmark, TailwindcssOriginal, TensorflowOriginal, TypescriptOriginal, VitejsOriginal, ViteOriginal } from 'devicons-react';
+import { AmazonwebservicesOriginalWordmark, AndroidOriginal, AppleOriginal, Css3Original, DockerOriginalWordmark, ExpressOriginal, ExpressOriginalWordmark, FirebaseOriginal, FlaskOriginal, GoOriginal, Html5Original, JavascriptOriginal, NextjsOriginal, NodejsOriginal, NumpyOriginal, OpencvOriginal, PandasOriginal, PythonOriginal, ReactOriginal, ReactOriginalWordmark, TailwindcssOriginal, TensorflowOriginal, TypescriptOriginal, VitejsOriginal, ViteOriginal } from 'devicons-react';
 import zIndex from "@mui/material/styles/zIndex";
 
 const LandingPage = () => {
 
 //<**************VARIABLES**********************>
 
-const textVariants = {
-    initial: {
-        x: -500,
-        opacity: 0,
-    },
-    animate: {
-        x: 0,
-        opacity: 1,
-        transition: {
-        duration: 1,
-        staggerChildren: 0.1,
-        },
-    },
-    scrollButton: {
-        opacity: 0,
-        y: 10,
-        transition: {
-        duration: 2,
-        repeat: Infinity,
-        },
-    },
-};
-
 const slider = [
-    {
+        {
         title: "Clippify",
         description: "CLippify is a web app for CLIPPING -> STORING, SAVING, ANALISING videos. Suited with AI Speech To Text and AI chatbot.",
         url: ClippifyScreen,
         logo: ClippifyLogo
+        },
+        {
+            title: "Skin Cancer App",
+            description: "CLippify is a web app for CLIPPING -> STORING, SAVING, ANALISING videos. Suited with AI Speech To Text and AI chatbot.",
+            url: ClippifyScreen,
+            logo: ClippifyLogo
+        },
+        {
+            title: "Skin Cancer Detection Model",
+            description: "CLippify is a web app for CLIPPING -> STORING, SAVING, ANALISING videos. Suited with AI Speech To Text and AI chatbot.",
+            url: ClippifyScreen,
+            logo: ClippifyLogo
         },
         {
         title: "Lupody",
@@ -87,13 +71,6 @@ const slider = [
         description: "Lupody Mobile is a PODCAST social media platform with AI chatbot and AI powered content.",
         url: LupodyMobileScreen,
         logo: LupodyLogo
-        },
-    
-        {
-        title: "Clippify Mobile",
-        description: "Cippify Mobile is a web app for CLIPPING -> STORING, SAVING, ANALISING videos. Suited with AI Speech To Text and AI chatbot.",
-        url: ClippifyMobileScreen,
-        logo: ClippifyLogo
         },
 ]
 
@@ -221,10 +198,6 @@ return (
 
     <div style={{borderTop:"1px solid black", display:"flex",flexDirection:"column", height:"100%"}}>
         <div id="services">           
-            <div className="divider-row">
-                <h4 style={{fontWeight:550,padding:"8px 20px",borderRadius:10,opacity:0.8,boxShadow: "inset -3px -3px 5px 1px black"}} >Worked with ...</h4>
-                <img src={GetconLogo} onClick={() => handleSeeMore("Getcon")}/>
-            </div>
 
             <Bubbles 
                 handleSeeMore={handleSeeMore}
@@ -271,9 +244,9 @@ const HeroSection = ({openResume}) => {
                 </div>
             </div>
             <div className="trust-row">
-                <h6 className="text-lg font-medium">Worked for:</h6>
+                <h6 className="text-ms font-medium md:text-lg">Worked for:</h6>
                 <img src={getcon} className="w-20 h-20 relative pb-1 hover:scale-110 cursor-pointer" title="Visit Getcon" onClick={() => window.location.href = "https://www.getcon.com/"} alt="" />
-                
+                <img src={vuSec} className="w-[140px] h-[40px] relative pb-1 hover:scale-110 cursor-pointer ml-5" title="Visit VU Cyber Security" onClick={() => window.location.href = "https://www.vusec.net/"} alt="" />
             </div>
         </div>
         <div className="bg-gradient-primary-rev p-2 rounded lg:block imageHero">
@@ -338,7 +311,7 @@ const TechModal = ({
                         <VitejsOriginal color='white' className='m-3 mx-4' size={35} />
                         <NextjsOriginal className='m-3 mx-4' size={35} />
                         <TailwindcssOriginal className='m-3 mx-4' size={35} />
-                        </div>
+                    </div>
                 </div>
 
                 <div className="flex flex-col mt-10 items-center p-5 bg-gray-900 rounded lg:flex-row lg:justify-between animated-bg">
@@ -347,12 +320,14 @@ const TechModal = ({
                         <GoOriginal className="m-3 mx-4" size={35} />
                         <JavascriptOriginal className="m-3 mx-4" size={35} />
                         <TypescriptOriginal className="m-3 mx-4" size={35} />
+                        <CplusplusOriginal className="m-3 mx-4" size={35} />
+                        <JavaOriginal className="m-3 mx-4" size={35} />
                         <PythonOriginal className="m-3 mx-4" size={35} />
                     </div>
                         <h3 className="text-white lg:ml-0 lg:mt-0 lg:mb-0 my-5">•</h3>
                         <div className="flex flex-wrap items-center p-3 bg-gray-600 rounded lg:ml-8 justify-center" style={{backgroundColor:"rgba(0,0,0,0.4)"}}>
                         <NodejsOriginal className="m-3 mx-4" size={35} />
-                        <ExpressOriginal color='white' className='m-3 bg-white rounded p-1 mx-4' size={35} />
+                        <DockerOriginalWordmark color='white' className="m-3 mx-4"  size={35} />
                         <FlaskOriginal className='m-3 mx-4 bg-white rounded p-1' size={35} />
                         <AmazonwebservicesOriginalWordmark className='m-3 bg-white rounded p-1 mx-4' size={35} />
                         <FirebaseOriginal className='m-3 mx-4' size={35} />
@@ -387,7 +362,7 @@ const TechModal = ({
                         <h3 className="text-white lg:ml-0 lg:mt-0 lg:mb-0 my-5">•</h3>
                         <div className="flex flex-wrap items-center p-3 bg-gray-600 rounded lg:ml-8 justify-center" style={{backgroundColor:"rgba(0,0,0,0.4)"}}>
                             <NodejsOriginal className="m-3 mx-4" size={35} />
-                            <ExpressOriginalWordmark color='white' className='m-3 bg-white rounded p-1 mx-4' size={35} />
+                            <DockerOriginalWordmark color='white' className="m-3 mx-4"  size={35} />
                             <FlaskOriginal className='m-3 mx-4 bg-white rounded p-1' size={35} />
                             <AmazonwebservicesOriginalWordmark className='m-3 bg-white rounded p-1 mx-4' size={35} />
                             <FirebaseOriginal className='m-3 mx-4' size={35} />
@@ -460,9 +435,9 @@ const WidgetSection = ({
 
             <div className="why-us-cont_t-2">
                 <div className="why-bubble-t relative bg-widget">
-                    <h2 className="mb-3">s</h2>
+                    <h2 className="mb-3">Pentesting CTF's</h2>
                     <Link to={"/fullstack-projects"} className="bubble-badge-green" style={{marginBottom:0}}>
-                        <h3>+ University</h3>
+                        <h3>See More</h3>
                     </Link>
                 </div>
                 <div className="why-bubble-b relative bg-gradient-primary-bigger">
@@ -495,9 +470,9 @@ const WidgetSection = ({
                 </div>
                 
                 <div className="why-bubble-b bg-widget relative">
-                <h2 className="mb-3">s</h2>
+                <h2 className="mb-3">Learning Journey</h2>
                     <Link to={"/fullstack-projects"} className="bubble-badge-green" style={{marginBottom:0}}>
-                        <h3>+ University</h3>
+                        <h3>+ 10 years</h3>
                     </Link>
      
                 </div>
@@ -683,8 +658,8 @@ const MyPortfolio = ({
     
             <div className="service-bottom-row">
                 <div className="consultation-box">
-                    <h5>We are up for the challange</h5>
-                    <h2>Appoint a <span>Free</span> consultation</h2>
+                    <h5>+ 2 years Student Association</h5>
+                    <h2>VU - <span>Cyber Security</span> Association</h2>
                     <h3>In order to make an appointment you will need to answer a few crutial questions designed for understanding your needs ...</h3>
                     <div className="consultation-btn">
                         <h4>Get Started</h4>
@@ -692,8 +667,8 @@ const MyPortfolio = ({
                 </div>
     
                 <div className="consultation-box">
-                    <h5>We are up for the challange</h5>
-                    <h2>Appoint a <span>Free</span> consultation</h2>
+                    <h5>+6 month Internship</h5>
+                    <h2>Getcon - <span>IT networks</span> & and security</h2>
                     <h3>In order to make an appointment you will need to answer a few crutial questions designed for understanding your needs ...</h3>
                     <div className="consultation-btn">
                         <h4>Get Started</h4>
@@ -771,10 +746,10 @@ const Bubbles = ({
                 <div className="bubble-type2">
                     <h3 className="font-black text-lg">Socials</h3>
                         <h5 style={{opacity:0.7,fontWeight:400,marginTop:5}}>Feel free to check me out<br /> <span style={{fontWeight:800}}>Budapest, Hungary</span><br/></h5>
-                        <div className="social_accs">
-                            <SocialIcon url="https://twitter.com/TamasOrban12" />
-                            <SocialIcon url="https://instagram.com/orbant12" />
-                            <SocialIcon url="https://www.linkedin.com/in/tamas-orban-30921524b/" />                   
+                        <div className="social_accs cursor-pointer">
+                            <SocialIcon className="hover:scale-90 " url="https://twitter.com/TamasOrban12" />
+                            <SocialIcon className="hover:scale-90 " url="https://instagram.com/orbant12" />
+                            <SocialIcon className="hover:scale-90 " url="https://www.linkedin.com/in/tamas-orban-30921524b/" />                   
                         </div>
                 </div>
 

@@ -1,6 +1,5 @@
 
 import React, { useEffect } from 'react';
-import { Link } from 'react-router-dom';
 import '../CSS/NavBar.css';
 
 const NavBar = () => {
@@ -30,10 +29,10 @@ return (
     <nav className='sticky' style={{zIndex:100}}>
       <div className="nav-bar active">
         <i className='bx bx-menu sidebarOpen' onClick={handleBurgerMenuOpen2}/>
-        <span className="logo navLogo ml-3"><a href="/" className='text-sm'>Tamas Orban</a></span>
+        <span className="logo navLogo ml-3"><a href="/" className='text-ms hidden md:block'>Tamas Orban</a><a href="/" className='text-ms block md:hidden'>Tom</a></span>
         <div className="menu show"> 
           <div className="logo-toggle ">
-            <span className="logo"><a href="#">betterByte</a></span>
+            <span className="logo"><a href="#">Tamas Orban</a></span>
             <i className='bx bx-x siderbarClose' onClick={handleBurgerMenuClose2}></i>
           </div>
           <ul className="nav-links">

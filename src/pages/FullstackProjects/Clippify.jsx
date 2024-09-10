@@ -15,7 +15,6 @@ import LupodyThumbnail from "../../assets/LupodyScreen2.png"
 //PORTFOLIO
 import PortfolioThumbnail from "../../assets/Portfolio.png"
 import { Link } from "react-router-dom";
-import { div } from "@tensorflow/tfjs";
 
 
 const ClippifyPage = () => {
