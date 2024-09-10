@@ -62,7 +62,7 @@ return(
         title="XSS"
         description=""
         tags={["CNN", "ISIC Skin Cancer Dataset"]}
-        navigation={"fullstack-projects/lupody"}
+        navigation={"/cyber_security-projects/pdfY"}
         level={"Senior"}
       />
       <ProductView 

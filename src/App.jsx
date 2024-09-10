@@ -15,6 +15,7 @@ import ClippifyPage from './pages/FullstackProjects/Clippify';
 import LupodyPage from './pages/FullstackProjects/Lupody';
 import PocketProtectPage from './pages/FullstackProjects/PocketProtect';
 //import UserAuthContext from './context/UserAuthContext';
+import PdfY from './pages/CyberProjects/pdfY';
 
 
 function App() {
@@ -31,7 +32,10 @@ return (
         <Route path="/about-me" element={<AboutMe />} />
         <Route path="/fullstack-projects" element={<FullstackPage />} />
         <Route path="/machine_learning-projects" element={<MLPage />} />
+
         <Route path="/cyber_security-projects" element={<CyberSecurityPage />} />
+        <Route path="/cyber_security-projects/pdfY" element={<PdfY />} />
+
         <Route path="/mobile-projects" element={<MobilePage />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/fullstack-projects/clippify" element={<ClippifyPage/>} />
