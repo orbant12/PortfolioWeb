@@ -16,6 +16,7 @@ import LupodyPage from './pages/FullstackProjects/Lupody';
 import PocketProtectPage from './pages/FullstackProjects/PocketProtect';
 //import UserAuthContext from './context/UserAuthContext';
 import PdfY from './pages/CyberProjects/pdfY';
+import AboutMePage from './pages/AboutMePage';
 
 
 function App() {
@@ -29,7 +30,7 @@ return (
     <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/portfolio/:id" element={<PortfolioPage />} />
-        <Route path="/about-me" element={<AboutMe />} />
+        <Route path="/about-me" element={<AboutMePage />} />
         <Route path="/fullstack-projects" element={<FullstackPage />} />
         <Route path="/machine_learning-projects" element={<MLPage />} />
 

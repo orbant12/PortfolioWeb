@@ -840,11 +840,17 @@ const BottomButton = ({
         <div className="ai-chat-content">
             <div className="ai-chat-row">
                 <h2>Email:</h2>
-                <h3>betterbyte.business@gmail.com</h3>
+                <h3>orbant1@gmail.com</h3>
             </div>
             <div className="ai-chat-row">
-                <h2>Resume:</h2>
-                <h3></h3>
+                <h2>Location:</h2>
+                <h3 style={{color:"black",opacity:1}}>Netherlands, Amsterdam</h3>
+            </div>
+
+            <div className="social_accs cursor-pointer">
+                <SocialIcon className="hover:scale-90 " url="https://github.com/orbant12" />
+                <SocialIcon className="hover:scale-90 " url="https://instagram.com/orbant12" />
+                <SocialIcon className="hover:scale-90 " url="https://www.linkedin.com/in/tamas-orban-30921524b/" />                   
             </div>
 
             <div className="ai-chat-row">
