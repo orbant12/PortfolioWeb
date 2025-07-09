@@ -30,32 +30,32 @@ const ClippifyPage = () => {
     const [visibleItems, setVisibleItems] = useState(2);
     const blogs = [
         {
-            title: "Serverless To Node REST API",
+            title: "Serverless To Node Web Server",
             name: "Problem & Solution",
             description: "Problem: The project was initially built with Firebase Serverless, but as the project grew, the limitations of Firebase became apparent.",
             tags: ["Node", "REST API", "Express", "Serverless Switch"],
-            navigation: "/"
+            navigation: "NOT READY"
         },
         {
-            title: "S",
+            title: "Stripe API and Web Server",
             name: "Problem & Solution",
             description: "Problem: The project was initially built with Firebase Serverless, but as the project grew, the limitations of Firebase became apparent.",
-            tags: ["Node", "REST API", "Express", "Serverless Switch"],
-            navigation: "/"
+            tags: ["Stripe", "REST API"],
+            navigation: "NOT READY"
         },
         {
-            title: "Serverless To Node REST API",
+            title: "Open API and Web Server",
             name: "Problem & Solution",
             description: "Problem: The project was initially built with Firebase Serverless, but as the project grew, the limitations of Firebase became apparent.",
-            tags: ["Node", "REST API", "Express", "Serverless Switch"],
-            navigation: "/"
+            tags: ["Open AI", "REST API"],
+            navigation: "NOT READY"
         },
         {
-            title: "Serverless To Node REST API",
+            title: "Node Web Server Benefits and Drawbacks",
             name: "Problem & Solution",
             description: "Problem: The project was initially built with Firebase Serverless, but as the project grew, the limitations of Firebase became apparent.",
-            tags: ["Node", "REST API", "Express", "Serverless Switch"],
-            navigation: "/"
+            tags: ["Node", "REST API"],
+            navigation: "NOT READY"
         }
     ];
 
@@ -419,12 +419,8 @@ const TableForStats = ({
                 <TableTagRow
                     tags={[
                         "Unit Tested",
-                        "Version Controlled",
-                        "Anaconda",
-                        "Convolutional Neural Network",
-                        "OS Script Automation",
-                        "Own Data Collection",
-                        "NVDIA Cuda"
+                        "Version Controlled Git",
+                        "Published (https)"
                     ]}
                 />
                 </>
@@ -525,18 +521,18 @@ export const TableMiddleStat = ({
         <div className='stat-middle'>
         <div className='middle-table'>
             <div className='table-row' style={{display:"flex", flexDirection:"row",padding:30}}>
-                <h2 className=" font-bold">Project: </h2>
-                <h4 className="text-white">{Clippify_data?.project} 1</h4>
+                <h2 className=" font-bold">Status: </h2>
+                <h4 className="text-white">{Clippify_data?.project} Under Development</h4>
             </div>
 
             <div className='table-row' style={{display:"flex", flexDirection:"row",padding:30}}>
                 <h2 className="text-white font-bold">Registered Users: </h2>
-                <h4 className="text-white">{Clippify_data?.total_users} 1</h4>
+                <h4 className="text-white">{Clippify_data?.total_users} 22</h4>
             </div>
 
             <div className='table-row' style={{display:"flex", flexDirection:"row",padding:30}}>
                 <h2 className="text-white font-bold">Record traffic: </h2>
-                <h4 className="text-white">{Clippify_data?.record_live_users} 1</h4>
+                <h4 className="text-white">{Clippify_data?.record_live_users} 3 / Day</h4>
             </div>
             <div className="social_accs">
                    {socials.map((social, index) => {
@@ -606,9 +602,15 @@ const ProductView = ({ title, description, tags, navigation,name }) => {
                 <div className="flex flex-col justify-center bg-white p-4 rounded pr-10 pl-10 transition duration-300 ease-in-out">
                   <h5 className="text-black">Open</h5>
                 </div>
-                <Link to={navigation} className="absolute inset-0 bg-black opacity-90 rounded pr-10 pl-10 flex justify-center items-center group-hover:opacity-100 transition duration-300 ease-in-out cursor-pointer rounded border border-white-800">
-                  <h5 className="text-white font-bolder">Open</h5>
+                {navigation == "NOT READY" ?
+                  <Link onClick={() => alert("Not ready yet ...")} className="absolute inset-0 bg-black opacity-90 rounded pr-1 pl-1 flex justify-center items-center group-hover:opacity-100 transition duration-300 ease-in-out cursor-pointer rounded border border-white-800">
+                  <h5 className="text-white font-bolder">Not Ready</h5>
                 </Link>
+                :
+                <Link to={navigation} className="absolute inset-0 bg-black opacity-90 rounded pr-10 pl-10 flex justify-center items-center group-hover:opacity-100 transition duration-300 ease-in-out cursor-pointer rounded border border-white-800">
+                <h5 className="text-white font-bolder">Open</h5>
+              </Link>
+              }
               </div>
             </div>
           </div>

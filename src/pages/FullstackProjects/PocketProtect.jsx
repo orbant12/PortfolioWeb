@@ -36,28 +36,28 @@ const PocketProtectPage = () => {
             name: "Problem & Solution",
             description: "Problem: The project fetching operation was taking too long, and the app required a faster backend to handle the data fetching.",
             tags: ["Go", "REST API", "Echo", "TS to Go Switch"],
-            navigation: "/"
+            navigation: "NOT READY"
         },
         {
             title: "Discovering the Power of Tailwind CSS",
             name: "Problem & Solution",
             description: "Problem: The project was initially built with Firebase Serverless, but as the project grew, the limitations of Firebase became apparent.",
             tags: ["Node", "REST API", "Express", "Serverless Switch"],
-            navigation: "/"
+            navigation: "NOT READY"
         },
         {
             title: "Regret of not using Statically Typed Languages Earlier",
             name: "Problem & Solution",
             description: "Problem: The project was initially built with Firebase Serverless, but as the project grew, the limitations of Firebase became apparent.",
             tags: ["Typescript", "Go", "Javascript", "Functional Programming", "Statically Typed Languages"],
-            navigation: "/"
+            navigation: "NOT READY"
         },
         {
             title: "Serverless To Node REST API",
             name: "Problem & Solution",
             description: "Problem: The project was initially built with Firebase Serverless, but as the project grew, the limitations of Firebase became apparent.",
             tags: ["Node", "REST API", "Express", "Serverless Switch"],
-            navigation: "/"
+            navigation: "NOT READY"
         }
     ];
 
@@ -76,7 +76,7 @@ const PocketProtectPage = () => {
       }, []);
 
       const Portfolio_data = {
-        project: 10,
+        project: "Not Published",
         total_users: 0,
         record_live_users: 0,
         thumbnail: PortfolioThumbnail
@@ -174,15 +174,15 @@ const Header = ({
             </div>
 
             <div className="flex flex-wrap items-center w-[100%] justify-center relative my-10">
-                <div className="visit-p-btn m-3" onClick={() => handleVisitClick("Clippify")}>
+                <div className="visit-p-btn m-3" onClick={() => alert("Not ready yet...")}>
                     <h4>Pocket Protect Web</h4>
                     <FaArrowRight className="arrow active" />
                 </div>
-                <div className="visit-p-btn m-3" onClick={() => handleVisitClick("Clippify")}>
+                <div className="visit-p-btn m-3" onClick={() => alert("Not ready yet...")}>
                     <h4>App Store</h4>
                     <FaArrowRight className="arrow active" />
                 </div>
-                <div className="visit-p-btn m-3" onClick={() => handleVisitClick("Clippify")}>
+                <div className="visit-p-btn m-3" onClick={() => alert("Not ready yet...")}>
                     <h4>Play Store</h4>
                     <FaArrowRight className="arrow active" />
                 </div>
@@ -190,14 +190,14 @@ const Header = ({
             </div>
             <div className="d-cont-right" style={{marginRight:40}}>
                 <a href="#Problems">Project Blogs</a>
-                <a href="#Techstack">Tech Stack</a>
-                <a href="#Lexical Rich Text Editor">Text Editor</a>
-                <a href="#RNN & Open AI">OpenAI API</a>
-                <a href="#FFmpeg">FFmpeg</a>
-                <a href="Python, Tensorflow">RNN</a>
-                <a href="#Stripe API">Stripe API</a>
-                <a href="#Stripe Payment">OAuth 2</a>
-                <a href="#Stripe Payment">CO Isolation</a>
+                <a href="#Techstack">Skin Cancer Detect</a>
+                <a href="#Lexical Rich Text Editor">UV Index Monitor</a>
+                <a href="#RNN & Open AI">Storage of Moles</a>
+                <a href="#FFmpeg">LLM Assistant</a>
+                <a href="Python, Tensorflow">Context Storage</a>
+                <a href="#Stripe API">Chat with Professional</a>
+                <a href="#Stripe Payment">Professional Analasis GUI & React PDF</a>
+                <a href="#Stripe Payment">Google auth provider</a>
             </div>
             {/* <div className="project-stat">
                 <div className="stat-top">
@@ -242,7 +242,7 @@ const VideoContainer = ({
                 <h1>{pageData.title}</h1>
             </div>
             <div className="l-desc">
-            <h5>Clippify enables you to effortlessly collect and store video clips from various sources. Whether it's the funny moments from your family gatherings, educational tutorials, or your favorite movie quotes, Clippify helps you organize and access them with ease.</h5><br />
+            <h5>Pocket Protect is mainly a cross-platform (Android & IOS) mobile application designed to help in areas of Skin Cancer Prevention with built in CNN deep learning model and an interactive web interface for professional dermotologists with powerful analasis features and the ability to live chat with their clients (Web Socket).</h5><br />
             </div>
         </div>
 
@@ -258,7 +258,7 @@ const ExpertTitle = ({}) => {
     return(
         <div className='bg-gradient-primary flex flex-col w-[100%] p-5 justify-center items-center mt-10'>
             <h5 style={{border:"0px solid white",padding:"5px 10px",borderRadius:10,opacity:0.4,boxShadow: "inset 1px 1px 5px 1px white",marginBottom:10,color:"white"}}>Under the hood</h5>
-            <h2 className="text-white text-3xl pb-10 text-center">Fetures and Components</h2>
+            <h2 className="text-white text-3xl pb-10 text-center">Features and Components</h2>
         </div>
     )
 }
@@ -337,8 +337,8 @@ const TableForStats = ({
                     Clippify_data={Portfolio_data}
                     handleVisitClick={handleVisitClick}
                     socials={[
-                        {url:"https://github.com/orbant12/Podcast-Social-Media---WebApp.git"},
-                        {url:"https://https://www.tiktok.com/@lupody.tv"}
+                        {url:"https://github.com/orbant12/PocketProtect.git"},
+                        {url:""}
                     ]}
                     setVisibleItems={setVisibleItems}
                     visibleItems={visibleItems}
@@ -371,11 +371,11 @@ const TableForStats = ({
             (
                 <>
                 <TableMiddleStat 
-                    Clippify_data={Mobile_data}
+                    Clippify_data={Portfolio_data}
                     handleVisitClick={handleVisitClick}
                     socials={[
-                        {url:"https://github.com/orbant12/Podcast-Social-Media---WebApp.git"},
-                        {url:"https://https://www.tiktok.com/@lupody.tv"}
+                        {url:"https://github.com/orbant12/PocketProtect.git"},
+                        {url:""}
                     ]}
                     setVisibleItems={setVisibleItems}
                     visibleItems={visibleItems}
@@ -582,9 +582,15 @@ const ProductView = ({ title, description, tags, navigation,name }) => {
                 <div className="flex flex-col justify-center bg-white p-4 rounded pr-10 pl-10 transition duration-300 ease-in-out">
                   <h5 className="text-black">Open</h5>
                 </div>
-                <Link to={navigation} className="absolute inset-0 bg-black opacity-90 rounded pr-10 pl-10 flex justify-center items-center group-hover:opacity-100 transition duration-300 ease-in-out cursor-pointer rounded border border-white-800">
-                  <h5 className="text-white font-bolder">Open</h5>
+                {navigation == "NOT READY" ?
+                  <Link onClick={() => alert("Not ready yet ...")} className="absolute inset-0 bg-black opacity-90 rounded pr-1 pl-1 flex justify-center items-center group-hover:opacity-100 transition duration-300 ease-in-out cursor-pointer rounded border border-white-800">
+                  <h5 className="text-white font-bolder">Not Ready</h5>
                 </Link>
+                :
+                <Link to={navigation} className="absolute inset-0 bg-black opacity-90 rounded pr-10 pl-10 flex justify-center items-center group-hover:opacity-100 transition duration-300 ease-in-out cursor-pointer rounded border border-white-800">
+                <h5 className="text-white font-bolder">Open</h5>
+              </Link>
+              }
               </div>
             </div>
           </div>

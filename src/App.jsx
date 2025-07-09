@@ -15,8 +15,9 @@ import ClippifyPage from './pages/FullstackProjects/Clippify';
 import LupodyPage from './pages/FullstackProjects/Lupody';
 import PocketProtectPage from './pages/FullstackProjects/PocketProtect';
 //import UserAuthContext from './context/UserAuthContext';
-import PdfY from './pages/CyberProjects/pdfY';
+import PdfY from './pages/CyberProjects/artificial';
 import AboutMePage from './pages/AboutMePage';
+import Codify from './pages/CyberProjects/codify';
 
 
 function App() {
@@ -35,7 +36,8 @@ return (
         <Route path="/machine_learning-projects" element={<MLPage />} />
 
         <Route path="/cyber_security-projects" element={<CyberSecurityPage />} />
-        <Route path="/cyber_security-projects/pdfY" element={<PdfY />} />
+        <Route path="/cyber_security-projects/artificial-writeup" element={<PdfY />} />
+        <Route path="/cyber_security-projects/codify-writeup" element={<Codify />} />
 
         <Route path="/mobile-projects" element={<MobilePage />} />
         <Route path="/contact" element={<Contact />} />

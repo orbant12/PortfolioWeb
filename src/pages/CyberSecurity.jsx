@@ -1,338 +1,478 @@
-
-import React, {useState,useEffect} from 'react';
-import "../CSS/fullstack.css"
-
-import CourseraLogo from "../assets/Coursera.png"
-import SurferboyLogo from "../assets/SurferboyLogo.jpeg"
-import Modal from '@mui/material/Modal';
-import ClippifyImage from "../assets/Clippify-log.svg"
-import { Link } from 'react-router-dom';
-import { AmazonwebservicesOriginalWordmark, AppleOriginal, CplusplusLine, CplusplusOriginal, Css3Original, ExpressOriginal, FirebaseOriginal, FlaskOriginal, GoOriginal, Html5Original, JavascriptOriginal, LinuxOriginal, NextjsOriginal, NodejsOriginal, NumpyOriginal, OpenclOriginal, OpencvOriginal, PandasOriginal, PythonOriginal, ReactOriginal, TailwindcssOriginal, TensorflowOriginal, TypescriptOriginal, UbuntuOriginal, UbuntuOriginalWordmark, UbuntuPlain, VitejsOriginal, ViteOriginal, Windows11Original } from 'devicons-react';
-import vuLogo from "../assets/vu.jpg"
-
-
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const CyberSecurityPage = () => {
-
-  //STATE FOR Data Representation
   const [open, setOpen] = useState(false);
+  const [modelInput, setModelInput] = useState("");
+  const [activeSection, setActiveSection] = useState("writeups");
 
-  const [modelInput, setModelInput] = useState("")
+  const handleOpen = (certInput) => {
+    setOpen(true);
+    setModelInput(certInput);
+  };
+  const handleClose = () => setOpen(false);
 
-  //<**********-DATA-*****************>
+  const navigate = useNavigate()
 
+  const handleWriteUpNav = (title) => {
+    if(title === "[HTB] - Artificial"){
+      navigate("/cyber_security-projects/artificial-writeup")
+    } else if(title === "[HTB] - Codify"){
+      navigate("/cyber_security-projects/codify-writeup")
+    }
+  };
 
-const handleOpen = (certInput) => {
-  setOpen(true);
-  setModelInput(certInput)
-};
-const handleClose = () => setOpen(false);
+  const handleNavTools = (title) => {
+    if(title === "🔑 Credhunter"){
+       location.href = "https://github.com/orbant12/Pentest-ToolKit/tree/main/Credhunter"
+    }
+  };
 
-
-
-
-return(
-  <div className="fullstack">
-    {/*1.) Hero SECTION*/}
-    <div className='flex flex-col w-[70%] p-0 mt-20'>
-        <h1 className='text-white text-md'>Main Menu</h1>
-        <h1 className='text-white text-4xl'>Penetration Testing</h1>
-        <AnimatedBackground />
-        
-      <div className="flex flex-col items-center p-5 bg-gray-900 rounded lg:flex-row lg:justify-between animated-bg mt-10">
-                    <h1 className="text-white text-md opacity-85 self-center font-bold lg:self-left mb-5 lg:mb-0">Tools: </h1>
-                    <div className="flex flex-wrap items-center p-5 rounded justify-center" style={{backgroundColor:"rgba(0,0,0,0.4)"}}>
-                        <JavascriptOriginal className="m-3 mx-4" size={35} />
-                        <PythonOriginal className="m-3 mx-4" size={35} />
-                        <CplusplusOriginal className="m-3 mx-4" size={35} />
-                    </div>
-                        <h3 className="text-white lg:ml-0 lg:mt-0 lg:mb-0 my-5">•</h3>
-                        <div className="flex flex-wrap items-center p-3 rounded lg:ml-8 justify-center" style={{backgroundColor:"rgba(0,0,0,0.4)"}}>
-                        <LinuxOriginal className="m-3 mx-4" size={35} />
-                        <Windows11Original color='white' className='m-3 mx-4' size={35} />
-                        <AppleOriginal className='m-3 mx-4' size={35} />
-                    </div>
-                </div>
-
-    </div>
-    <div className='flex flex-col items-center border-t mt-16'>
-      <h1 className='text-3xl font-medium m-10 p-3 text-white' >Projects</h1>
-      <ProductView 
-        icon={ClippifyImage}
-        title="XSS"
-        description=""
-        tags={["CNN", "ISIC Skin Cancer Dataset"]}
-        navigation={"/cyber_security-projects/pdfY"}
-        level={"Senior"}
-      />
-      <ProductView 
-        icon={ClippifyImage}
-        title="Speech To Text"
-        description=""
-        tags={["RNN","LJSpeech Dataset"]}
-        navigation={"/fullstack-projects/clippify"}
-        level={"Intermediate"}
-      />
-      <ProductView 
-        icon={ClippifyImage}
-        title="Object Detection"
-        description=""
-        tags={["SSD"]}
-        navigation={"/fullstack-projects/lupody"}
-        level={"Beginner"}
-      />
-      <ProductView 
-        icon={ClippifyImage}
-        title="Kaggle Competitions"
-        description="A comprehensive course on Fullstack Web Development, covering Frontend, Backend, and Databases."
-        tags={["React & Vite", "JS, CSS & Tailwind, HTML", "Figma", "Spline 3D"]}
-        navigation={"/lupody"}
-        level={"Beginner"}
-      />
-    </div>
-
-
-
-    {/*3.) Learning-Path SECTION*/}
-    <div className='fullstack-learning'>
-        <div className='flex flex-col items-center mb-10 '>
-          <h5 style={{border:"0px solid black",padding:"5px 10px",borderRadius:10,opacity:0.4,boxShadow: "inset 1px 1px 5px 1px white",color:"white"}}>Click the icon for Certificate</h5>
-          <h1 style={{marginTop:10, color:"white",fontSize:20}}>My Learning Journey</h1>
-        </div>
-
-        <div className='learning-path'>
-        {/*FULLSTACK WEB BOOTCAMP - UDEMY COURSE*/}
-        <ol class="timeline">
-          {/*COURSE TITLE*/}
-          <li class="timeline-item">
-            <span class="timeline-item-icon | avatar-icon">
-              <i class="avatar">
-                <img src={vuLogo} />
-              </i>
-            </span>
-            <div class="timeline-item-description">
-              <span><a href="https://www.vusec.net/" className='learned-course-title text-xs md:text-lg' style={{color:"white"}}>📚 VU Cyber Security Association 📚</a></span>
-            </div>
-          </li>
-          
-          {/*FRONTEND COURSE ITEM*/}
-          <li class="timeline-item">
-            <span class="timeline-item-icon | faded-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
-                <path fill="none" d="M0 0h24v24H0z" />
-                <path fill="currentColor" d="M12.9 6.858l4.242 4.243L7.242 21H3v-4.243l9.9-9.9zm1.414-1.414l2.121-2.122a1 1 0 0 1 1.414 0l2.829 2.829a1 1 0 0 1 0 1.414l-2.122 2.121-4.242-4.242z" />
-              </svg>
-            </span>
-            <div class="timeline-item-description">
-              <i class="avatar | small">
-                <img src={vuLogo} />
-              </i>
-              <span><a style={{color:"white"}} className='learned-course-lesson-title' href="https://www.udemy.com/course/the-complete-web-development-bootcamp/?couponCode=ACCAGE0923">Front-End Web Development</a> •-• <a href="https://www.udemy.com/course/the-complete-web-development-bootcamp/?couponCode=ACCAGE0923#instructor-1">Dr. Angela Yu</a> •-• <time datetime="21-01-2021">Dec 11, 2023</time></span>
-            </div>
-          </li>
-          {/*Technology's COURSE ITEM*/}
-          <li class="timeline-item">
-            <span class="timeline-item-icon | faded-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
-                <path fill="none" d="M0 0h24v24H0z" />
-                <path fill="currentColor" d="M12 13H4v-2h8V4l8 8-8 8z" />
-              </svg>
-            </span>
-            <div class="timeline-item-description">
-              <i class="avatar | small">
-                <img src={vuLogo} />
-              </i>
-              <span><a style={{color:"white"}} className='learned-course-lesson-title' href="https://www.udemy.com/course/the-complete-web-development-bootcamp/?couponCode=ACCAGE0923">Bootstrap, jQuery, Node & Express, EJS, React, SQL, PostgreSQL, Databases </a> •-• <a href="https://www.udemy.com/course/the-complete-web-development-bootcamp/?couponCode=ACCAGE0923#instructor-1">Dr. Angela Yu</a> •-• <time datetime="21-01-2021">Dec 11, 2023</time></span>
-            </div>
-          </li>
-          {/*BACKEND COURSE ITEM*/}
-          <li class="timeline-item">
-            <span class="timeline-item-icon | faded-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
-                <path fill="none" d="M0 0h24v24H0z" />
-                <path fill="currentColor" d="M12 13H4v-2h8V4l8 8-8 8z" />
-              </svg>
-            </span>
-            <div class="timeline-item-description">
-              <i class="avatar | small">
-                <img src={vuLogo} />
-              </i>
-              <span><a style={{color:"white"}} className='learned-course-lesson-title' href="https://www.udemy.com/course/the-complete-web-development-bootcamp/?couponCode=ACCAGE0923">Back-End Web Development</a> •-• <a href="https://www.udemy.com/course/the-complete-web-development-bootcamp/?couponCode=ACCAGE0923#instructor-1">Dr. Angela Yu</a> •-• <time datetime="21-01-2021">Dec 11, 2023</time></span>
-            </div>
-          </li>
-          {/*AUTH-SECURITY COURSE ITEM*/}
-          <li class="timeline-item">
-            <span class="timeline-item-icon | faded-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
-                <path fill="none" d="M0 0h24v24H0z" />
-                <path fill="currentColor" d="M12 13H4v-2h8V4l8 8-8 8z" />
-              </svg>
-            </span>
-            <div class="timeline-item-description">
-              <i class="avatar | small">
-                <img src={vuLogo} />
-              </i>
-              <span><a style={{color:"white"}} className='learned-course-lesson-title' href="https://www.udemy.com/course/the-complete-web-development-bootcamp/?couponCode=ACCAGE0923">Authentication and Security - Handling Credentials & Designing a Secure Login</a> •-• <a href="https://www.udemy.com/course/the-complete-web-development-bootcamp/?couponCode=ACCAGE0923#instructor-1">Dr. Angela Yu</a> •-• <time datetime="21-01-2021">Dec 11, 2023</time></span>
-            </div>
-          </li>
-          {/*API COURSE ITEM*/}
-          <li class="timeline-item">
-            <span class="timeline-item-icon | faded-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
-                <path fill="none" d="M0 0h24v24H0z" />
-                <path fill="currentColor" d="M12 13H4v-2h8V4l8 8-8 8z" />
-              </svg>
-            </span>
-            <div class="timeline-item-description">
-              <i class="avatar | small">
-                <img src={vuLogo} />
-              </i>
-              <span><a style={{color:"white"}} className='learned-course-lesson-title' href="https://www.udemy.com/course/the-complete-web-development-bootcamp/?couponCode=ACCAGE0923">API Types and Architectures</a> •-• <a href="https://www.udemy.com/course/the-complete-web-development-bootcamp/?couponCode=ACCAGE0923#instructor-1">Dr. Angela Yu</a> •-• <time datetime="21-01-2021">Dec 11, 2023</time></span>
-            </div>
-          </li>
-          {/*CERT*/}
-          <li class="timeline-item">
-          <span class="timeline-item-icon | faded-icon" onClick={() => handleOpen(BootcampFullstack_cert)} >
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 24" width="24" height="24">
-                  <path class="cls-1" d="M28,5H4A2,2,0,0,0,2,7V24a2,2,0,0,0,2,2H18v3a1,1,0,0,0,.53.88,1,1,0,0,0,1-.05L22,28.2l2.45,1.63A1,1,0,0,0,26,29V26h2a2,2,0,0,0,2-2V7A2,2,0,0,0,28,5ZM22.59,21.94a3,3,0,1,1,2.35-2.35A3,3,0,0,1,22.59,21.94ZM24,27.13l-1.45-1a1,1,0,0,0-1.1,0l-1.45,1V23.58a5,5,0,0,0,4,0ZM28,24H26V22s0,0,0,0a4.93,4.93,0,0,0,.88-4.1A5,5,0,0,0,17,19a4.93,4.93,0,0,0,1,3s0,0,0,0v2H4V7H28Z"/><path class="cls-1" d="M7,12H25a1,1,0,0,0,0-2H7a1,1,0,0,0,0,2Z"/><path class="cls-1" d="M7,16h8a1,1,0,0,0,0-2H7a1,1,0,0,0,0,2Z"/><path class="cls-1" d="M7,20h8a1,1,0,0,0,0-2H7a1,1,0,0,0,0,2Z"/>
-                </svg>
+  // Animated Matrix-style background with purple theme
+  const MatrixBackground = () => (
+    <div className="fixed inset-0 overflow-hidden pointer-events-none opacity-10">
+      <div className="matrix-rain">
+        {[...Array(50)].map((_, i) => (
+          <div
+            key={i}
+            className="matrix-column"
+            style={{
+              left: `${i * 2}%`,
+              animationDelay: `${Math.random() * 5}s`,
+              animationDuration: `${3 + Math.random() * 4}s`
+            }}
+          >
+            {[...Array(20)].map((_, j) => (
+              <span key={j} className="text-purple-400 text-xs font-mono">
+                {String.fromCharCode(0x30A0 + Math.random() * 96)}
               </span>
-            <div class="timeline-item-description">
-              <i class="avatar | small">
-                <img src={vuLogo} />
-              </i>
-            </div>
-          </li>
-
-          {/*OPINNION*/}
-          <li class="timeline-item | extra-space">
-            <span class="timeline-item-icon | filled-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
-                <path fill="none" d="M0 0h24v24H0z" />
-                <path fill="currentColor" d="M6.455 19L2 22.5V4a1 1 0 0 1 1-1h18a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H6.455zM7 10v2h2v-2H7zm4 0v2h2v-2h-2zm4 0v2h2v-2h-2z" />
-              </svg>
-            </span>
-            <div class="timeline-item-wrapper">
-              <div class="timeline-item-description">
-                <i class="avatar | small">
-                  <img src={vuLogo} />
-                </i>
-                <span><a href="#">What I've learned</a> from this course </span>
-              </div>
-              <div class="comment">
-              <p>
-                    1. <span className='comment-highlight'>Build websites</span> and web applications from scratch using HTML, CSS, and JavaScript.<br />
-                    <br />
-              
-                    2. <span className='comment-highlight'>Create responsive layouts:</span> with plain CSS and frameworks like Bootstrap & Tailwind.<br />
-                    <br />
-
-                    3. <span className='comment-highlight'>Develop server-side applications: </span> using Node.js and Express. <br /> <br />
-                    4. <span className='comment-highlight'>Work with databases:</span> like MongoDB and SQL.<br /> <br />
-                    5. <span className='comment-highlight'>Implement user authentication and authorization</span>  <br /> <br />
-                    6. <span className='comment-highlight'>Use version control:</span> with Git and GitHub.<br /> <br />
-                    7. <span className='comment-highlight'>Deploy web applications to services like Heroku.</span><br /> <br />
-                    8. <span className='comment-highlight'>Understand the latest web development technologies and best practices.</span><br /> <br />
-                    9. <span className='comment-highlight'>Utilize APIs and handle asynchronous operations.</span><br /> <br />
-                    10. <span className='comment-highlight'>Debug and troubleshoot</span> common web development issues.<br /> <br />
-                  </p>
-                  <button class="button">⭐⭐⭐⭐</button>
-              </div>
-              <button class="show-replies" onClick={() => handleVisitClick("CourseraNotes")}>
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-forward" width="44" height="44" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                  <path d="M15 11l4 4l-4 4m4 -4h-11a4 4 0 0 1 0 -8h1" />
-                </svg>
-                  See My Notes
-              </button>
-              </div>
-          </li>
-        </ol>
-
-        <div style={{height:2, width:"65%",backgroundColor:"white",margin:20}} />
-
-        <Modal
-            open={open}
-            onClose={handleClose}
-            aria-labelledby="modal-modal-title"
-            aria-describedby="modal-modal-description"
-            >
-            <div style={{display:"flex",flexDirection:"column",width:"100%",alignItems:"center",marginTop:200}}>
-                <img className='cert-image-kaggle'  src={modelInput} alt="" />
-            </div>
-        </Modal>
-
-        </div>
-
-
-    </div>
-  </div>
-)
-}
-
-
-export default CyberSecurityPage;
-
-
-const ProductView = ({ icon, title, description, tags, navigation, level }) => {
-  return (
-<div className="flex flex-col md:flex-row md:items-center p-10 border border-magenta rounded shadow-lg mb-10 bg-gradient-primary relative w-[90%] md:w-[70%]">
-  <div className="flex flex-col flex-grow">
-    <h3 className="text-xl font-semibold mb-2 text-white">{title}</h3>
-    <p className="text-gray-400 mb-2 max-w-[90%] text-bac md:text-md lg:text-sd">{description}</p>
-    <div className="flex flex-wrap">
-      {tags.map((tag, index) => (
-        <span
-          key={index}
-          className="bg-blue-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded m-2"
-        >
-          {tag}
-        </span>
-      ))}
-    </div>
-  </div>
-  <div className="flex flex-col mt-4 md:mt-0 md:ml-4 md:self-stretch justify-end md:justify-center">
-    <div className="relative inline-block">
-      <div className="group">
-        <div className="flex flex-col justify-center bg-white p-4 rounded pr-10 pl-10 transition duration-300 ease-in-out">
-          <h5 className="text-black">Open</h5>
-        </div>
-        <Link to={navigation} className="absolute inset-0 bg-black opacity-90 rounded pr-10 pl-10 flex justify-center items-center group-hover:opacity-100 transition duration-300 ease-in-out cursor-pointer rounded border border-white-800">
-          <h5 className="text-white font-bolder">Open</h5>
-        </Link>
+            ))}
+          </div>
+        ))}
       </div>
     </div>
-  </div>
-  <div className='absolute top-0 right-0 bg-black p-2 border rounded-bl-lg w-40 flex items-center justify-center border-magenta'>
-    <h5 className='text-xs text-white'><span className='opacity-60 mr-1'>Level: </span>{level}</h5>
-  </div>
-</div>
+  );
 
+  // Glitch text effect with purple
+  const GlitchText = ({ children, className = "" }) => (
+    <div className={`glitch ${className}`} data-text={children}>
+      {children}
+    </div>
+  );
 
+  // Writeup card component
+  const WriteupCard = ({ title, description, tags, difficulty, platform }) => (
+    <div className="bg-black border border-purple-500 rounded-lg p-6 mb-6 shadow-lg shadow-purple-500/20 hover:shadow-purple-400/30 transition-all duration-300 hover:border-purple-400 project-card">
+      <div className="flex justify-between items-start mb-4">
+        <div className="flex-1">
+          <div className="text-purple-500 font-mono text-sm mb-1">[{platform}]</div>
+          <h3 className="text-xl font-bold text-purple-300 mb-2 hover:text-purple-200 transition-colors">{title}</h3>
+          <p className="text-gray-400 mb-4 leading-relaxed">{description}</p>
+        </div>
+        <div className="bg-red-900/30 border border-red-500 rounded px-3 py-1 ml-4">
+          <span className="text-red-400 font-mono text-xs">{difficulty}</span>
+        </div>
+      </div>
+
+      <div className="flex flex-wrap gap-2 mb-4">
+        {tags.map((tag, index) => (
+          <span
+            key={index}
+            className="px-2 py-1 bg-gray-900 border border-purple-700 rounded text-purple-300 font-mono text-xs hover:border-purple-500 transition-colors"
+          >
+            {tag}
+          </span>
+        ))}
+      </div>
+
+      <div className="flex justify-end">
+        <button 
+          className="bg-purple-600 hover:bg-purple-500 text-black font-mono font-bold py-2 px-6 rounded transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/50"
+          onClick={() => handleWriteUpNav(title)}
+        >
+          READ_WRITEUP
+        </button>
+      </div>
+    </div>
+  );
+
+  // Tool card component
+  const ToolCard = ({ name, description, language, category, status }) => (
+    <div className="bg-black border border-purple-500 rounded-lg p-6 mb-6 shadow-lg shadow-purple-500/20 hover:shadow-purple-400/30 transition-all duration-300 hover:border-purple-400 project-card">
+      <div className="flex justify-between items-start mb-4">
+        <div className="flex-1">
+          <div className="text-purple-500 font-mono text-sm mb-1">[{category}]</div>
+          <h3 className="text-xl font-bold text-purple-300 mb-2">{name}</h3>
+          <p className="text-gray-400 mb-4 leading-relaxed">{description}</p>
+          <div className="text-purple-400 font-mono text-sm">
+            <span className="text-purple-500">$</span> Language: {language}
+          </div>
+        </div>
+        <div className={`border rounded px-3 py-1 ml-4 ${
+          status === 'ACTIVE' 
+            ? 'bg-purple-900/30 border-purple-500' 
+            : 'bg-yellow-900/30 border-yellow-500'
+        }`}>
+          <span className={`font-mono text-xs ${
+            status === 'ACTIVE' ? 'text-purple-400' : 'text-yellow-400'
+          }`}>
+            {status}
+          </span>
+        </div>
+      </div>
+
+      <div className="flex justify-end">
+        <button 
+          className="bg-purple-600 hover:bg-purple-500 text-black font-mono font-bold py-2 px-6 rounded transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/50"
+          onClick={() => handleNavTools(name)}
+        >
+          VIEW_CODE
+        </button>
+      </div>
+    </div>
+  );
+
+  // Certification badge
+  const CertBadge = ({ name, issuer, date, level, verified = true }) => (
+    <div className="bg-black border border-purple-500 rounded-lg p-6 mb-6 shadow-lg shadow-purple-500/20 terminal-border">
+      <div className="flex items-center justify-between mb-4">
+        <div className="flex items-center">
+          <div className={`w-4 h-4 rounded-full mr-3 ${verified ? 'bg-purple-500' : 'bg-red-500'}`}></div>
+          <div>
+            <h3 className="text-xl font-bold text-purple-300">{name}</h3>
+            <p className="text-purple-500 font-mono text-sm">{issuer}</p>
+          </div>
+        </div>
+        <div className="text-right">
+          <div className="text-purple-400 font-mono text-sm">{date}</div>
+          <div className={`font-mono text-xs px-2 py-1 rounded mt-1 ${
+            level === 'EXPERT' 
+              ? 'bg-red-900/30 border border-red-500 text-red-400'
+              : level === 'INTERMEDIATE'
+              ? 'bg-yellow-900/30 border border-yellow-500 text-yellow-400'
+              : 'bg-purple-900/30 border border-purple-500 text-purple-400'
+          }`}>
+            {level}
+          </div>
+        </div>
+      </div>
+      
+      <div className="flex justify-end">
+        <button 
+          className="bg-purple-600 hover:bg-purple-500 text-black font-mono font-bold py-1 px-4 rounded transition-all duration-300"
+          onClick={() => handleOpen(`${name}_cert`)}
+        >
+          VERIFY
+        </button>
+      </div>
+    </div>
+  );
+
+  // Navigation tabs
+  const TabButton = ({ id, label, active, onClick }) => (
+    <button
+      className={`px-6 py-3 font-mono font-bold rounded-t-lg transition-all duration-300 ${
+        active 
+          ? 'bg-purple-600 text-black border-b-2 border-purple-400' 
+          : 'bg-gray-900 text-purple-400 hover:bg-gray-800 border border-purple-700'
+      }`}
+      onClick={() => onClick(id)}
+    >
+      {label}
+    </button>
+  );
+
+  return (
+    <div className="min-h-screen bg-black text-purple-400 font-mono relative overflow-hidden">
+      <MatrixBackground />
+      
+      {/* Styles */}
+      <style jsx>{`
+        @keyframes matrix-fall {
+          0% { transform: translateY(-100vh); }
+          100% { transform: translateY(100vh); }
+        }
+        
+        @keyframes glitch {
+          0% { transform: translate(0); }
+          20% { transform: translate(-2px, 2px); }
+          40% { transform: translate(-2px, -2px); }
+          60% { transform: translate(2px, 2px); }
+          80% { transform: translate(2px, -2px); }
+          100% { transform: translate(0); }
+        }
+        
+        @keyframes flicker {
+          0%, 100% { opacity: 1; }
+          50% { opacity: 0.8; }
+        }
+        
+        @keyframes neural-pulse {
+          0%, 100% { box-shadow: 0 0 5px #8b5cf6; }
+          50% { box-shadow: 0 0 20px #8b5cf6, 0 0 30px #8b5cf6; }
+        }
+        
+        .matrix-column {
+          position: absolute;
+          animation: matrix-fall linear infinite;
+          display: flex;
+          flex-direction: column;
+        }
+        
+        .glitch {
+          position: relative;
+          animation: flicker 2s infinite;
+        }
+        
+        .glitch:before,
+        .glitch:after {
+          content: attr(data-text);
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: black;
+        }
+        
+        .glitch:before {
+          animation: glitch 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both infinite;
+          color: #ff0066;
+          z-index: -1;
+        }
+        
+        .glitch:after {
+          animation: glitch 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) reverse both infinite;
+          color: #8b5cf6;
+          z-index: -2;
+        }
+        
+        .terminal-border {
+          position: relative;
+        }
+        
+        .terminal-border:before {
+          content: '';
+          position: absolute;
+          top: -1px;
+          left: -1px;
+          right: -1px;
+          bottom: -1px;
+          background: linear-gradient(45deg, #8b5cf6, #6366f1, #8b5cf6);
+          border-radius: inherit;
+          z-index: -1;
+          animation: neural-pulse 3s infinite;
+        }
+        
+        .project-card:hover {
+          transform: translateY(-5px);
+        }
+      `}</style>
+
+      {/* Main content */}
+      <div className="container mx-auto px-6 py-20 relative z-10">
+        {/* Hero Section */}
+        <div className="mb-20">
+          <div className="text-purple-500 font-mono text-sm mb-2">[SYSTEM_ACCESS_GRANTED]</div>
+          <div className="text-purple-400 font-mono mb-4">Main Menu > Security Operations</div>
+          
+          <GlitchText className="text-4xl md:text-6xl font-bold text-purple-300 mb-8">
+            PENETRATION_TESTING
+          </GlitchText>
+          
+          <div className="text-purple-500 font-mono mb-8">
+            <span className="text-purple-400">root@kali:~#</span> ./start_engagement.sh
+          </div>
+
+          <div className="bg-black border border-purple-500 rounded-lg p-6 mb-6 shadow-lg shadow-purple-500/20 terminal-border">
+            <div className="flex items-center mb-4">
+              <div className="flex space-x-2 mr-4">
+                <div className="w-3 h-3 bg-red-500 rounded-full"></div>
+                <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
+                <div className="w-3 h-3 bg-purple-500 rounded-full"></div>
+              </div>
+              <span className="text-purple-400 font-mono text-sm">~/security/penetration_testing</span>
+            </div>
+            
+            <div className="text-purple-400 font-mono text-sm">
+              [+] Initializing penetration testing framework...<br/>
+              [+] Loading custom exploits...<br/>
+              [+] Establishing secure channels...<br/>
+              [✓] System ready for engagement
+            </div>
+          </div>
+        </div>
+
+        {/* Navigation Tabs */}
+        <div className="mb-8">
+          <div className="flex space-x-2 mb-6">
+            <TabButton 
+              id="writeups" 
+              label="WRITEUPS" 
+              active={activeSection === "writeups"} 
+              onClick={setActiveSection} 
+            />
+            <TabButton 
+              id="tools" 
+              label="MY_CUSTOM_TOOLS" 
+              active={activeSection === "tools"} 
+              onClick={setActiveSection} 
+            />
+            <TabButton 
+              id="certs" 
+              label="CERTIFICATIONS" 
+              active={activeSection === "certs"} 
+              onClick={setActiveSection} 
+            />
+          </div>
+        </div>
+
+        {/* Writeups Section */}
+        {activeSection === "writeups" && (
+          <div className="mb-20">
+            <div className="text-center mb-12">
+              <div className="text-purple-500 font-mono mb-2">[EXPLOITATION_DATABASE]</div>
+              <h2 className="text-3xl font-bold text-purple-300">MACHINE_WRITEUPS</h2>
+            </div>
+
+            <WriteupCard
+              title="[HTB] - Artificial"
+              platform="HACKTHEBOX"
+              difficulty="MEDIUM"
+              description="AI-themed machine featuring TensorFlow web application vulnerable to malicious .h5 model uploads. Exploited keras.models.load_model for RCE, escalated via SQLite enumeration, hash cracking, and Backrest backup service exploitation."
+              tags={[".h5 file upload", "keras RCE", "sqlite enumeration", "hash cracking", "backrest WebUI RCE", "port forwarding"]}
+            />
+
+              <WriteupCard
+              title="[HTB] - Codify"
+              platform="HACKTHEBOX"
+              difficulty="EASY"
+              description="Fascinating challenge that demonstrates the dangers of code sandboxes and privilege escalation through misconfigured scripts."
+              tags={["vm2 js sandbox escape", "CVE-2023-30547", "sqlite enumeration", "hash cracking", "sudo privileges", "bash script exploitation", "terminal spoofing"]}
+            />
+          </div>
+        )}
+
+        {/* Custom Tools Section */}
+        {activeSection === "tools" && (
+          <div className="mb-20">
+            <div className="text-center mb-12">
+              <div className="text-purple-500 font-mono mb-2">[CUSTOM_ARSENAL]</div>
+              <h2 className="text-3xl font-bold text-purple-300">MY_PENTESTING_TOOLS</h2>
+            </div>
+
+            <ToolCard
+              name="🔑 Credhunter"
+              category="POST_EXPLOITATION"
+              description="A powerful bash script designed to hunt for credentials, API keys, passwords, and sensitive files across directory structures. Perfect for OSCP exam preparation and ethical penetration testing."
+              language="Bash"
+              status="ACTIVE"
+            />
+          </div>
+        )}
+
+        {/* Certifications Section */}
+        {activeSection === "certs" && (
+          <div className="mb-20">
+            <div className="text-center mb-12">
+              <div className="text-purple-500 font-mono mb-2">[CREDENTIAL_VERIFICATION]</div>
+              <h2 className="text-3xl font-bold text-purple-300">SECURITY_CERTIFICATIONS</h2>
+            </div>
+
+            <CertBadge
+              name="CompTIA Security+"
+              issuer="CompTIA"
+              date="2025"
+              level="INTERMEDIATE"
+              verified={true}
+            />
+
+            <CertBadge
+              name="OSCP - Offensive Security Certified Professional (In Progress)"
+              issuer="Offensive Security"
+              date="2025"
+              level="EXPERT"
+              verified={false}
+            />
+          </div>
+        )}
+
+        {/* Learning Journey Section */}
+        <div className="mb-20">
+          <div className="text-center mb-12">
+            <div className="text-purple-500 font-mono mb-2">[KNOWLEDGE_BASE]</div>
+            <h2 className="text-3xl font-bold text-purple-300">SECURITY_TRAINING</h2>
+          </div>
+
+          <div className="bg-black border border-purple-500 rounded-lg p-8 shadow-lg shadow-purple-500/20 terminal-border">
+            <div className="text-purple-400 font-mono mb-6">
+              <span className="text-purple-500">root@training:~#</span> cat security_education.log
+            </div>
+
+            <div className="space-y-6">
+              <div className="bg-gray-900 border border-purple-700 rounded p-4">
+                <div className="text-purple-300 font-mono font-bold mb-2">📚 VU Cyber Security Association</div>
+                <div className="text-purple-400 font-mono text-sm mb-2">Advanced Penetration Testing Methodologies</div>
+                <div className="text-gray-400 font-mono text-xs">Network Security, Web Application Security, Binary Exploitation</div>
+              </div>
+
+              <div className="bg-gray-900 border border-purple-700 rounded p-4">
+                <div className="text-purple-300 font-mono font-bold mb-2">🔒 OSCP Certification Track</div>
+                <div className="text-purple-400 font-mono text-sm mb-2">Penetration Testing with Kali Linux (PWK)</div>
+                <div className="text-gray-400 font-mono text-xs">Buffer Overflows, Privilege Escalation, Active Directory</div>
+              </div>
+
+              <div className="bg-gray-900 border border-purple-700 rounded p-4">
+                <div className="text-purple-300 font-mono font-bold mb-2">🛡️ Security+ Foundation</div>
+                <div className="text-purple-400 font-mono text-sm mb-2">CompTIA Security+ Certification</div>
+                <div className="text-gray-400 font-mono text-xs">Risk Management, Cryptography, Network Security</div>
+              </div>
+            </div>
+
+            <div className="mt-8 bg-gray-900 border border-purple-700 rounded p-4">
+              <div className="text-purple-300 font-mono text-sm mb-3"># Core Security Skills:</div>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-2 text-purple-400 font-mono text-sm">
+                <div>• Advanced Penetration Testing</div>
+                <div>• Web Application Security</div>
+                <div>• Network Security Assessment</div>
+                <div>• Binary Exploitation & Reverse Engineering</div>
+                <div>• Active Directory Exploitation</div>
+                <div>• Social Engineering & OSINT</div>
+                <div>• Malware Analysis & Development</div>
+                <div>• Incident Response & Forensics</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Certificate Modal */}
+      {open && (
+        <div className="fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-50" onClick={handleClose}>
+          <div className="bg-black border border-purple-500 rounded-lg p-6 max-w-4xl max-h-full overflow-auto">
+            <div className="text-purple-300 font-mono mb-4">[CERTIFICATE_VERIFICATION]</div>
+            <div className="text-center">
+              <div className="text-purple-400 font-mono mb-4">Certificate: {modelInput}</div>
+              <div className="text-purple-500 font-mono mb-4">[✓] VERIFICATION_SUCCESSFUL</div>
+              <button 
+                className="bg-purple-600 hover:bg-purple-500 text-black font-mono font-bold py-2 px-4 rounded"
+                onClick={handleClose}
+              >
+                CLOSE
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Terminal footer */}
+      <div className="border-t border-purple-500 bg-black p-4">
+        <div className="text-purple-400 font-mono text-center">
+          <span className="text-purple-500">root@system:~#</span> End of transmission
+        </div>
+      </div>
+    </div>
   );
 };
 
-
-
-
-export const AnimatedBackground = () => (
-  <>
-    <style jsx>{`
-      @keyframes backgroundFade {
-        0% {
-          background-color: rgba(255, 255, 255, 0.1);
-        }
-        50% {
-          background-color: rgba(255, 255, 255, 0.3);
-        }
-        100% {
-          background-color: rgba(255, 255, 255, 0.1);
-        }
-      }
-
-      .animated-bg {
-        animation: backgroundFade 5s infinite;
-      }
-    `}</style>
-  </>
-);
+export default CyberSecurityPage;

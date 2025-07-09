@@ -25,6 +25,14 @@ import ImageFrame from './components/ClippifyComponents/videoFrame/imageFrame';
 import HoverFrame from './components/ClippifyComponents/videoFrame/hoverFrame';
 import HovermeImage from './assets/hoverME2.jpeg';
 
+import GoogleAuth from "./assets/pp/auth.png"
+import uv from "./assets/pp/uv.png"
+import storageMole from "./assets/pp/storage.png"
+import ai from "./assets/pp/ai.png"
+import contextImage from "./assets/pp/context.png"
+import liveImage from "./assets/pp/live.png"
+import appLog from "./assets/pp/logo.png"
+import anal from "./assets/pp/anal.png"
 
 
 import ExpoIcon from './assets/expoGo.png';
@@ -58,6 +66,8 @@ const richtextClip = 'https://firebasestorage.googleapis.com/v0/b/betterbyte-fbd
 
 //LUPODY SHORT
 const LupodyYoutube = 'https://firebasestorage.googleapis.com/v0/b/betterbyte-fbd6c.appspot.com/o/LupodyShort.mp4?alt=media&token=4c0ea98c-f7d0-47d3-a209-a81c5b979c8e'
+
+const pocketVideo = 'https://firebasestorage.googleapis.com/v0/b/betterbyte-fbd6c.appspot.com/o/Google%20Auth.mp4?alt=media&token=20667450-b67f-4c40-b61c-0474dfe39191'
 
 
 export const ClippifyData = {
@@ -403,9 +413,9 @@ export const ClippifyMobileData = {
 
 export const PocketProtectData = {
   title: "Pocket Protect",
-  youtube: clippifyYoutube,
-  navigation: "https://clippify.net",
-  youtubeHref: "https://www.youtube.com/watch?v=u0Unxzzn6vc&ab_channel=Clippify",
+  youtube: pocketVideo,
+  navigation: "",
+  youtubeHref: "",
   list: [
       "Clip trimming, saving, storing",
       "Machine Learning Model for transcript extraction",
@@ -416,81 +426,97 @@ export const PocketProtectData = {
   ],
   expertise: [
   {
-      logo: LexicalJPG,
-      title: "Note Taking",
-      tech: "Lexical Rich Text Editor",
+      logo: appLog,
+      title: "Skin Cancer Detect",
+      tech: "CNN Model with Flask Web Server",
       text: [
-          "• Serialization & Deserialization (HTML, JSON)",
-          "• Nodes (Transforms, Overrides)",
-          "• Listeners",
-          "• Custom Plugins (CODE, MARKDOWN, LINK, LIST)",
+          "• Dokcer + Flask + AWS EC2",
+          "• ISIC Database for model training",
+          "• Png to Base 64 Url for faster req and res",
+          "• 83% Accuracy",
       ],
-      show: () => <Editor />
+      show: () => <ImageFrame image={anal} />
     },
     {
-      logo: openAiJPG,
-      title: "LLM with Transcript",
-      tech: "RNN & Open AI",
+      logo: appLog,
+      title: "UV Index Monitor",
+      tech: "OpenWeatherAPI + OpenAI API",
       text: [
-        "• Video type manipulation (blob, data:url, base64)",
-        "• FFmpeg syntax for video manipulation",
-        "• Timeline Bar from thumbnails"
+        "• Getting current weather data from OpenWeatherAPI",
+        "• Evaluating data with LLM giving valuable advice",
+        "• Notification alerts for hight indexes and current advice"
       ],
-      show: () => <AiText />
+      show: () => <ImageFrame image={uv} />
     },
     {
-      logo: FFMPEGjpg,
-      title: "Video Clipper",
-      tech: "FFmpeg",
+      logo: appLog,
+      title: "Storage of Moles",
+      tech: "Typescript",
       text: [
-        "• Video type manipulation (blob, data:url, base64)",
-        "• FFmpeg syntax for video manipulation",
-        "• Timeline Bar from thumbnails"
+        "• Body Part -> All Moles -> Selected Mole",
+        "• You can see data about your moles in an organised manner",
       ],
-      show: () => <VideoFrame videoSrc={clippifyClip} />
+      show: () => <ImageFrame image={storageMole} />
     },
     {
-      logo: SpeechToTextjpg,
-      tech: "Python, Tensorflow",
-      title: "Speech To Text Model",
+      logo: appLog,
+      tech: "Open AI API",
+      title: "LLM Assistant",
       text: [
-          "• Video type manipulation (blob, data:url, base64)",
-          "• FFmpeg syntax for video manipulation",
-          "• Timeline Bar from thumbnails"
+          "• Chat with a ChatGPT wrapper designed for medical advice",
+          "• It can see your medical records to give help to your specific needs",
       ],
-      show: () => <ImageFrame image={imageImport} />
+      show: () => <ImageFrame image={ai} />
     },
     {
-      logo: Stripejpg,
-      title: "Payment System",
-      tech: "Stripe API",
+      logo: appLog,
+      title: "Context Storage",
+      tech: "Typescript",
       text: [
-          "• Video type manipulation (blob, data:url, base64)",
-          "• FFmpeg syntax for video manipulation",
-          "• Timeline Bar from thumbnails"
+          "This is what the LLM can see:",
+          "• Blood Work",
+          "• Allergies",
+          "• Current Weather and UV Index",
+          "• BMI"
       ],
-      show: () => null
+      show: () => <ImageFrame image={contextImage} />
     },
     {
-      logo: FirebaseIcon,
-      title: "User Authentication",
+      logo: appLog,
+      title: "Chat with professional",
+      tech: "Web Socket",
       text: [
-          "• Video type manipulation (blob, data:url, base64)",
-          "• FFmpeg syntax for video manipulation",
-          "• Timeline Bar from thumbnails"
+          "• Live and realtime chat system between an assistant account and client account",
+          "• It works with Web <-> Mobile and Mobile <-> Mobile",
+          "• Fully Functional and well tested",
+      ],
+
+      show: () => <ImageFrame image={liveImage} />
+    
+    },
+    {
+      logo: appLog,
+      title: "Professional Analasis GUI & React PDF",
+      tech: "React, Typescript, React PDF",
+      text: [
+          "• GUI for generating a professional analasis based on client mole.",
+          "• shape, border, color, asymetry ...",
+          "• It has client request manager, accept, deny, chat",
+          "• Tools for better analasis like : Zoom",
       ],
     
     },
     {
-      logo: CORSIcon,
-      title: "Cross Origin Isolation",
+      logo: FirebaseIcon,
+      title: "Google Auth Provider",
+      tech: "Go",
       text: [
-          "• Proxy Server",
-          "• CORS Policy",
-          "• Header Manipulation",
-          "• Limitations of Isolation"
+          "• Faster Authentication",
+          "• Safer Auth",
       ],
+      show: () => <ImageFrame image={GoogleAuth} />
+    
     },
   ],
-  logo: clippifyLogo
+  logo: appLog
 };
