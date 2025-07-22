@@ -19,6 +19,20 @@ const CyberSecurityPage = () => {
       navigate("/cyber_security-projects/artificial-writeup")
     } else if(title === "[HTB] - Codify"){
       navigate("/cyber_security-projects/codify-writeup")
+    } else if(title === "[HTB] - Pilgrimage"){
+      navigate("/cyber_security-projects/pilgrimage-writeup")
+    } else if(title === "[HTB] - CozyHosting"){
+      navigate("/cyber_security-projects/cozyhosting-writeup")
+    } else if(title === "[HTB] - Busqueda"){
+      navigate("/cyber_security-projects/busqueda-writeup")
+    } else if(title === "[HTB] - Squashed"){
+      navigate("/cyber_security-projects/squashed-writeup")
+    } else if(title === "[HTB] - Precious"){
+      navigate("/cyber_security-projects/precious-writeup")
+    } else if(title === "[HTB] - Photobomb"){
+      navigate("/cyber_security-projects/photobomb-writeup")
+    } else if(title === "[HTB] - Irked"){
+      navigate("/cyber_security-projects/irked-writeup")
     }
   };
 
@@ -349,6 +363,62 @@ const CyberSecurityPage = () => {
               difficulty="EASY"
               description="Fascinating challenge that demonstrates the dangers of code sandboxes and privilege escalation through misconfigured scripts."
               tags={["vm2 js sandbox escape", "CVE-2023-30547", "sqlite enumeration", "hash cracking", "sudo privileges", "bash script exploitation", "terminal spoofing"]}
+            />
+
+            <WriteupCard
+              title="[HTB] - Pilgrimage"
+              platform="HACKTHEBOX"
+              difficulty="EASY"
+              description="Intriguing challenge that showcases the power of git repository leakage and CVE exploitation."
+              tags={["git repository leak", "CVE-2022-44268", "ImageMagick exploit", "arbitrary file read", "CVE-2022-4510", "binwalk RCE", "terminal spoofing"]}
+            />
+
+            <WriteupCard
+              title="[HTB] - CozyHosting"
+              platform="HACKTHEBOX"
+              difficulty="EASY"
+              description="Exciting challenge showcasing Spring Boot enumeration techniques, command injection vulnerabilities, and lateral movement through database credential harvesting. Explore Spring Boot actuator endpoints, PostgreSQL database exploitation, and sudo privilege escalation."
+              tags={["Spring Boot enumeration", "actuator endpoints", "command injection", "PostgreSQL", "hash cracking", "lateral movement", "sudo privileges", "GTFOBins"]}
+            />
+
+            <WriteupCard
+              title="[HTB] - Busqueda"
+              platform="HACKTHEBOX"
+              difficulty="EASY"
+              description="Dangers of Python eval() and f-string injection vulnerabilities. Explore how improper input sanitization in a Flask application leads to RCE, exposed git repositories containing sensitive credentials, Docker configuration mismanagement enables privilege escalation"
+              tags={["Python eval injection", "f-string escape", "CVE-2023-43364", "git credential leak", "Docker privilege escalation", "Searchor 2.4.0", "Flask exploitation", "sudo misconfiguration"]}
+            />
+
+            <WriteupCard
+              title="[HTB] - Squashed"
+              platform="HACKTHEBOX"
+              difficulty="EASY"
+              description="Network File System (NFS) misconfigurations and X11 session hijacking. Discover how improper NFS exports can lead to user impersonation, explore the intricacies of UID manipulation, and learn how X11 can be leveraged for privilege escalation"
+              tags={["NFS", "nfs root_squash mis-config", "X11 hijacking", ".Xauthority", "xwd screenshot", "uid impersonation", "PHP reverse shell"]}
+            />
+
+            <WriteupCard
+              title="[HTB] - Precious"
+              platform="HACKTHEBOX"
+              difficulty="EASY"
+              description="Master URL input command injection through PDFKit exploitation, navigate through Ruby YAML deserialization attacks, and escalate privileges via misconfigured sudo permissions"
+              tags={["URL input", "command injection", "PDFKit CVE-2022-25765", "YAML deserialization", "ruby exploitation", "credential discovery", "sudo misconfiguration", "lateral movement"]}
+            />
+
+            <WriteupCard
+              title="[HTB] - Photobomb"
+              platform="HACKTHEBOX"
+              difficulty="EASY"
+              description="Demonstrates how image processing applications can be exploited through filtered command injection, credential discovery in JavaScript source code, and PATH injection privilege escalation vulnerabilities"
+              tags={["filter enumeration", "filtered command injection", "PATH injection privilege escalation", "JavaScript analysis", "credential discovery", "image processing", "sudo exploitation", "bash built-ins"]}
+            />
+
+            <WriteupCard
+              title="[HTB] - Irked"
+              platform="HACKTHEBOX"
+              difficulty="EASY"
+              description="Exploit a backdoor in UnrealIRCd, uncover hidden credentials through steganography, and escalate privileges through SUID binary exploitation with reverse engineering via ghidra"
+              tags={["Backdoored version exploit", "Ghidra", "RCI Enumeration", "Reverse engineering", "SUID", "Steganography", "IRC exploitation", "Binary analysis"]}
             />
           </div>
         )}

@@ -1,11 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState,useRef,useEffect } from 'react';
 import { Shield, Target, Code, BookOpen, Award, ChevronRight, Lock, Bug, Search, Database, Globe, Smartphone, Terminal, Zap, Trophy, Star, Users, Calendar, Download, Eye, ExternalLink, Sword } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
+
+import resume from "../assets/TO-port.pdf";
 
 const CybersecLandingPage = () => {
   const [selectedModal, setSelectedModal] = useState(null);
   const [isAiChatOpen, setIsAiChatOpen] = useState(false);
-
+  
 
   // CTF and Cybersecurity Projects Data
   const ctfProjects = [
@@ -27,15 +29,74 @@ const CybersecLandingPage = () => {
       status: "Completed",
       points: "CTF"
     },
-    {
-      title: "Network Forensics Challenge",
-      category: "Digital Forensics",
-      difficulty: "Medium",
-      description: "Network traffic analysis and incident response scenarios",
-      tags: ["Wireshark", "PCAP", "Network Analysis", "Incident Response"],
+   {
+      title: "[HTB] Pilgrimage",
+      category: "2025-07-11",
+      difficulty: "Easy",
+      description: "Intriguing challenge that showcases the power of git repository leakage and CVE exploitation.",
+      tags: ["git repository leak", "CVE-2022-44268", "ImageMagick exploit", "arbitrary file read", "CVE-2022-4510", "binwalk RCE", "terminal spoofing"],
       status: "Completed",
-      points: 1200
-    }
+      points: "CTF"
+    },
+       {
+      title: "[HTB] CozyHosting",
+      category: "2025-07-15",
+      difficulty: "Medium",
+      description: "Spring Boot enumeration techniques, command injection vulnerabilities, and lateral movement through PostgreSQL database credential",
+      tags: ["Spring Boot enumeration", "actuator endpoints", "command injection", "PostgreSQL", "hash cracking", "lateral movement", "sudo privileges", "GTFOBins"],
+      status: "Completed",
+      points: "CTF"
+    },
+
+    {
+      title: "[HTB] Busqueda",
+      category: "2025-07-20",
+      difficulty: "Easy",
+      description: "Dangers of Python eval() and f-string injection vulnerabilities. Explore how improper input sanitization in a Flask application leads to RCE, exposed git repositories containing sensitive credentials, Docker configuration mismanagement enables privilege escalation",
+      tags:["Python eval injection", "f-string escape", "CVE-2023-43364", "git credential leak", "Docker privilege escalation", "Searchor 2.4.0", "Flask exploitation", "sudo misconfiguration"],
+      status: "Completed",
+      points: "CTF"
+    },
+
+           {
+      title: "[HTB] Squashed",
+      category: "2025-07-20",
+      difficulty: "Easy",
+      description: "Network File System (NFS) misconfigurations and X11 session hijacking. Discover how improper NFS exports can lead to user impersonation, explore the intricacies of UID manipulation, and learn how X11 can be leveraged for privilege escalation",
+      tags: ["NFS", "nfs root_squash mis-config", "X11 hijacking", ".Xauthority", "xwd screenshot", "uid impersonation", "PHP reverse shell"],
+      status: "Completed",
+      points: "CTF"
+    },
+
+           {
+      title: "[HTB] Precious",
+      category: "2025-07-21",
+      difficulty: "Easy",
+      description: "Master URL input command injection through PDFKit exploitation, navigate through Ruby YAML deserialization attacks, and escalate privileges via misconfigured sudo permissions",
+      tags: ["URL input", "command injection", "PDFKit CVE-2022-25765", "YAML deserialization", "ruby exploitation", "credential discovery", "sudo misconfiguration", "lateral movement"],
+      status: "Completed",
+      points: "CTF"
+    },
+
+             {
+      title: "[HTB] Photobomb",
+      category: "2025-07-21",
+      difficulty: "Easy",
+      description: "Demonstrates how image processing applications can be exploited through filtered command injection, credential discovery in JavaScript source code, and PATH injection privilege escalation vulnerabilities",
+      tags: ["filter enumeration", "filtered command injection", "PATH injection privilege escalation", "JavaScript analysis", "credential discovery", "image processing", "sudo exploitation", "bash built-ins"],
+      status: "Completed",
+      points: "CTF"
+    },
+
+             {
+      title: "[HTB] Irked",
+      category: "2025-07-22",
+      difficulty: "Medium",
+      description: "Exploit a backdoor in UnrealIRCd, uncover hidden credentials through steganography, and escalate privileges through SUID binary exploitation with reverse engineering via ghidra",
+      tags: ["Backdoored version exploit", "Ghidra", "RCI Enumeration", "Reverse engineering", "SUID", "Steganography", "IRC exploitation", "Binary analysis"],
+      status: "Completed",
+      points: "CTF"
+    },
   ];
 
   const certifications = {
@@ -139,6 +200,9 @@ const CybersecLandingPage = () => {
 };
 
 const HeroSection = () => {
+
+  const navigate = useNavigate();
+
   return (
     <section className="relative min-h-screen flex items-center justify-center px-6 overflow-hidden">
       {/* Animated Background Elements */}
@@ -154,7 +218,7 @@ const HeroSection = () => {
           <div className="space-y-4">
             <div className="flex items-center space-x-2 text-green-400">
               <Shield className="w-6 h-6" />
-              <span className="text-sm font-medium tracking-wider">CYBERSECURITY SPECIALIST</span>
+              <span className="text-sm font-medium tracking-wider">CYBERSECURITY</span>
             </div>
             
             <h1 className="text-5xl lg:text-7xl font-bold leading-tight">
@@ -168,41 +232,42 @@ const HeroSection = () => {
           </div>
           
           <div className="flex flex-wrap gap-4">
-            <div className="bg-gradient-to-r from-purple-500 to-purple-600 hover:from-purple-600 hover:to-purple-700 px-8 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 flex items-center space-x-2">
+            <div onClick={() => window.open(resume, '_blank')} className="bg-gradient-to-r relative from-purple-500 cursor-pointer to-purple-600 hover:from-purple-600 hover:to-purple-700 px-8 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 flex items-center space-x-2">
               <Eye className="w-5 h-5" />
               <span>View Resume</span>
             </div>
-            <div className="border-2 border-green-400 text-green-400 hover:bg-green-400 hover:text-black px-8 py-3 rounded-lg font-semibold transition-all duration-300 flex items-center space-x-2">
+
+            <div onClick={() => navigate("/cyber_security-projects")} className="border-2 cursor-pointer relative border-green-400 text-green-400 hover:bg-green-400 hover:text-black px-8 py-3 rounded-lg font-semibold transition-all duration-300 flex items-center space-x-2">
               <Target className="w-5 h-5" />
               <span>CTF Writeups</span>
             </div>
           </div>
           
-          <div className="flex items-center space-x-6 pt-4">
+          <div className="flex items-center space-x-6 pt-4 relative">
             <div className="flex items-center space-x-2 text-gray-400">
               <span className="text-sm">Worked for:</span>
             </div>
-            <div className="bg-gray-800 px-4 py-2 rounded-lg border border-gray-700 hover:border-purple-400 transition-colors cursor-pointer">
+            <div className="bg-gray-800 px-4 py-2 relative rounded-lg border border-gray-700 hover:border-purple-400 transition-colors cursor-pointer">
               <span className="text-purple-400 font-semibold">Getcon</span>
             </div>
-            <div className="bg-gray-800 px-4 py-2 rounded-lg border border-gray-700 hover:border-purple-400 transition-colors cursor-pointer">
+            <div className="bg-gray-800 px-4 py-2 rounded-lg relative border border-gray-700 hover:border-purple-400 transition-colors cursor-pointer">
               <span className="text-purple-400 font-semibold">VU Studsec</span>
             </div>
-            <div className="bg-gray-800 px-4 py-2 rounded-lg border border-gray-700 hover:border-purple-400 transition-colors cursor-pointer">
+            <div className="bg-gray-800 px-4 py-2 rounded-lg relative border border-gray-700 hover:border-purple-400 transition-colors cursor-pointer">
               <span className="text-purple-400 font-semibold">Road.io</span>
             </div>
           </div>
         </div>
         
         <div className="relative">
-          <div className="bg-gradient-to-r from-purple-400/20 to-green-400/20 p-8 rounded-2xl backdrop-blur-sm border border-gray-700">
-            <div className="aspect-square bg-gray-800 rounded-xl flex items-center justify-center">
+          <div className="bg-gradient-to-r relative from-purple-400/20 to-green-400/20 p-8 rounded-2xl backdrop-blur-sm border border-gray-700">
+            <div className="aspect-square relative bg-gray-800 rounded-xl flex items-center justify-center">
               <div className="text-6xl">👨‍💻</div>
             </div>
           </div>
           
           {/* Floating Elements */}
-          <div className="absolute -top-4 -right-4 bg-purple-500 p-3 rounded-full animate-bounce">
+          <div className="absolute -top-4 -right-4  bg-purple-500 p-3 rounded-full animate-bounce">
             <Shield className="w-6 h-6 text-black" />
           </div>
           <div className="absolute -bottom-4 -left-4 bg-green-500 p-3 rounded-full animate-pulse">
@@ -215,21 +280,94 @@ const HeroSection = () => {
 };
 
 const CybersecurityShowcase = ({ ctfProjects }) => {
-
-    const navigate = useNavigate()
+  
+  const navigate = useNavigate();
+  const [isPaused, setIsPaused] = useState(false);
+  const [currentTransform, setCurrentTransform] = useState(0);
+  const sliderRef = useRef(null);
+  const animationRef = useRef(null);
+  const startTimeRef = useRef(null);
+  const pausedTimeRef = useRef(0);
 
   const handleNav = (title) => {
     if(title == "[HTB] Artificial"){
       navigate("/cyber_security-projects/artificial-writeup")
     } else if (title == "[HTB] Codify"){
       navigate("/cyber_security-projects/codify-writeup")
+    } else if(title === "[HTB] Pilgrimage"){
+      navigate("/cyber_security-projects/pilgrimage-writeup")
+    } else if(title === "[HTB] CozyHosting"){
+      navigate("/cyber_security-projects/cozyhosting-writeup")
+    } else if(title === "[HTB] Busqueda"){
+      navigate("/cyber_security-projects/busqueda-writeup")
+    } else if(title === "[HTB] Squashed"){
+      navigate("/cyber_security-projects/squashed-writeup")
+    } else if(title === "[HTB] Precious"){
+      navigate("/cyber_security-projects/precious-writeup")
+    } else if(title === "[HTB] Photobomb"){
+      navigate("/cyber_security-projects/photobomb-writeup")
+    } else if(title === "[HTB] Irked"){
+      navigate("/cyber_security-projects/irked-writeup")
     }
   }
 
+  // Duplicate projects for seamless loop
+  const duplicatedProjects = [...ctfProjects, ...ctfProjects];
+
+  const animate = (timestamp) => {
+    if (!startTimeRef.current) {
+      startTimeRef.current = timestamp - pausedTimeRef.current;
+    }
+    
+    const elapsed = timestamp - startTimeRef.current;
+    const duration = 110000; // 60 seconds in milliseconds
+    const progress = (elapsed % duration) / duration;
+    const translateX = progress * -50; // Move from 0% to -50%
+    
+    setCurrentTransform(translateX);
+    
+    if (sliderRef.current) {
+      sliderRef.current.style.transform = `translateX(${translateX}%)`;
+    }
+    
+    if (!isPaused) {
+      animationRef.current = requestAnimationFrame(animate);
+    }
+  };
+
+  useEffect(() => {
+    if (!isPaused) {
+      animationRef.current = requestAnimationFrame(animate);
+    } else {
+      if (animationRef.current) {
+        cancelAnimationFrame(animationRef.current);
+      }
+      // Store how much time has passed when paused
+      if (startTimeRef.current) {
+        pausedTimeRef.current = performance.now() - startTimeRef.current;
+      }
+    }
+    
+    return () => {
+      if (animationRef.current) {
+        cancelAnimationFrame(animationRef.current);
+      }
+    };
+  }, [isPaused]);
+
+  const handleMouseEnter = () => {
+    setIsPaused(true);
+  };
+
+  const handleMouseLeave = () => {
+    startTimeRef.current = null; // Reset start time to continue from current position
+    setIsPaused(false);
+  };
+
   return (
-    <section className="py-20 px-6 bg-gray-910">
-      <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16">
+    <section className="py-20 px-6 bg-gray-910 w-[100%]">
+      <div className="mx-10 w-[100%]">
+        <div className="text-center mb-16 w-[100%]">
           <div className="flex items-center justify-center space-x-2 text-green-400 mb-4">
             <Target className="w-6 h-6" />
             <span className="text-sm font-medium tracking-wider">PENETRATION TESTING & CTF</span>
@@ -242,36 +380,52 @@ const CybersecurityShowcase = ({ ctfProjects }) => {
           </p>
         </div>
         
-        <div className="grid lg:grid-cols-3 gap-8">
-          {ctfProjects.map((project, index) => (
-            <div key={index} onClick={() => handleNav(project.title)} className="bg-gray-900 rounded-xl p-6 border border-gray-700 hover:border-purple-400 transition-all duration-300 hover:transform hover:scale-105 cursor-pointer">
-              <div className="flex items-center justify-between mb-4">
-                <span className={`px-3 py-1 text-xs font-semibold rounded-full ${
-                  project.difficulty === 'Easy' ? 'bg-green-500/20 text-green-400' :
-                  project.difficulty === 'Medium' ? 'bg-purple-500/20 text-purple-400' :
-                  'bg-gray-500/20 text-gray-400'
-                }`}>
-                  {project.difficulty}
-                </span>
-                <div className="flex items-center space-x-1 text-green-400">
-                  <Sword className="w-4 h-4 fill-current" />
-                  <span className="text-sm font-medium">{project.points}</span>
+        {/* Slider Container */}
+        <div className="relative overflow-hidden p-10 w-[750%]">
+          <div 
+            ref={sliderRef}
+            className="flex gap-8 relative"
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+            style={{
+              width:'100%',
+              willChange: 'transform'
+            }}
+          >
+            {duplicatedProjects.map((project, index) => (
+              <div 
+                key={`${project.title}-${index}`} 
+                onClick={() => handleNav(project.title)} 
+                className="bg-gray-900 rounded-xl p-6 border border-gray-700 hover:border-purple-400 transition-all duration-300 hover:transform hover:scale-105 cursor-pointer flex-shrink-0 w-80 w-[400px]"
+              >
+                <div className="flex items-center justify-between mb-4">
+                  <span className={`px-3 py-1 text-xs font-semibold rounded-full ${
+                    project.difficulty === 'Easy' ? 'bg-green-500/20 text-green-400' :
+                    project.difficulty === 'Medium' ? 'bg-purple-500/20 text-purple-400' :
+                    'bg-gray-500/20 text-gray-400'
+                  }`}>
+                    {project.difficulty}
+                  </span>
+                  <div className="flex items-center space-x-1 text-green-400">
+                    <Sword className="w-4 h-4 fill-current" />
+                    <span className="text-sm font-medium">{project.points}</span>
+                  </div>
+                </div>
+                
+                <h3 className="text-xl font-bold mb-2">{project.title}</h3>
+                <p className="text-gray-400 text-sm mb-4">{project.category}</p>
+                <p className="text-gray-300 mb-4">{project.description}</p>
+                
+                <div className="flex flex-wrap gap-2 mb-4">
+                  {project.tags.map((tag, tagIndex) => (
+                    <span key={tagIndex} className="bg-gray-700 text-gray-300 px-2 py-1 text-xs rounded">
+                      {tag}
+                    </span>
+                  ))}
                 </div>
               </div>
-              
-              <h3 className="text-xl font-bold mb-2">{project.title}</h3>
-              <p className="text-gray-400 text-sm mb-4">{project.category}</p>
-              <p className="text-gray-300 mb-4">{project.description}</p>
-              
-              <div className="flex flex-wrap gap-2 mb-4">
-                {project.tags.map((tag, tagIndex) => (
-                  <span key={tagIndex} className="bg-gray-700 text-gray-300 px-2 py-1 text-xs rounded">
-                    {tag}
-                  </span>
-                ))}
-              </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </section>

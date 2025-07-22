@@ -18,6 +18,13 @@ import PocketProtectPage from './pages/FullstackProjects/PocketProtect';
 import PdfY from './pages/CyberProjects/artificial';
 import AboutMePage from './pages/AboutMePage';
 import Codify from './pages/CyberProjects/codify';
+import Pilgrimage from './pages/CyberProjects/pilgrimage';
+import CozyHosting from './pages/CyberProjects/cozyhosting';
+import Busqueda from './pages/CyberProjects/busqueda';
+import Squashed from './pages/CyberProjects/squashed';
+import Precious from './pages/CyberProjects/precious';
+import Photobomb from './pages/CyberProjects/photobomb';
+import Irked from './pages/CyberProjects/irked';
 
 
 function App() {
@@ -38,6 +45,13 @@ return (
         <Route path="/cyber_security-projects" element={<CyberSecurityPage />} />
         <Route path="/cyber_security-projects/artificial-writeup" element={<PdfY />} />
         <Route path="/cyber_security-projects/codify-writeup" element={<Codify />} />
+        <Route path="/cyber_security-projects/pilgrimage-writeup" element={<Pilgrimage />} />
+        <Route path="/cyber_security-projects/cozyhosting-writeup" element={<CozyHosting />} />
+        <Route path="/cyber_security-projects/busqueda-writeup" element={<Busqueda />} />
+        <Route path="/cyber_security-projects/squashed-writeup" element={<Squashed />} />
+        <Route path="/cyber_security-projects/precious-writeup" element={<Precious />} />
+        <Route path="/cyber_security-projects/photobomb-writeup" element={<Photobomb />} />
+        <Route path="/cyber_security-projects/irked-writeup" element={<Irked />} />
 
         <Route path="/mobile-projects" element={<MobilePage />} />
         <Route path="/contact" element={<Contact />} />
